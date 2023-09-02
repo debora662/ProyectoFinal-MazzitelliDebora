@@ -26,12 +26,12 @@ function comprar() {
     let seguirComprando = true
 
     while (seguirComprando) {
-        let opciones = prompt("¿Qué operación quieres realizar?. Ingresa el número de opción... \n 1) Comprar \n 2) Mostrar Carrito \n 3) Salir");
+        let opciones = prompt("¿Estás seguro que quieres realizar la compra ? Ingresa el número de opción para confirmar... \n 1) Comprar \n 2) Mostrar Carrito \n 3) Salir");
 
         switch (opciones) {
             case "1":
                 seguirComprando = false;
-                alert("Felicitaciones compra efectuada. Gracias por elegirnos!!!")
+                alert("Felicitaciones, compra efectuada. Gracias por elegirnos!!!")
                 break;
             case "2":
                 mostrarCarrito();
