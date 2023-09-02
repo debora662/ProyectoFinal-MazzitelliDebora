@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explora la mejor selección de productos de computación en nuestra tienda en línea. Encuentra laptops, PCs, componentes, accesorios y más. ¡Potencia tu mundo digital con nuestras ofertas y calidad.">
+    <meta name="keywords" content="computadoras de escritorio, laptops, teclados, mouse, auriculares">
+    <link rel="shorcut icon" href="./assets/images/favicon-16x16.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>E-TechUniverse - E-commerce</title>
+</head>
+
+<body>
+    <div class="w-full flex justify-evenly mt-5">
+
+        <div class="w-40 h-min shadow-lg hover:shadow-blue-500/100">
+            <img src="./assets/images/auriculares.webp" alt="foto de auriculares">
+            <div class="bg-slate-200 flex flex-col items-center">
+                <div class="font-bold text-xl mb-2">Auriculares</div>
+                <p>Precio: $3200</p>
+                <div>
+                    <button onclick="agregarProducto('Auriculares', 3200)"
+                        class="bg-sky-300 hover:bg-sky-400 rounded p-1 mt-3 mb-2 mx-4">Agregar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-40 h-min shadow-lg hover:shadow-blue-500/100">
+            <img src="./assets/images/mouse.webp" alt="foto de mouse">
+            <div class="bg-slate-200 flex flex-col items-center">
+                <div class="font-bold text-xl mb-2">Mouse</div>
+                <p>Precio: $3000</p>
+                <button onclick="agregarProducto('Mouse', 3000)"
+                    class="bg-sky-300 hover:bg-sky-400 rounded p-1 mt-3 mb-2 mx-4">Agregar</button>
+            </div>
+        </div>
+
+        <div class="w-40 h-min shadow-lg hover:shadow-blue-500/100">
+            <img src="./assets/images/teclado.webp" alt="foto de teclado">
+            <div class="bg-slate-200 flex flex-col items-center">
+                <div class="font-bold text-xl mb-2">Teclado</div>
+                <p>Precio: $3900</p>
+                <button onclick="agregarProducto('Teclado', 3900)"
+                    class="bg-sky-300 hover:bg-sky-400 rounded p-1 mt-3 mb-2 mx-4">Agregar</button>
+            </div>
+        </div>
+
+        <div class="w-40 h-min shadow-lg hover:shadow-blue-500/100">
+            <img src="./assets/images/webcam.webp" alt="foto de teclado">
+            <div class="bg-slate-200 flex flex-col items-center">
+                <div class="font-bold text-xl mb-2">WebCam</div>
+                <p>Precio: $4200</p>
+                <button onclick="agregarProducto('WebCam', 4200)"
+                    class="bg-sky-300 hover:bg-sky-400 rounded p-1 mt-3 mb-2 mx-4">Agregar</button>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- <button onclick="agregarProducto('WebCam', 4200)">Agregar4</button>
+    <button onclick="mostrarCarrito()">Mostrar Carrito</button>
+    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+    <button onclick="comprar()">Comprar</button> -->
+    <script src="carrito.js"></script>
+</body>
+
+</html>
