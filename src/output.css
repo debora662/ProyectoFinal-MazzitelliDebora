@@ -814,10 +814,6 @@ video {
   height: min-content;
 }
 
-.w-40 {
-  width: 10rem;
-}
-
 .w-44 {
   width: 11rem;
 }
@@ -1961,13 +1957,13 @@ video {
   vertical-align: super;
 }
 
-.text-xl {
-  font-size: 1.25rem;
+.text-lg {
+  font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
-.text-lg {
-  font-size: 1.125rem;
+.text-xl {
+  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
@@ -2461,6 +2457,14 @@ video {
 
   .xs\:flex {
     display: flex;
+  }
+
+  .xs\:flex-row {
+    flex-direction: row;
+  }
+
+  .xs\:justify-center {
+    justify-content: center;
   }
 }
 
