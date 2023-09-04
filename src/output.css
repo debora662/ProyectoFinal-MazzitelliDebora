@@ -686,12 +686,12 @@ video {
   margin-right: 1rem;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
+.mb-1 {
+  margin-bottom: 0.25rem;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .mr-4 {
@@ -708,14 +708,6 @@ video {
 
 .mt-3 {
   margin-top: 0.75rem;
-}
-
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
 }
 
 .box-border {
@@ -824,6 +816,10 @@ video {
 
 .w-40 {
   width: 10rem;
+}
+
+.w-44 {
+  width: 11rem;
 }
 
 .flex-shrink {
@@ -1970,6 +1966,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -2454,6 +2455,10 @@ video {
 }
 
 @media (min-width: 320px) {
+  .xs\:mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
   .xs\:flex {
     display: flex;
   }
