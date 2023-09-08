@@ -13,13 +13,20 @@
 </head>
 
 <body>
-    <div class="grid grid-rows-1">
-        <div class="xs:flex xs:justify-center md:flex md:justify-end bg-sky-400 py-5">
-            <button onclick="mostrarCarrito()" class="xs:mx-3 text-sm hover:text-white sm:text-lg">Mostrar Carrito</button>
-            <button onclick="vaciarCarrito()" class="xs:mx-3 text-sm hover:text-white sm:text-lg">Vaciar Carrito</button>
-            <button onclick="comprar()" class="xs:mx-3 text-sm hover:text-white sm:text-lg">Comprar</button>
-        </div>
-    </div>
+
+    <nav class="grid grid-cols-1 flex items-center justify-between flex-wrap bg-indigo-600 p-5">       
+        <div class="xs:flex xs:justify-center xs:hidden md:flex md:justify-end py-5">
+            <button onclick="mostrarCarrito()" class="xs:mx-3 text-sm text-white transform hover:scale-110 sm:text-lg">Mostrar Carrito</button>
+             <button onclick="vaciarCarrito()" class="xs:mx-3 text-sm text-white transform hover:scale-110 sm:text-lg">Vaciar Carrito</button>
+             <button onclick="comprar()" class="xs:mx-3 text-sm text-white transform hover:scale-110 sm:text-lg">Comprar</button>
+         </div> 
+      
+        <div class="block md:hidden">
+          <button id='boton' class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+          </button>
+        </div>      
+     </nav>               
 
     <div class="grid grid-cols-1">
         <div class="xs:flex flex-col items-center sm:flex flex-col items-center md:flex-row justify-evenly mt-10 ">
