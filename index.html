@@ -39,27 +39,43 @@
                     </svg>
                 </button>
             </div>
-
         </nav>
     </header>
 
     <main>
-        <div>
-            <img src="./assets/images/banner.webp" alt="foto de aguila con discos rigidos">
-        </div>
+        <img class="w-screen" src="./assets/images/banner.webp" alt="foto de aguila con discos rigidos">
+        
+        <div
+            class="bg-white p-5 xs:hidden md:block md:flex flex-col md:flex-row items-center justify-around">
+            <div class="flex items-center">
+                <img class="w-10" src="./assets/images/card.svg">
+                <p class="font-semibold ml-2">
+                    Formas de pago<br>
+                    3, 6, 12 y 18 cuotas
+                </p>
+            </div>
 
-        <div class="container mx-auto mt-6 rounded bg-white p-6 flex space-x-4">
-            <img class="w-10" src="./assets/images/card.svg">
-            <p class="font-semibold">
-                Formas de pago<br>
-                3, 6, 12 y 18 cuotas
-            </p>
+            <div class="flex items-center">
+                <img class="w-10" src="./assets/images/truck.svg">
+                <p class="font-semibold ml-2">
+                    Envios a todo el país
+                </p>
+            </div>
+
+            <div class="flex items-center">
+                <img class="w-10" src="./assets/images/clock.svg">
+                <p class="font-semibold ml-2">
+                    Horarios de atención<br>
+                    L a V 9 a 13hs / 14 a 17 hs
+                </p>
+            </div>
         </div>
 
         <div class="grid grid-cols-1">
             <div
-                class="xs:flex flex-col items-center sm:flex flex-col items-center md:flex-row justify-evenly mt-16 mb-10 space-x-4 mx-4">
-                <div class="xs:mb-6 sm:mb-6 w-36 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
+                class="xs:flex flex-col items-center sm:flex flex-col items-center md:flex-row justify-evenly md:space-x-6 mt-14 mb-10 mx-4">
+
+                <div class="xs:mb-6 sm:mb-6 w-36 md:w-40 h-min shadow-lg hover:shadow-blue-500/100"">
                     <img class="rounded-t-lg" src="./assets/images/auriculares.webp" alt="foto de auriculares">
                     <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">Auriculares</div>
@@ -113,6 +129,7 @@
 
             </div>
         </div>
+
     </main>
 
     <footer class="bg-indigo-600 text-center text-white lg:text-left">
