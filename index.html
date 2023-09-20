@@ -14,9 +14,10 @@
 
 <body class="m-0 p-0 h-screen bg-slate-300">
     <header>
+
         <nav class="grid grid-cols-1 flex items-center justify-between flex-wrap bg-indigo-600 p-3">
             <div class="flex justify-between items-end">
-                <img class="w-28" src="./assets/images/logo3.png">
+                <img class="w-28 xs:hidden md:block" src="./assets/images/logo3.png" alt="logo de e-techuniverse">
                 <div class="xs:flex xs:justify-center xs:hidden md:flex md:justify-between p-3">
                     <button onclick="mostrarCarrito()"
                         class="xs:mx-3 text-sm text-white md:text-base transform hover:scale-110 sm:text-lg">Mostrar
@@ -38,6 +39,7 @@
                     </svg>
                 </button>
             </div>
+
         </nav>
     </header>
 
@@ -45,14 +47,23 @@
         <div>
             <img src="./assets/images/banner.webp" alt="foto de aguila con discos rigidos">
         </div>
-        <div class="grid grid-cols-1">
-            <div class="xs:flex flex-col items-center sm:flex flex-col items-center md:flex-row justify-evenly mt-10 mb-10">
 
-                <div class="xs:mb-6 sm:mb-6 w-40 h-min shadow-lg hover:shadow-blue-500/100">
+        <div class="container mx-auto mt-6 rounded bg-white p-6 flex space-x-4">
+            <img class="w-10" src="./assets/images/card.svg">
+            <p class="font-semibold">
+                Formas de pago<br>
+                3, 6, 12 y 18 cuotas
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1">
+            <div
+                class="xs:flex flex-col items-center sm:flex flex-col items-center md:flex-row justify-evenly mt-16 mb-10 space-x-4 mx-4">
+                <div class="xs:mb-6 sm:mb-6 w-36 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
                     <img class="rounded-t-lg" src="./assets/images/auriculares.webp" alt="foto de auriculares">
                     <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-xl mb-1">Auriculares</div>
-                        <p>Precio: $3200</p>
+                        <div class="font-bold text-lg mb-1">Auriculares</div>
+                        <p>$3200</p>
                         <div>
                             <button onclick="agregarProducto('Auriculares')"
                                 class="bg-sky-300 hover:bg-sky-400 rounded p-1 mt-3 mb-2 mx-4">Agregar</button>
@@ -60,40 +71,40 @@
                     </div>
                 </div>
 
-                <div class="xs:mb-6 sm:mb-6 w-40 h-min shadow-lg hover:shadow-blue-500/100">
+                <div class="xs:mb-6 sm:mb-6 w-36 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
                     <img class="rounded-t-lg" src="./assets/images/mouse.webp" alt="foto de mouse">
                     <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-xl mb-1">Mouse</div>
-                        <p>Precio: $3000</p>
+                        <div class="font-bold text-lg mb-1">Mouse</div>
+                        <p>$3000</p>
                         <button onclick="agregarProducto('Mouse')"
                             class="bg-sky-300 hover:bg-sky-400 rounded p-1 mt-3 mb-2 mx-4">Agregar</button>
                     </div>
                 </div>
 
-                <div class="xs:mb-6 sm:mb-6 w-40 h-min shadow-lg hover:shadow-blue-500/100">
+                <div class="xs:mb-6 sm:mb-6 w-36 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
                     <img class="rounded-t-lg" src="./assets/images/teclado.webp" alt="foto de teclado">
                     <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-xl mb-1">Teclado</div>
-                        <p>Precio: $3900</p>
+                        <div class="font-bold text-lg mb-1">Teclado</div>
+                        <p>$3900</p>
                         <button onclick="agregarProducto('Teclado')"
                             class="bg-sky-300 hover:bg-sky-400 rounded p-1 mt-3 mb-2 mx-4">Agregar</button>
                     </div>
                 </div>
 
-                <div class="xs:mb-6 sm:mb-6 w-40 h-min shadow-lg hover:shadow-blue-500/100">
+                <div class="xs:mb-6 sm:mb-6 w-36 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
                     <img class="rounded-t-lg" src="./assets/images/webcam.webp" alt="foto de teclado">
                     <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-xl mb-1">WebCam</div>
-                        <p>Precio: $4200</p>
+                        <div class="font-bold text-lg mb-1">WebCam</div>
+                        <p>$4200</p>
                         <button onclick="agregarProducto('WebCam')"
                             class="bg-sky-300 hover:bg-sky-400 rounded p-1 mt-3 mb-2 mx-4">Agregar</button>
                     </div>
                 </div>
 
-                <div class="xs:mb-6 sm:mb-6 w-40 h-min shadow-lg hover:shadow-blue-500/100">
+                <div class="xs:mb-6 sm:mb-6 w-36 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
                     <img class="rounded-t-lg" src="./assets/images/parlantes.webp" alt="foto de parlantes">
                     <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-xl mb-1">Parlantes</div>
+                        <div class="font-bold text-lg mb-1">Parlantes</div>
                         <p>Precio: $4800</p>
                         <button onclick="agregarProducto('Parlantes')"
                             class="bg-sky-300 hover:bg-sky-400 rounded p-1 mt-3 mb-2 mx-4">Agregar</button>
@@ -104,11 +115,10 @@
         </div>
     </main>
 
-    <footer class="bg-indigo-600 text-center text-white lg:text-left">    
-            
+    <footer class="bg-indigo-600 text-center text-white lg:text-left">
         <div class="mx-6 py-4 text-center md:text-left">
-            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 justify-items-center ">
-                <div >
+            <div class="grid gap-8 md:grid-cols-2 md:grid-cols-4 justify-items-center">
+                <div class="xs:hidden md:block">
                     <h6 class="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                             class="mr-3 h-4 w-4">
@@ -124,7 +134,7 @@
                     </p>
                 </div>
 
-                <div>
+                <div class="xs:hidden md:block">
                     <h6 class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
                         Productos
                     </h6>
@@ -136,26 +146,37 @@
                 </div>
 
                 <div>
-                    <h6
-                      class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-                      Redes Sociales
+                    <h6 class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+                        Redes Sociales
                     </h6>
-                    <p class="mb-2 text-sm">
-                      <a href="https://www.instagram.com" target="_blank" class="text-neutral-600 dark:text-neutral-200"
-                        >Instagram</a
-                      >
+
+                    <div class="flex items-center space-x-4 md:hidden ml-3">
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img class="w-6" src="./assets/images/instagram.svg" alt="logo de instagram">
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img class="w-6" src="./assets/images/facebook.svg" alt="logo de facebook">
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank">
+                            <img class="w-6" src="./assets/images/twitter.svg" alt="logo de twitter">
+                        </a>
+                    </div>
+
+                    <p class="mb-2 text-sm xs:hidden md:block">
+                        <a href="https://www.instagram.com" target="_blank"
+                            class="text-neutral-600 dark:text-neutral-200">Instagram</a>
                     </p>
-                    <p class="mb-2 text-sm">
-                      <a href="https://www.facebook.com" target="_blank" class="text-neutral-600 dark:text-neutral-200"
-                        >Facebook</a
-                      >
+
+                    <p class="mb-2 text-sm xs:hidden md:block">
+                        <a href="https://www.facebook.com" target="_blank"
+                            class="text-neutral-600 dark:text-neutral-200">Facebook</a>
                     </p>
-                    <p class="text-sm">
-                      <a href="https://www.twitter.com" target="_blank" class="text-neutral-600 dark:text-neutral-200"
-                        >Twitter</a
-                      >
-                    </p>                    
-                  </div>                  
+
+                    <p class="text-sm xs:hidden md:block">
+                        <a href="https://www.twitter.com" target="_blank"
+                            class="text-neutral-600 dark:text-neutral-200">Twitter</a>
+                    </p>
+                </div>
 
                 <div>
                     <h6 class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
@@ -179,7 +200,7 @@
                             <path
                                 d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                         </svg>
-                        e-techuniverse@gmail.com
+                        techuniverse@gmail.com
                     </p>
                     <p class="mb-2 text-sm flex items-center justify-center md:justify-start">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -189,15 +210,6 @@
                                 clip-rule="evenodd" />
                         </svg>
                         + 54 11 3345 5678
-                    </p>
-                    <p class="text-sm flex items-center justify-center md:justify-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="mr-3 h-5 w-5">
-                            <path fill-rule="evenodd"
-                                d="M7.875 1.5C6.839 1.5 6 2.34 6 3.375v2.99c-.426.053-.851.11-1.274.174-1.454.218-2.476 1.483-2.476 2.917v6.294a3 3 0 003 3h.27l-.155 1.705A1.875 1.875 0 007.232 22.5h9.536a1.875 1.875 0 001.867-2.045l-.155-1.705h.27a3 3 0 003-3V9.456c0-1.434-1.022-2.7-2.476-2.917A48.716 48.716 0 0018 6.366V3.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM16.5 6.205v-2.83A.375.375 0 0016.125 3h-8.25a.375.375 0 00-.375.375v2.83a49.353 49.353 0 019 0zm-.217 8.265c.178.018.317.16.333.337l.526 5.784a.375.375 0 01-.374.409H7.232a.375.375 0 01-.374-.409l.526-5.784a.373.373 0 01.333-.337 41.741 41.741 0 018.566 0zm.967-3.97a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H18a.75.75 0 01-.75-.75V10.5zM15 9.75a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V10.5a.75.75 0 00-.75-.75H15z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        + 54 11 4865 5679
                     </p>
                 </div>
 
