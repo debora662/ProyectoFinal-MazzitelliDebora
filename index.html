@@ -16,9 +16,18 @@
     <header>
 
         <nav class="grid grid-cols-1 flex items-center justify-between flex-wrap bg-indigo-600 p-3">
-            <div class="flex justify-between items-end">
-                <img class="w-28 xs:hidden md:block" src="./assets/images/logo3.png" alt="logo de e-techuniverse">
-                <div class="xs:flex xs:justify-center xs:hidden md:flex md:justify-between p-3">
+
+            <div class="flex flex-col md:flex-row justify-between items-end ">
+                <div class="xs:hidden lg:block">
+                    <img class="w-32 transition-transform transform hover:scale-105"" src="./assets/images/logo3.png" alt="logo de e-techuniverse">
+                </div>
+
+                <div class="flex justify-center mb-2 xs:hidden md:block">
+                    <input class="md:w-80 lg:w-96 rounded-l-lg p-1" type="text" id="texto" placeholder="Buscar Productos">
+                    <button class="bg-sky-300 p-1 -ml-1 hover:bg-sky-400">Buscar</button>
+                </div>               
+
+                <div class="xs:flex xs:justify-center xs:hidden md:flex md:justify-between mb-3">
                     <button onclick="mostrarCarrito()"
                         class="xs:mx-3 text-sm text-white md:text-base transform hover:scale-110 sm:text-lg">Mostrar
                         Carrito</button>
@@ -44,12 +53,11 @@
 
     <main>
         <img class="w-screen" src="./assets/images/banner.webp" alt="foto de aguila con discos rigidos">
-        
-        <div
-            class="bg-white p-5 xs:hidden md:block md:flex flex-col md:flex-row items-center justify-around">
+
+        <div class="bg-white p-5 xs:hidden md:block md:flex flex-col md:flex-row items-center justify-around">
             <div class="flex items-center">
                 <img class="w-10" src="./assets/images/card.svg">
-                <p class="font-semibold ml-2">
+                <p class="text-sm font-semibold ml-2">
                     Formas de pago<br>
                     3, 6, 12 y 18 cuotas
                 </p>
@@ -57,14 +65,14 @@
 
             <div class="flex items-center">
                 <img class="w-10" src="./assets/images/truck.svg">
-                <p class="font-semibold ml-2">
+                <p class="text-sm font-semibold ml-2">
                     Envios a todo el país
                 </p>
             </div>
 
             <div class="flex items-center">
                 <img class="w-10" src="./assets/images/clock.svg">
-                <p class="font-semibold ml-2">
+                <p class="text-sm font-semibold ml-2">
                     Horarios de atención<br>
                     L a V 9 a 13hs / 14 a 17 hs
                 </p>
@@ -75,8 +83,8 @@
             <div
                 class="xs:flex flex-col items-center sm:flex flex-col items-center md:flex-row justify-evenly md:space-x-6 mt-14 mb-10 mx-4">
 
-                <div class="xs:mb-6 sm:mb-6 w-36 md:w-40 h-min shadow-lg hover:shadow-blue-500/100"">
-                    <img class="rounded-t-lg" src="./assets/images/auriculares.webp" alt="foto de auriculares">
+                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100"">
+                    <img class=" rounded-t-lg" src="./assets/images/auriculares.webp" alt="foto de auriculares">
                     <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">Auriculares</div>
                         <p>$3200</p>
@@ -87,7 +95,7 @@
                     </div>
                 </div>
 
-                <div class="xs:mb-6 sm:mb-6 w-36 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
+                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
                     <img class="rounded-t-lg" src="./assets/images/mouse.webp" alt="foto de mouse">
                     <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">Mouse</div>
@@ -97,7 +105,7 @@
                     </div>
                 </div>
 
-                <div class="xs:mb-6 sm:mb-6 w-36 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
+                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
                     <img class="rounded-t-lg" src="./assets/images/teclado.webp" alt="foto de teclado">
                     <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">Teclado</div>
@@ -107,7 +115,7 @@
                     </div>
                 </div>
 
-                <div class="xs:mb-6 sm:mb-6 w-36 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
+                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
                     <img class="rounded-t-lg" src="./assets/images/webcam.webp" alt="foto de teclado">
                     <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">WebCam</div>
@@ -117,7 +125,7 @@
                     </div>
                 </div>
 
-                <div class="xs:mb-6 sm:mb-6 w-36 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
+                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
                     <img class="rounded-t-lg" src="./assets/images/parlantes.webp" alt="foto de parlantes">
                     <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">Parlantes</div>
@@ -136,7 +144,7 @@
         <div class="mx-6 py-4 text-center md:text-left">
             <div class="grid gap-8 md:grid-cols-2 md:grid-cols-4 justify-items-center">
                 <div class="xs:hidden md:block">
-                    <h6 class="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
+                    <h6 class="mb-4 flex items-center justify-center text-sm font-semibold uppercase md:justify-start">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                             class="mr-3 h-4 w-4">
                             <path
@@ -152,7 +160,7 @@
                 </div>
 
                 <div class="xs:hidden md:block">
-                    <h6 class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+                    <h6 class="mb-4 flex justify-center text-sm font-semibold uppercase md:justify-start">
                         Productos
                     </h6>
                     <p class="mb-2 text-sm">Auriculares</p>
@@ -163,11 +171,11 @@
                 </div>
 
                 <div>
-                    <h6 class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+                    <h6 class="mb-4 flex justify-center text-sm font-semibold uppercase md:justify-start">
                         Redes Sociales
                     </h6>
 
-                    <div class="flex items-center space-x-4 md:hidden ml-3">
+                    <div class="flex items-center space-x-4 md:hidden ml-1">
                         <a href="https://www.instagram.com" target="_blank">
                             <img class="w-6" src="./assets/images/instagram.svg" alt="logo de instagram">
                         </a>
@@ -196,7 +204,7 @@
                 </div>
 
                 <div>
-                    <h6 class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+                    <h6 class="mb-4 flex justify-center text-sm font-semibold uppercase md:justify-start">
                         Contact
                     </h6>
                     <p class="mb-2 text-sm flex items-center justify-center md:justify-start">

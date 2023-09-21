@@ -3,8 +3,8 @@ module.exports = {
   content: ["./**/*.{html,js}"],
   theme: {
     extend: {
-      spacing: {
-        'mx-13': '48px',
+      width: {
+        'w-98': '390px',
       },
       screens: {
         'xs': '320px',
