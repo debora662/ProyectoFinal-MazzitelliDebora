@@ -1,25 +1,38 @@
+function Producto(nombre, precio) {
+    this.nombre = nombre;
+    this.precio = precio;
+    this.cantidad = 0;
+    this.subTotal = 0;
+}
+
+const productos = [
+    new Producto("Auriculares", 3200),
+    new Producto("Mouse", 3000),
+    new Producto("Teclado", 3900),
+    new Producto("WebCam", 4200),
+    new Producto("Parlantes", 4800)
+];
+
 let carrito = [];
 
-const productos = [{ nombre: "Auriculares", precio: 3200, subTotal: 3200, cantidad: 1 },
-{ nombre: "Mouse", precio: 3000, subTotal: 3000, cantidad: 1 },
-{ nombre: "Teclado", precio: 3900, subTotal: 3900, cantidad: 1 },
-{ nombre: "WebCam", precio: 4200, subTotal: 4200, cantidad: 1 },
-{ nombre: "Parlantes", precio: 4800, subTotal: 4800, cantidad: 1 }]
 
 function agregarProducto(itemNombre) {
 
-    const enCarrito = carrito.find((el) => el.nombre === itemNombre);
+    const producto = productos.find((el) => el.nombre === itemNombre);
 
-    if (enCarrito) {
-        enCarrito.cantidad++;
-        enCarrito.subTotal = enCarrito.cantidad * enCarrito.precio;
-    } else {
-        const producto = productos.find((el) => el.nombre === itemNombre);
-        if (producto) {
-            carrito.push({ ...producto });
+    if (producto) {
+        producto.cantidad++;
+        producto.subTotal = producto.cantidad * producto.precio;
+
+        const enCarrito = carrito.find((el) => el.nombre === itemNombre);
+
+        if (!enCarrito) {
+            carrito.push(producto)
         }
+        alert("El producto " + itemNombre + " fue agregado con éxito");
+    } else {
+        alert("El producto " + itemNombre + " no existe.");
     }
-    alert("El producto " + itemNombre + " fue agregado con éxito");
 }
 
 function mostrarCarrito() {
@@ -48,12 +61,12 @@ function eliminarProducto() {
     if (nombreProducto) {
         const indiceProducto = carrito.indexOf(producto);
         carrito.splice(indiceProducto, 1);
-        alert("El producto " + nombreProducto + " fue eliminado.")
+        alert("El producto " + nombreProducto + " fue eliminado.");
     }
 }
 
 function comprar() {
-    let seguirComprando = true
+    let seguirComprando = true;
 
     while (seguirComprando) {
         let opciones = prompt("¿Estás seguro que quieres realizar la compra ? Ingresa el número de opción para confirmar... \n 1) Comprar \n 2) Mostrar Carrito \n 3) Salir");
@@ -61,7 +74,7 @@ function comprar() {
         switch (opciones) {
             case "1":
                 seguirComprando = false;
-                alert("Felicitaciones, compra efectuada. Gracias por elegirnos!!!")
+                alert("Felicitaciones, compra efectuada. Gracias por elegirnos!!!");
                 break;
             case "2":
                 mostrarCarrito();
@@ -75,5 +88,25 @@ function comprar() {
     }
 }
 
+const inputBuscador = document.querySelector("#buscador");
+const boton = document.querySelector("#boton")
+
+
+boton.addEventListener("click", function () {
+    const textoIngresado = inputBuscador.value.toLowerCase();
+    const filtrado = productos.filter((producto) => producto.nombre.toLowerCase().includes(textoIngresado));
+
+    if (textoIngresado === "") {
+        alert("Por favor, ingresa un término de búsqueda.");
+        return;
+    }
+
+    if (filtrado.length > 0) {
+        const productoEncontrado = filtrado.map((producto) => producto.nombre);
+        alert("Se encontró el siguiente producto: " + productoEncontrado);
+    } else {
+        alert("No se encontró ningún producto")
+    }
+})
 
 
