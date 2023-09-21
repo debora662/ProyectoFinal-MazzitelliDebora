@@ -29,9 +29,9 @@ function agregarProducto(itemNombre) {
         if (!enCarrito) {
             carrito.push(producto)
         }
-        alert("El producto " + itemNombre + " fue agregado con éxito");
+        alert(`El producto ${itemNombre} fue agregado con éxito.`);
     } else {
-        alert("El producto " + itemNombre + " no existe.");
+        alert(`El producto ${itemNombre} no existe.`);
     }
 }
 
@@ -61,7 +61,7 @@ function eliminarProducto() {
     if (nombreProducto) {
         const indiceProducto = carrito.indexOf(producto);
         carrito.splice(indiceProducto, 1);
-        alert("El producto " + nombreProducto + " fue eliminado.");
+        alert(`El producto ${nombreProducto} fue eliminado.`);
     }
 }
 
@@ -103,9 +103,9 @@ boton.addEventListener("click", function () {
 
     if (filtrado.length > 0) {
         const productoEncontrado = filtrado.map((producto) => producto.nombre);
-        alert("Se encontró el siguiente producto: " + productoEncontrado);
+        alert(`Se encontró el siguiente producto: ${productoEncontrado}.`);
     } else {
-        alert("No se encontró ningún producto")
+        alert("No se encontró ningún producto.")
     }
 })
 
