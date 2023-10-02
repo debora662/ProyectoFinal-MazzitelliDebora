@@ -15,42 +15,46 @@
 <body class="m-0 p-0 h-screen bg-slate-300">
     <header>
 
-        <nav class="grid grid-cols-1 flex items-center justify-between flex-wrap bg-indigo-600 p-3">
+        <nav
+            class="flex items-center justify-between bg-[#FBFBFB] py-2 text-white shadow-lg hover:text-neutral-700 focus:text-neutral-700 bg-indigo-600 lg:py-5">
+            <div class="flex items-center justify-between space-x-5 px-3 w-full">
 
-            <div class="flex flex-col md:flex-row justify-between items-end ">
-                <div class="xs:hidden lg:block">
-                    <img class="w-32 transition-transform transform hover:scale-105"" src=" ./assets/images/logo3.png"
+                
+                <div class="lg:mr-auto">
+                    <img class="w-32 transition-transform transform hover:scale-105" src="./assets/images/logo3.png"
                         alt="logo de e-techuniverse">
                 </div>
 
-                <div class="flex justify-center mb-2 xs:hidden md:block">
-                    <input class="md:w-80 lg:w-96 rounded-l-lg p-1" type="text" id="buscador"
-                        placeholder="Buscar Productos">
-                    <button id="boton" class="bg-sky-300 p-1 -ml-1 hover:bg-sky-400">Buscar</button>
+                <div class="flex items-center justify-center w-full">
+                    <div class="grow-[0.5]">
+                        <input type="text" id="buscador"
+                            class="w-full rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] placeholder-neutral-200 focus:outline-none focus:border-2 dark:text-white"
+                            placeholder="Buscar productos..." aria-label="buscador" aria-describedby="button-addon2" />
+                    </div>
+                    <button id="boton"
+                        class="input-group-text flex items-center whitespace-nowrap rounded px-2 py-2 text-center text-base font-normal text-neutral-700 dark:text-neutral-200 bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                            <path fill-rule="evenodd"
+                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
                 </div>
+              
+                <div class="flex items-center ">
 
-                <div class="xs:flex xs:justify-center xs:hidden md:flex md:justify-between mb-3">
                     <button onclick="mostrarCarrito()"
-                        class="xs:mx-3 text-sm text-white md:text-base transform hover:scale-110 sm:text-lg">Mostrar
+                        class="text-sm text-white md:text-base transform hover:scale-110 sm:text-lg mx-4">Mostrar
                         Carrito</button>
                     <button onclick="eliminarProducto()"
-                        class="xs:mx-3 text-sm text-white md:text-base transform hover:scale-110 sm:text-lg">Eliminar
+                        class="text-sm text-white md:text-base transform hover:scale-110 sm:text-lg mx-4">Eliminar
                         Producto</button>
                     <button onclick="comprar()"
-                        class="xs:mx-3 text-sm text-white md:text-base transform hover:scale-110 sm:text-lg">Comprar</button>
+                        class="text-sm text-white md:text-base transform hover:scale-110 sm:text-lg mx-4">Comprar</button>
                 </div>
             </div>
+        </nav>       
 
-            <div class="block md:hidden">
-                <button id='boton'
-                    class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <title>Menu</title>
-                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-                    </svg>
-                </button>
-            </div>
-        </nav>
     </header>
 
     <main>
@@ -65,7 +69,8 @@
 
                 <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item>
-                    <img src="./assets/images/banner2.webp" class="block w-full" alt="imagen de auriculares inalámbricos" />
+                    <img src="./assets/images/banner2.webp" class="block w-full"
+                        alt="imagen de auriculares inalámbricos" />
                 </div>
 
                 <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
@@ -86,7 +91,7 @@
                 <span
                     class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Previous</span>
             </button>
-           
+
             <button
                 class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
                 type="button" data-te-target="#carouselExampleControls" data-te-slide="next">
@@ -99,7 +104,7 @@
                 <span
                     class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span>
             </button>
-        </div>      
+        </div>
 
         <div class="bg-white p-5 xs:hidden md:block md:flex flex-col md:flex-row items-center justify-around">
             <div class="flex items-center">
@@ -126,65 +131,57 @@
             </div>
         </div>
 
+
+        <H5 class="underline decoration-2 font-semibold text-lg m-8" id="categoria">CATEGORIAS:</H5>
+        <button id="volverBtn" class="hidden text-black hover:text-blue-700 underline underline-offset-1 font-bold py-2 px-4 mt-3 ml-8">Volver atrás</button>
+
         <div class="grid grid-cols-1">
             <div
-                class="grid xs:grid-cols-2 xs:grid-rows-2 xs:justify-items-center sm:grid-cols-3 md:flex flex-row justify-evenly md:space-x-6 mt-10 mb-10 mx-4">
+                class="flex justify-center items-center flex-wrap mt-4 mb-8 mx-4 gap-8" id="categoriasContainer">
 
-                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
+                <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="auriculares">
                     <img class="rounded-t-lg" src="./assets/images/auriculares.webp" alt="foto de auriculares">
-                    <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-lg mb-1">Auriculares</div>
-                        <p>$3200</p>
-                        <div>
-                            <button onclick="agregarProducto('Auriculares')"
-                                class="bg-sky-300 hover:bg-sky-400 rounded p-1 mt-3 mb-2 mx-4">Agregar</button>
-                        </div>
+                    <div class="bg-white flex flex-col items-center rounded-b-lg">
+                        <div class="font-bold text-lg mb-1">Auriculares</div>                      
                     </div>
-                </div>
+                </button>               
 
-                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
+                <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="mouse">
                     <img class="rounded-t-lg" src="./assets/images/mouse.webp" alt="foto de mouse">
-                    <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-lg mb-1">Mouse</div>
-                        <p>$3000</p>
-                        <button onclick="agregarProducto('Mouse')"
-                            class="bg-sky-300 hover:bg-sky-400 rounded p-1 mt-3 mb-2 mx-4">Agregar</button>
+                    <div class="bg-white flex flex-col items-center rounded-b-lg">
+                        <div class="font-bold text-lg mb-1">Mouse</div>                        
                     </div>
-                </div>
+                </button>                
 
-                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
+                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="teclado">
                     <img class="rounded-t-lg" src="./assets/images/teclado.webp" alt="foto de teclado">
-                    <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-lg mb-1">Teclado</div>
-                        <p>$3900</p>
-                        <button onclick="agregarProducto('Teclado')"
-                            class="bg-sky-300 hover:bg-sky-400 rounded p-1 mt-3 mb-2 mx-4">Agregar</button>
+                    <div class="bg-white flex flex-col items-center rounded-b-lg">
+                        <div class="font-bold text-lg mb-1">Teclado</div>                        
                     </div>
                 </div>
 
-                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
+                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="webcam">
                     <img class="rounded-t-lg" src="./assets/images/webcam.webp" alt="foto de teclado">
-                    <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-lg mb-1">WebCam</div>
-                        <p>$4200</p>
-                        <button onclick="agregarProducto('WebCam')"
-                            class="bg-sky-300 hover:bg-sky-400 rounded p-1 mt-3 mb-2 mx-4">Agregar</button>
+                    <div class="bg-white flex flex-col items-center rounded-b-lg">
+                        <div class="font-bold text-lg mb-1">WebCam</div>                       
                     </div>
                 </div>
 
-                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100">
+                  <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="parlantes">
                     <img class="rounded-t-lg" src="./assets/images/parlantes.webp" alt="foto de parlantes">
-                    <div class="bg-slate-200 flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-lg mb-1">Parlantes</div>
-                        <p>Precio: $4800</p>
-                        <button onclick="agregarProducto('Parlantes')"
-                            class="bg-sky-300 hover:bg-sky-400 rounded p-1 mt-3 mb-2 mx-4">Agregar</button>
+                    <div class="bg-white flex flex-col items-center rounded-b-lg">
+                        <div class="font-bold text-lg mb-1">Parlantes</div>                       
                     </div>
                 </div>
+              
+
+                <div id="productosContainer" class="flex flex-wrap justify-center md:grid md:grid-cols-2 lg:flex justify-center grid-cols-3 xl:grid-cols-4 gap-4 p-4"></div>
 
             </div>
+            
         </div>
     </main>
+
 
     <footer class="bg-indigo-600 text-center text-white lg:text-left">
         <div class="mx-6 py-4 text-center md:text-left">
