@@ -192,6 +192,8 @@ function mostrarCategorias(categoria) {
         productosContainer.appendChild(productoElemento);
     })
 
+    carousel.style.display = 'none';
+    dataInfo.classList.remove('hidden');
     botonAuriculares.style.display = 'none';
     botonMouse.style.display = 'none';
     botonTeclado.style.display = 'none';
@@ -225,12 +227,13 @@ volverBtn.addEventListener('click', () => {
 
     productosContainer.innerHTML = '';
 
+    carousel.style.display = 'block';
+    dataInfo.classList.add('hidden');
     botonAuriculares.style.display = 'block';
     botonMouse.style.display = 'block';
     botonTeclado.style.display = 'block';
     botonWebcam.style.display = 'block';
     botonParlantes.style.display = 'block';
-
     volverBtn.classList.add('hidden');
     textoCategoria.style.display = 'block';
 });
@@ -308,7 +311,9 @@ function comprar() {
 }
 
 const inputBuscador = document.querySelector("#buscador");
-const boton = document.querySelector("#botonBuscar")
+const boton = document.querySelector("#botonBuscar");
+const carousel = document.querySelector("#carouselExampleControls");
+const dataInfo = document.querySelector("#dataPagos");
 
 
 boton.addEventListener("click", function () {
@@ -349,6 +354,8 @@ function mostrarProductosFiltrados(productosFiltrados) {
         productosContainer.appendChild(productoElemento);
     })
 
+    carousel.style.display = 'none';
+    dataInfo.classList.remove('hidden');
     botonAuriculares.style.display = 'none';
     botonMouse.style.display = 'none';
     botonTeclado.style.display = 'none';
