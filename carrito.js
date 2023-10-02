@@ -163,6 +163,7 @@ const volverBtn = document.querySelector("#volverBtn");
 const categoriasContainer = document.querySelector("#categoriasContainer");
 const productosContainer = document.querySelector('#productosContainer');
 
+
 function mostrarCategorias(categoria) {
 
     productosContainer.innerHTML = '';
@@ -179,10 +180,15 @@ function mostrarCategorias(categoria) {
         <p class=" w-64 h-50 text-gray-700 text-xs mb-1">${producto.desc}</p>
         <p class="font-bold text-sm mt-2">Precio: $${producto.precio}</p> 
         <div class="flex items-end">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mt-3">Agregar</button> 
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mt-3 agregar-btn">Agregar</button> 
         </div>
         </div>
         `;
+
+        productoElemento.querySelector('.agregar-btn').addEventListener('click', function() {            
+            agregarProducto(producto);
+        });
+
         productosContainer.appendChild(productoElemento);
     })
 
@@ -230,23 +236,23 @@ volverBtn.addEventListener('click', () => {
 });
 
 
-function agregarProducto(itemNombre) {
+function agregarProducto(producto) {
 
-    const producto = productos.find((el) => el.nombre === itemNombre);
+    const productoEnCarrito = carrito.find((el) => el.id === producto.id);
 
-    if (producto) {
-        producto.cantidad++;
-        producto.subTotal = producto.cantidad * producto.precio;
-
-        const enCarrito = carrito.find((el) => el.nombre === itemNombre);
-
-        if (!enCarrito) {
-            carrito.push(producto)
-        }
-        alert(`El producto ${itemNombre} fue agregado con éxito.`);
+    if (productoEnCarrito) {
+        productoEnCarrito.cantidad++;
+        productoEnCarrito.subTotal = productoEnCarrito.cantidad * productoEnCarrito.precio;
     } else {
-        alert(`El producto ${itemNombre} no existe.`);
+        const nuevoProducto = {
+            ...producto,
+            cantidad: 1,
+            subTotal: producto.precio
+        };
+        carrito.push(nuevoProducto)
     }
+    alert(`El producto ${producto.nombre} fue agregado con éxito.`);     
+    console.log(carrito)
 }
 
 function mostrarCarrito() {
