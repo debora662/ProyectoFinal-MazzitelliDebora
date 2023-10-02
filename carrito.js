@@ -185,7 +185,7 @@ function mostrarCategorias(categoria) {
         </div>
         `;
 
-        productoElemento.querySelector('.agregar-btn').addEventListener('click', function() {            
+        productoElemento.querySelector('.agregar-btn').addEventListener('click', function () {
             agregarProducto(producto);
         });
 
@@ -251,7 +251,7 @@ function agregarProducto(producto) {
         };
         carrito.push(nuevoProducto)
     }
-    alert(`El producto ${producto.nombre} fue agregado con éxito.`);     
+    alert(`El producto ${producto.nombre} fue agregado con éxito.`);
     console.log(carrito)
 }
 
@@ -308,23 +308,53 @@ function comprar() {
 }
 
 const inputBuscador = document.querySelector("#buscador");
-const boton = document.querySelector("#boton")
+const boton = document.querySelector("#botonBuscar")
 
 
 boton.addEventListener("click", function () {
     const textoIngresado = inputBuscador.value.toLowerCase();
-    const filtrado = productos.filter((producto) => producto.nombre.toLowerCase().includes(textoIngresado));
 
-    if (textoIngresado === "") {
-        alert("Por favor, ingresa un término de búsqueda.");
-        return;
-    }
+    const productosFiltrados = productos.filter((producto) => {
+        const coincideNombre = producto.nombre.toLowerCase().includes(textoIngresado);
+        const coincideCategoria = producto.categoria.toLowerCase().includes(textoIngresado);
+        return coincideNombre || coincideCategoria;
+    });
 
-    if (filtrado.length > 0) {
-        const productoEncontrado = filtrado.map((producto) => producto.nombre);
-        alert(`Se encontró el siguiente producto: ${productoEncontrado}.`);
-    } else {
-        alert("No se encontró ningún producto.")
-    }
+    mostrarProductosFiltrados(productosFiltrados)
+
 })
+
+function mostrarProductosFiltrados(productosFiltrados) {
+    productosContainer.innerHTML = "";
+
+    productosFiltrados.forEach(producto => {
+        const productoElemento = document.createElement('div');
+        productoElemento.className = 'bg-white rounded-lg shadow-lg p-2 m-2 flex flex-col items-center '
+        productoElemento.innerHTML = `
+        <div class="flex flex-col items-center ">
+        <img class="w-36 object-cover mb-2 mx-auto rounded-t" src="${producto.image}" alt="${producto.nombre}"> 
+        <h2 class="text-sm font-bold mb-1">${producto.nombre}</h2> 
+        <p class=" w-64 h-50 text-gray-700 text-xs mb-1">${producto.desc}</p>
+        <p class="font-bold text-sm mt-2">Precio: $${producto.precio}</p> 
+        <div class="flex items-end">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mt-3 agregar-btn">Agregar</button> 
+        </div>
+        </div>
+        `;
+
+        productoElemento.querySelector('.agregar-btn').addEventListener('click', function () {
+            agregarProducto(producto);
+        });
+
+        productosContainer.appendChild(productoElemento);
+    })
+
+    botonAuriculares.style.display = 'none';
+    botonMouse.style.display = 'none';
+    botonTeclado.style.display = 'none';
+    botonWebcam.style.display = 'none';
+    botonParlantes.style.display = 'none';
+    textoCategoria.style.display = 'none';
+    volverBtn.classList.remove('hidden')
+}
 
