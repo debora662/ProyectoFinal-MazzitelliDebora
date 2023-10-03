@@ -162,6 +162,7 @@ const textoCategoria = document.querySelector("#categoria")
 const volverBtn = document.querySelector("#volverBtn");
 const categoriasContainer = document.querySelector("#categoriasContainer");
 const productosContainer = document.querySelector('#productosContainer');
+const carritoCompras = document.querySelector("#mostrarCarrito")
 
 
 function mostrarCategorias(categoria) {
@@ -258,7 +259,10 @@ function agregarProducto(producto) {
     console.log(carrito)
 }
 
-function mostrarCarrito() {
+carritoCompras.addEventListener("click", mostrarCarrito)
+
+function mostrarCarrito() {    
+    
     if (carrito.length === 0) {
         alert("El carrito está vacio.")
     } else {
