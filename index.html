@@ -14,15 +14,13 @@
 
 <body class="m-0 p-0 h-screen bg-slate-300">
     <header>
-
         <nav
             class="flex items-center justify-between bg-[#FBFBFB] py-2 text-white shadow-lg hover:text-neutral-700 focus:text-neutral-700 bg-indigo-600 lg:py-5">
             <div class="flex items-center justify-between space-x-5 px-3 w-full">
 
-                
                 <div class="lg:mr-auto">
-                    <img class="w-32 transition-transform transform hover:scale-110 xs:hidden lg:block" src="./assets/images/logo3.png"
-                        alt="logo de e-techuniverse">
+                    <img class="w-32 transition-transform transform hover:scale-110 xs:hidden lg:block"
+                        src="./assets/images/logo3.png" alt="logo de e-techuniverse">
                 </div>
 
                 <div class="flex items-center justify-center w-full">
@@ -40,20 +38,19 @@
                         </svg>
                     </button>
                 </div>
-              
-                <div class="flex items-center ">
-                    <button id="mostrarCarrito">
-                    <img class="w-12" src="./assets/images/cart.png" alt="icono de carrito">
-                       </button>
-                   <!--  <button onclick="eliminarProducto()"
-                        class="text-sm text-white md:text-base transform hover:scale-110 sm:text-lg mx-4">Eliminar
-                        Producto</button>
-                    <button onclick="comprar()"
-                        class="text-sm text-white md:text-base transform hover:scale-110 sm:text-lg mx-4">Comprar</button> -->
-                </div>
 
-            </div>
-        </nav>      
+                <div class="flex items-center ">
+                    <button id="mostrarProductos">
+                        <img class="w-8" src="./assets/images/cart.png" alt="icono de carrito de compras" />
+                        <div id="sidenav-7"
+                            class="transition-transform duration-300 ease-in-out transform translate-x-full invisible fixed right-0 top-0 z-[1035] h-screen w-60 overflow-hidden bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.07),_0_2px_4px_rgba(0,0,0,0.05)] dark:bg-zinc-800">
+                            <div id="carritoProductos">
+                                <ul id="listaCarrito"></ul>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+        </nav>
     </header>
 
     <main>
@@ -105,7 +102,8 @@
             </button>
         </div>
 
-        <div class="bg-white p-5 xs:hidden md:block md:flex flex-col md:flex-row items-center justify-around" id="dataPagos">
+        <div class="bg-white p-5 xs:hidden md:block md:flex flex-col md:flex-row items-center justify-around"
+            id="dataPagos">
             <div class="flex items-center">
                 <img class="w-10" src="./assets/images/card.svg">
                 <p class="text-sm font-semibold ml-2">
@@ -130,56 +128,57 @@
             </div>
         </div>
 
-
         <H5 class="underline decoration-2 font-semibold text-lg m-8 flex justify-center" id="categoria">CATEGORIAS:</H5>
-        <button id="volverBtn" class="hidden text-black hover:text-blue-700 underline underline-offset-1 font-bold py-2 px-4 mt-3 ml-8">Volver atrás</button>
+        <button id="volverBtn"
+            class="hidden text-black hover:text-blue-700 underline underline-offset-1 font-bold py-2 px-4 mt-3 ml-8">Volver
+            atrás</button>
 
         <div class="grid grid-cols-1">
-            <div
-                class="flex justify-center flex-wrap mt-4 mb-6 mx-4 gap-8" id="categoriasContainer">
+            <div class="flex justify-center flex-wrap mt-4 mb-6 mx-4 gap-8" id="categoriasContainer">
 
                 <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="auriculares">
                     <img class="rounded-t-lg" src="./assets/images/auriculares.webp" alt="foto de auriculares">
                     <div class="bg-white flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-lg mb-1">Auriculares</div>                      
+                        <div class="font-bold text-lg mb-1">Auriculares</div>
                     </div>
-                </button>               
+                </button>
 
                 <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="mouse">
                     <img class="rounded-t-lg" src="./assets/images/mouse.webp" alt="foto de mouse">
                     <div class="bg-white flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-lg mb-1">Mouse</div>                        
+                        <div class="font-bold text-lg mb-1">Mouse</div>
                     </div>
-                </button>                
+                </button>
 
                 <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="teclado">
                     <img class="rounded-t-lg" src="./assets/images/teclado.webp" alt="foto de teclado">
                     <div class="bg-white flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-lg mb-1">Teclado</div>                        
+                        <div class="font-bold text-lg mb-1">Teclado</div>
                     </div>
                 </div>
 
                 <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="webcam">
                     <img class="rounded-t-lg" src="./assets/images/webcam.webp" alt="foto de teclado">
                     <div class="bg-white flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-lg mb-1">WebCam</div>                       
+                        <div class="font-bold text-lg mb-1">WebCam</div>
                     </div>
                 </div>
 
-                  <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="parlantes">
+                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="parlantes">
                     <img class="rounded-t-lg" src="./assets/images/parlantes.webp" alt="foto de parlantes">
                     <div class="bg-white flex flex-col items-center rounded-b-lg">
-                        <div class="font-bold text-lg mb-1">Parlantes</div>                       
+                        <div class="font-bold text-lg mb-1">Parlantes</div>
                     </div>
                 </div>
-                              
-            </div>            
+
+            </div>
         </div>
 
-        <div id="productosContainer" class="flex flex-wrap justify-center md:grid md:grid-cols-2 lg:flex justify-center grid-cols-3 xl:grid-cols-4 gap-4 p-4 mb-8"></div>
-    
-    </main>
+        <div id="productosContainer"
+            class="flex flex-wrap justify-center md:grid md:grid-cols-2 lg:flex justify-center grid-cols-3 xl:grid-cols-4 gap-4 p-4 mb-8">
+        </div>
 
+    </main>
 
     <footer class="bg-indigo-600 text-center text-white lg:text-left">
         <div class="mx-6 py-4 text-center md:text-left">

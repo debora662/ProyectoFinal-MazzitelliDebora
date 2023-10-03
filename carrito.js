@@ -162,7 +162,8 @@ const textoCategoria = document.querySelector("#categoria")
 const volverBtn = document.querySelector("#volverBtn");
 const categoriasContainer = document.querySelector("#categoriasContainer");
 const productosContainer = document.querySelector('#productosContainer');
-const carritoCompras = document.querySelector("#mostrarCarrito")
+
+
 
 
 function mostrarCategorias(categoria) {
@@ -256,28 +257,34 @@ function agregarProducto(producto) {
         carrito.push(nuevoProducto)
     }
     alert(`El producto ${producto.nombre} fue agregado con éxito.`);
-    console.log(carrito)
 }
+
+const carritoCompras = document.querySelector("#mostrarProductos");
+const sidenav = document.querySelector("#sidenav-7");
+
+sidenav.style.transform = "translateX(100%)";
+
 
 carritoCompras.addEventListener("click", mostrarCarrito)
 
-function mostrarCarrito() {    
-    
-    if (carrito.length === 0) {
-        alert("El carrito está vacio.")
+function mostrarCarrito() {
+
+    const articulosCarrito = document.querySelector("#listaCarrito")
+    articulosCarrito.innerHTML = "";
+
+    carrito.forEach(producto => {
+        const productoCarrito = document.createElement('li');
+        productoCarrito.textContent = `${producto.nombre} - Cantidad: ${producto.cantidad} - Subtotal: $${producto.subTotal}`;
+        articulosCarrito.appendChild(productoCarrito);
+    });
+
+    if (sidenav.style.transform === "translateX(100%)") {
+        sidenav.classList.remove('invisible');
+        sidenav.style.transform = "translateX(0)";
     } else {
-        let resumenCarrito = "CONTENIDO DEL CARRITO: \n\n";
-
-        carrito.forEach((item) => {
-            resumenCarrito += "Producto: " + item.nombre + "\nCantidad: " + item.cantidad + "\nSubtotal: $" + item.subTotal + "\n\n";
-        })
-
-        const total = carrito.reduce((acc, item) => acc + item.subTotal, 0);
-        resumenCarrito += "TOTAL DEL CARRITO: $" + total;
-
-        alert(resumenCarrito)
+        sidenav.style.transform = "translateX(100%)";
     }
-}
+};
 
 function eliminarProducto() {
     const nombreProducto = prompt("¿Qué producto desea eliminar?");
@@ -368,4 +375,3 @@ function mostrarProductosFiltrados(productosFiltrados) {
     textoCategoria.style.display = 'none';
     volverBtn.classList.remove('hidden')
 }
-
