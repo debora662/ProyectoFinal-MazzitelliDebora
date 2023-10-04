@@ -256,6 +256,7 @@ function agregarProducto(producto) {
         };
         carrito.push(nuevoProducto)
     }
+    mostrarCarritoUI();
     alert(`El producto ${producto.nombre} fue agregado con éxito.`);
 }
 
@@ -265,26 +266,32 @@ const sidenav = document.querySelector("#sidenav-7");
 sidenav.style.transform = "translateX(100%)";
 
 
-carritoCompras.addEventListener("click", mostrarCarrito)
+carritoCompras.addEventListener("click", barraLateral)
 
-function mostrarCarrito() {
-
-    const articulosCarrito = document.querySelector("#listaCarrito")
-    articulosCarrito.innerHTML = "";
-
-    carrito.forEach(producto => {
-        const productoCarrito = document.createElement('li');
-        productoCarrito.textContent = `${producto.nombre} - Cantidad: ${producto.cantidad} - Subtotal: $${producto.subTotal}`;
-        articulosCarrito.appendChild(productoCarrito);
-    });
-
+function barraLateral() {   
+    
     if (sidenav.style.transform === "translateX(100%)") {
         sidenav.classList.remove('invisible');
         sidenav.style.transform = "translateX(0)";
     } else {
         sidenav.style.transform = "translateX(100%)";
     }
+    mostrarCarritoUI();
 };
+
+function mostrarCarritoUI() {
+    const articulosCarrito = document.querySelector("#listaCarrito");
+    
+    articulosCarrito.innerHTML = "";
+
+    carrito.forEach(producto => {        
+        const productoCarrito = document.createElement('li');        
+        productoCarrito.classList.add('text-white', 'text-left', 'ml-4');
+        productoCarrito.innerHTML = `${producto.nombre} <br> Cantidad: ${producto.cantidad} <br> Subtotal: $${producto.subTotal}`;
+        articulosCarrito.appendChild(productoCarrito);
+    });
+}
+
 
 function eliminarProducto() {
     const nombreProducto = prompt("¿Qué producto desea eliminar?");
@@ -343,27 +350,33 @@ boton.addEventListener("click", function () {
 function mostrarProductosFiltrados(productosFiltrados) {
     productosContainer.innerHTML = "";
 
-    productosFiltrados.forEach(producto => {
-        const productoElemento = document.createElement('div');
-        productoElemento.className = 'bg-white rounded-lg shadow-lg p-2 m-2 flex flex-col items-center '
-        productoElemento.innerHTML = `
-        <div class="flex flex-col items-center ">
-        <img class="w-36 object-cover mb-2 mx-auto rounded-t" src="${producto.image}" alt="${producto.nombre}"> 
-        <h2 class="text-sm font-bold mb-1">${producto.nombre}</h2> 
-        <p class=" w-64 h-50 text-gray-700 text-xs mb-1">${producto.desc}</p>
-        <p class="font-bold text-sm mt-2">Precio: $${producto.precio}</p> 
-        <div class="flex items-end">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mt-3 agregar-btn">Agregar</button> 
-        </div>
-        </div>
-        `;
+    const hayCoincidencia = productosFiltrados.length > 0;
 
-        productoElemento.querySelector('.agregar-btn').addEventListener('click', function () {
-            agregarProducto(producto);
-        });
+    if (hayCoincidencia) {
+        productosFiltrados.forEach(producto => {
+            const productoElemento = document.createElement('div');
+            productoElemento.className = 'bg-white rounded-lg shadow-lg p-2 m-2 flex flex-col items-center '
+            productoElemento.innerHTML = `
+          <div class="flex flex-col items-center ">
+          <img class="w-36 object-cover mb-2 mx-auto rounded-t" src="${producto.image}" alt="${producto.nombre}"> 
+          <h2 class="text-sm font-bold mb-1">${producto.nombre}</h2> 
+          <p class=" w-64 h-50 text-gray-700 text-xs mb-1">${producto.desc}</p>
+          <p class="font-bold text-sm mt-2">Precio: $${producto.precio}</p> 
+          <div class="flex items-end">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mt-3 agregar-btn">Agregar</button> 
+          </div>
+          </div>
+          `;
 
-        productosContainer.appendChild(productoElemento);
-    })
+            productoElemento.querySelector('.agregar-btn').addEventListener('click', function () {
+                agregarProducto(producto);
+            });
+
+            productosContainer.appendChild(productoElemento);
+        })
+    }else {
+        productosContainer.innerHTML = '<p class="bg-white rounded-lg p-10">No se encontraron productos que coincidan con la búsqueda.</p>';
+    }
 
     carousel.style.display = 'none';
     dataInfo.classList.remove('hidden');
