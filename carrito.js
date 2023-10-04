@@ -1,7 +1,7 @@
 const productos = [
     {
         id: 0,
-        nombre: "Soul s600",
+        nombre: "Auriculares Soul s600",
         image: "./assets/images/auris2.webp",
         precio: 5200,
         tags: ["auriculares", "inalambricos"],
@@ -11,7 +11,7 @@ const productos = [
     },
     {
         id: 1,
-        nombre: "JBL Tune 510BT",
+        nombre: "Auriculares JBL Tune 510BT",
         image: "./assets/images/auris3.webp",
         precio: 7500,
         tags: ["auriculares", "inalambricos"],
@@ -21,7 +21,7 @@ const productos = [
     },
     {
         id: 2,
-        nombre: "Noga Ng918bt",
+        nombre: "Auriculares Noga Ng918bt",
         image: "./assets/images/auris1.webp",
         precio: 3800,
         tags: ["auriculares", "inalambricos"],
@@ -31,7 +31,7 @@ const productos = [
     },
     {
         id: 3,
-        nombre: "Yindiao A2",
+        nombre: "Mouse Yindiao A2",
         image: "./assets/images/mouse3.webp",
         precio: 5800,
         tags: ["mouse", "inalambricos"],
@@ -41,7 +41,7 @@ const productos = [
     },
     {
         id: 4,
-        nombre: "Logitech M220",
+        nombre: "Mouse Logitech M220",
         image: "./assets/images/mouse1.webp",
         precio: 2800,
         tags: ["mouse", "inalambricos"],
@@ -51,7 +51,7 @@ const productos = [
     },
     {
         id: 5,
-        nombre: "Redragon M601WL-BA",
+        nombre: "Mouse Redragon M601WL",
         image: "./assets/images/mouse2.webp",
         precio: 4100,
         tags: ["mouse", "inalambricos"],
@@ -61,7 +61,7 @@ const productos = [
     },
     {
         id: 6,
-        nombre: "Noganet 78005",
+        nombre: "Teclado Noganet 78005",
         image: "./assets/images/teclado1.webp",
         precio: 5300,
         tags: ["teclado", "español"],
@@ -71,7 +71,7 @@ const productos = [
     },
     {
         id: 7,
-        nombre: "Logitech K380 QWERTY",
+        nombre: "Teclado Logitech K380",
         image: "./assets/images/teclado2.webp",
         precio: 9800,
         tags: ["teclado", "español"],
@@ -81,7 +81,7 @@ const productos = [
     },
     {
         id: 8,
-        nombre: "SteelSeries Apex Pro TKL",
+        nombre: "Teclado SteelSeries ApexPro TKL",
         image: "./assets/images/teclado3.webp",
         precio: 4700,
         tags: ["teclado", "español"],
@@ -91,7 +91,7 @@ const productos = [
     },
     {
         id: 9,
-        nombre: "Noga NGW-120",
+        nombre: "WebCam Noga NGW-120",
         image: "./assets/images/web3.webp",
         precio: 6500,
         tags: ["webcam", "camaraweb"],
@@ -101,7 +101,7 @@ const productos = [
     },
     {
         id: 10,
-        nombre: "Logitech C922",
+        nombre: "WebCam Logitech C922",
         image: "./assets/images/web2.webp",
         precio: 7700,
         tags: ["webcam", "camaraweb"],
@@ -111,7 +111,7 @@ const productos = [
     },
     {
         id: 11,
-        nombre: "Genius FaceCam 1000X",
+        nombre: "WebCam Genius 1000X",
         image: "./assets/images/web1.webp",
         precio: 4300,
         tags: ["webcam", "camaraweb"],
@@ -121,7 +121,7 @@ const productos = [
     },
     {
         id: 12,
-        nombre: "Genius SP-HF180",
+        nombre: "Parlantes Genius SP-HF180",
         image: "./assets/images/parlantes1.webp",
         precio: 5900,
         tags: ["parlantes", "musica"],
@@ -131,7 +131,7 @@ const productos = [
     },
     {
         id: 13,
-        nombre: "Xinua Rgb",
+        nombre: "Parlantes Xinua Rgb",
         image: "./assets/images/parlantes3.webp",
         precio: 6800,
         tags: ["parlantes", "musica"],
@@ -141,7 +141,7 @@ const productos = [
     },
     {
         id: 14,
-        nombre: "Braun Speaker 180",
+        nombre: "Parlantes Braun Speaker 180",
         image: "./assets/images/parlantes2.webp",
         precio: 3900,
         tags: ["parlantes", "musica"],
@@ -290,12 +290,21 @@ function mostrarCarrito() {
 
     articulosCarrito.innerHTML = "";
 
-    carrito.forEach(producto => {
+    carrito.forEach((producto, index) => {
         const productoCarrito = document.createElement('li');
-        productoCarrito.classList.add('text-white', 'text-left', 'ml-4', 'mb-6');
-        productoCarrito.innerHTML = `${producto.nombre} <br> Cantidad: ${producto.cantidad} <br> Subtotal: $${producto.subTotal}`;
+        productoCarrito.classList.add('text-white', 'text-left', 'ml-4', 'mb-6', 'text-sm');
+        productoCarrito.innerHTML = `${producto.nombre} <br> Cantidad: ${producto.cantidad} <button class="eliminar-btn bg-red-600 rounded-md text-white text-md font-bold ml-24 px-1">X</button> <br> Subtotal: $${producto.subTotal}
+        `;
+
+        const botonEliminar = productoCarrito.querySelector('.eliminar-btn');
+        botonEliminar.addEventListener('click', (event) => {
+            event.stopPropagation();
+            eliminarProducto(index);
+            mostrarCarrito();
+        });
         articulosCarrito.appendChild(productoCarrito);
     });
+
 
     const totalCarrito = document.createElement('div');
     totalCarrito.classList.add('text-white', 'font-bold');
@@ -306,40 +315,9 @@ function mostrarCarrito() {
 }
 
 
-function eliminarProducto() {
-    const nombreProducto = prompt("¿Qué producto desea eliminar?");
-
-    const producto = carrito.find((el) => el.nombre === nombreProducto);
-
-    if (nombreProducto) {
-        const indiceProducto = carrito.indexOf(producto);
-        carrito.splice(indiceProducto, 1);
-        alert(`El producto ${nombreProducto} fue eliminado.`);
-    }
+function eliminarProducto(index) {
+    carrito.splice(index, 1);
 }
-
-/* function comprar() {
-    let seguirComprando = true;
-
-    while (seguirComprando) {
-        let opciones = prompt("¿Estás seguro que quieres realizar la compra ? Ingresa el número de opción para confirmar... \n 1) Comprar \n 2) Mostrar Carrito \n 3) Salir");
-
-        switch (opciones) {
-            case "1":
-                seguirComprando = false;
-                alert("Felicitaciones, compra efectuada. Gracias por elegirnos!!!");
-                break;
-            case "2":
-                mostrarCarrito();
-                break;
-            case "3":
-                seguirComprando = false;
-                break;
-            default:
-                alert("Opción no válida. Por favor, elige una opción válida.");
-        }
-    }
-} */
 
 const inputBuscador = document.querySelector("#buscador");
 const boton = document.querySelector("#botonBuscar");
