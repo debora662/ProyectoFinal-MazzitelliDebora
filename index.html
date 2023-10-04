@@ -30,7 +30,7 @@
                             placeholder="Buscar productos..." aria-label="buscador" aria-describedby="button-addon2" />
                     </div>
                     <button id="botonBuscar"
-                        class="input-group-text flex items-center whitespace-nowrap rounded px-2 py-2 text-center text-base font-normal text-neutral-700 dark:text-neutral-200 bg-gray-700">
+                        class="input-group-text flex items-center whitespace-nowrap rounded px-2 py-2 text-center text-base font-normal text-neutral-700 dark:text-neutral-200 bg-gray-700 hover:bg-gray-600">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
                             <path fill-rule="evenodd"
                                 d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
@@ -46,7 +46,7 @@
                             class="transition-transform duration-300 ease-in-out transform translate-x-full invisible fixed right-0 top-0 z-[1035] h-screen w-60 overflow-hidden bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.07),_0_2px_4px_rgba(0,0,0,0.05)] dark:bg-zinc-800">
                             <h3 class="text-white font-bold text-lg mb-4">Mi Carrito</h3>
                             <div>
-                                <ul id="listaCarrito" class="flex gap-3"></ul>
+                                <ul id="listaCarrito" class="h-[36rem] overflow-y-auto border-gray-500 p-4"></ul>
                             </div>
                         </div>
                     </button>
