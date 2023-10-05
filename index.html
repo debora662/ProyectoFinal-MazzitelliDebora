@@ -8,6 +8,7 @@
         content="Explora la mejor selección de productos de computación en nuestra tienda en línea. Encuentra laptops, PCs, componentes, accesorios y más. ¡Potencia tu mundo digital con nuestras ofertas y calidad.">
     <meta name="keywords" content="computadoras de escritorio, laptops, teclados, mouse, auriculares">
     <link rel="shorcut icon" href="./assets/images/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="./src/output.css" rel="stylesheet">
     <title>E-TechUniverse - Ecommerce</title>
 </head>
@@ -61,18 +62,24 @@
 
                 <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item data-te-carousel-active>
-                    <img src="./assets/images/banner1.webp" class="block w-full" alt="imagen de discos rigidos" />
+                    <img src="./assets/images/img4.webp" class="block w-full" alt="imagen de discos rigidos" />
                 </div>
 
                 <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item>
-                    <img src="./assets/images/banner2.webp" class="block w-full"
+                    <img src="./assets/images/img3.webp" class="block w-full"
                         alt="imagen de auriculares inalámbricos" />
                 </div>
 
                 <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item>
-                    <img src="./assets/images/banner3.webp" class="block w-full" alt="imagen de teclado gammer" />
+                    <img src="./assets/images/img2.webp" class="block w-full"
+                        alt="imagen de auriculares inalámbricos" />
+                </div>
+
+                <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                    data-te-carousel-item>
+                    <img src="./assets/images/img1.webp" class="block w-full" alt="imagen de teclado gammer" />
                 </div>
             </div>
 
@@ -138,35 +145,50 @@
             <div class="flex justify-center flex-wrap mt-4 mb-6 mx-4 gap-8" id="categoriasContainer">
 
                 <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="auriculares">
-                    <img class="rounded-t-lg" src="./assets/images/auriculares.webp" alt="foto de auriculares">
+                    <div class="bg-white rounded-t-lg overflow-hidden">
+                        <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
+                            src="./assets/images/auriculares.webp" alt="foto de auriculares">
+                    </div>
                     <div class="bg-white flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">Auriculares</div>
                     </div>
                 </button>
 
                 <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="mouse">
-                    <img class="rounded-t-lg" src="./assets/images/mouse.webp" alt="foto de mouse">
+                    <div class="bg-white rounded-t-lg overflow-hidden">
+                        <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
+                            src="./assets/images/mouse.webp" alt="foto de mouse">
+                    </div>
                     <div class="bg-white flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">Mouse</div>
                     </div>
                 </button>
 
                 <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="teclado">
-                    <img class="rounded-t-lg" src="./assets/images/teclado.webp" alt="foto de teclado">
+                    <div class="bg-white rounded-t-lg overflow-hidden">
+                        <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
+                            src="./assets/images/teclado.webp" alt="foto de teclado">
+                    </div>
                     <div class="bg-white flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">Teclado</div>
                     </div>
                 </div>
 
                 <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="webcam">
-                    <img class="rounded-t-lg" src="./assets/images/webcam.webp" alt="foto de teclado">
+                    <div class="bg-white rounded-t-lg overflow-hidden">
+                        <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
+                            src="./assets/images/webcam.webp" alt="foto de teclado">
+                    </div>
                     <div class="bg-white flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">WebCam</div>
                     </div>
                 </div>
 
                 <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="parlantes">
-                    <img class="rounded-t-lg" src="./assets/images/parlantes.webp" alt="foto de parlantes">
+                    <div class="bg-white rounded-t-lg overflow-hidden">
+                        <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
+                            src="./assets/images/parlantes.webp" alt="foto de parlantes">
+                    </div>
                     <div class="bg-white flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">Parlantes</div>
                     </div>
@@ -288,6 +310,7 @@
     </footer>
 
     <script type="text/javascript" src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="carrito.js"></script>
 </body>
 
