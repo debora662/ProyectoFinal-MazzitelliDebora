@@ -16,7 +16,7 @@
 <body class="m-0 p-0 h-screen bg-slate-300">
     <header>
         <nav
-            class="flex items-center justify-between bg-[#FBFBFB] py-2 text-white shadow-lg hover:text-neutral-700 focus:text-neutral-700 bg-indigo-600 lg:py-5">
+            class="flex items-center bg-[#FBFBFB] py-2 text-white shadow-lg hover:text-neutral-700 focus:text-neutral-700 bg-indigo-600 lg:py-5">
             <div class="flex items-center justify-between space-x-5 px-3 w-full">
 
                 <div class="lg:mr-auto">
@@ -43,6 +43,8 @@
                 <div>
                     <button id="mostrarProductos">
                         <img class="w-8" src="./assets/images/cart.png" alt="icono de carrito de compras" />
+                        <span id="contadorCarrito"
+                            class="bg-red-500 text-white text-xs rounded-full px-2 py-1 xs:-top-1 lg:top-8  absolute hidden"></span>
                         <div id="sidenav-7"
                             class="transition-transform duration-300 ease-in-out transform translate-x-full invisible fixed right-0 top-0 z-[1035] h-screen w-60 overflow-hidden bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.07),_0_2px_4px_rgba(0,0,0,0.05)] dark:bg-zinc-800">
                             <h3 class="text-white font-bold text-lg mb-4">Mi Carrito</h3>
@@ -52,6 +54,7 @@
                         </div>
                     </button>
                 </div>
+            </div>
         </nav>
     </header>
 
@@ -67,19 +70,17 @@
 
                 <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item>
-                    <img src="./assets/images/img3.webp" class="block w-full"
-                        alt="imagen de auriculares inalámbricos" />
+                    <img src="./assets/images/img3.webp" class="block w-full" alt="imagen de tlecado mecánico" />
                 </div>
 
                 <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item>
-                    <img src="./assets/images/img2.webp" class="block w-full"
-                        alt="imagen de auriculares inalámbricos" />
+                    <img src="./assets/images/img2.webp" class="block w-full" alt="imagen de placa de video" />
                 </div>
 
                 <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item>
-                    <img src="./assets/images/img1.webp" class="block w-full" alt="imagen de teclado gammer" />
+                    <img src="./assets/images/img1.webp" class="block w-full" alt="imagen de cpu" />
                 </div>
             </div>
 
@@ -144,7 +145,8 @@
         <div class="grid grid-cols-1">
             <div class="flex justify-center flex-wrap mt-4 mb-6 mx-4 gap-8" id="categoriasContainer">
 
-                <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="auriculares">
+                <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100"
+                    id="auriculares">
                     <div class="bg-white rounded-t-lg overflow-hidden">
                         <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
                             src="./assets/images/auriculares.webp" alt="foto de auriculares">
@@ -154,7 +156,7 @@
                     </div>
                 </button>
 
-                <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="mouse">
+                <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100" id="mouse">
                     <div class="bg-white rounded-t-lg overflow-hidden">
                         <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
                             src="./assets/images/mouse.webp" alt="foto de mouse">
@@ -164,7 +166,7 @@
                     </div>
                 </button>
 
-                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="teclado">
+                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100" id="teclado">
                     <div class="bg-white rounded-t-lg overflow-hidden">
                         <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
                             src="./assets/images/teclado.webp" alt="foto de teclado">
@@ -174,17 +176,17 @@
                     </div>
                 </div>
 
-                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="webcam">
+                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100" id="webcam">
                     <div class="bg-white rounded-t-lg overflow-hidden">
                         <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
-                            src="./assets/images/webcam.webp" alt="foto de teclado">
+                            src="./assets/images/webcam.webp" alt="foto de webcams">
                     </div>
                     <div class="bg-white flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">WebCam</div>
                     </div>
                 </div>
 
-                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-blue-500/100" id="parlantes">
+                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100" id="parlantes">
                     <div class="bg-white rounded-t-lg overflow-hidden">
                         <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
                             src="./assets/images/parlantes.webp" alt="foto de parlantes">

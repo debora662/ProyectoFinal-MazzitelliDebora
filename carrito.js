@@ -167,7 +167,7 @@ const productosContainer = document.querySelector('#productosContainer');
 const carritoCompras = document.querySelector("#mostrarProductos");
 const sidenav = document.querySelector("#sidenav-7");
 const inputBuscador = document.querySelector("#buscador");
-const boton = document.querySelector("#botonBuscar");
+const botonBuscar = document.querySelector("#botonBuscar");
 const carousel = document.querySelector("#carouselExampleControls");
 const dataInfo = document.querySelector("#dataPagos");
 
@@ -227,7 +227,10 @@ function agregarProducto(producto) {
         carrito.push(nuevoProducto)
     }
     carritoEnLocalStorage();
-    mostrarProductos();
+    mostrarProductosEnCarrito();
+    actualizaContador();
+
+    localStorage.setItem("contadorCarrito", carrito.length);
 
     Toastify({
         text: `Se ha añadido ${producto.nombre} al carrito`,
@@ -235,9 +238,9 @@ function agregarProducto(producto) {
         gravity: "top",
         position: "center",
         style: {
-          background: "linear-gradient(to right, #ec1534, #ec27ea)",
+            background: "linear-gradient(to right, #ec1534, #ec27ea)",
         }
-      }).showToast();
+    }).showToast();
 
 }
 
@@ -257,10 +260,10 @@ function barraLateral() {
     } else {
         sidenav.style.transform = "translateX(100%)";
     }
-    mostrarProductos();
+    mostrarProductosEnCarrito();
 };
 
-function mostrarProductos() {
+function mostrarProductosEnCarrito() {
     const articulosCarrito = document.querySelector("#listaCarrito");
 
     articulosCarrito.innerHTML = "";
@@ -275,7 +278,7 @@ function mostrarProductos() {
         botonEliminar.addEventListener('click', (event) => {
             event.stopPropagation();
             eliminarProducto(index);
-            mostrarProductos();
+            mostrarProductosEnCarrito();
         });
         articulosCarrito.appendChild(productoCarrito);
     });
@@ -283,18 +286,44 @@ function mostrarProductos() {
 
     const totalCarrito = document.createElement('div');
     totalCarrito.classList.add('text-white', 'font-bold');
-    totalCarrito.innerHTML = `TOTAL:$${calcularTotalCarrito()}`
-    totalCarrito.id = 'totalCarrito';
+    const total = calcularTotalCarrito();
 
+    if (total > 0) {
+        totalCarrito.innerHTML = `TOTAL:$${calcularTotalCarrito()} <br> <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mt-5 agregar-btn">Comprar</button>`
+    } else {
+        totalCarrito.innerHTML = "El carrito está vacio 😢"
+    }
+
+    totalCarrito.id = 'totalCarrito';
     articulosCarrito.appendChild(totalCarrito);
 }
 
 function eliminarProducto(index) {
     carrito.splice(index, 1);
     carritoEnLocalStorage();
+    actualizaContador();
+
+    localStorage.setItem("contadorCarrito", carrito.length);
 }
 
-function carritoEnLocalStorage(){
+function actualizaContador() {
+    const contadorCarrito = document.querySelector("#contadorCarrito");
+  
+    const totalCantidadCarrito = carrito.reduce((total, producto) => {
+        return total + producto.cantidad;
+    }, 0);
+        
+    contadorCarrito.innerText = totalCantidadCarrito;
+       
+    if (totalCantidadCarrito > 0) {
+        contadorCarrito.classList.remove("hidden");
+    } else {
+        contadorCarrito.classList.add("hidden");
+    }
+}
+
+
+function carritoEnLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(carrito))
 }
 
@@ -340,6 +369,7 @@ function mostrarProductosFiltrados(productosFiltrados) {
     volverBtn.classList.remove('hidden')
 }
 
+
 sidenav.style.transform = "translateX(100%)";
 
 botonAuriculares.addEventListener('click', () => {
@@ -382,7 +412,7 @@ carritoCompras.addEventListener("click", () => {
     barraLateral()
 });
 
-boton.addEventListener("click", function () {
+botonBuscar.addEventListener("click", function () {
     const textoIngresado = inputBuscador.value.toLowerCase();
 
     const productosFiltrados = productos.filter((producto) => {
@@ -395,4 +425,15 @@ boton.addEventListener("click", function () {
 
 })
 
+inputBuscador.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+        const textoIngresado = inputBuscador.value.toLowerCase();
 
+        const productosFiltrados = productos.filter((producto) => {
+            const coincideNombre = producto.nombre.toLowerCase().includes(textoIngresado);
+            const coincideCategoria = producto.categoria.toLowerCase().includes(textoIngresado);
+            return coincideNombre || coincideCategoria;
+        })
+        mostrarProductosFiltrados(productosFiltrados)
+    }
+})
