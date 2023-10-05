@@ -3578,10 +3578,6 @@ input[type="range"]:active::-webkit-slider-thumb {
   padding: 0.25rem;
 }
 
-.p-10 {
-  padding: 2.5rem;
-}
-
 .p-2 {
   padding: 0.5rem;
 }
@@ -3612,6 +3608,10 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .p-\[auto\] {
   padding: auto;
+}
+
+.p-10 {
+  padding: 2.5rem;
 }
 
 .\!py-0 {

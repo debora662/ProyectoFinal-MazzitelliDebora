@@ -151,7 +151,9 @@ const productos = [
     },
 ]
 
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+
 
 const botonAuriculares = document.querySelector("#auriculares");
 const botonMouse = document.querySelector("#mouse");
@@ -162,6 +164,12 @@ const textoCategoria = document.querySelector("#categoria")
 const volverBtn = document.querySelector("#volverBtn");
 const categoriasContainer = document.querySelector("#categoriasContainer");
 const productosContainer = document.querySelector('#productosContainer');
+const carritoCompras = document.querySelector("#mostrarProductos");
+const sidenav = document.querySelector("#sidenav-7");
+const inputBuscador = document.querySelector("#buscador");
+const boton = document.querySelector("#botonBuscar");
+const carousel = document.querySelector("#carouselExampleControls");
+const dataInfo = document.querySelector("#dataPagos");
 
 
 function mostrarCategorias(categoria) {
@@ -203,43 +211,6 @@ function mostrarCategorias(categoria) {
     volverBtn.classList.remove('hidden')
 }
 
-botonAuriculares.addEventListener('click', () => {
-    mostrarCategorias('auriculares');
-});
-
-botonMouse.addEventListener('click', () => {
-    mostrarCategorias('mouse');
-});
-
-botonTeclado.addEventListener('click', () => {
-    mostrarCategorias('teclado');
-});
-
-botonWebcam.addEventListener('click', () => {
-    mostrarCategorias('webcam');
-});
-
-botonParlantes.addEventListener('click', () => {
-    mostrarCategorias('parlantes');
-});
-
-volverBtn.addEventListener('click', () => {
-
-    productosContainer.innerHTML = '';
-
-    carousel.style.display = 'block';
-    dataInfo.classList.add('hidden');
-    botonAuriculares.style.display = 'block';
-    botonMouse.style.display = 'block';
-    botonTeclado.style.display = 'block';
-    botonWebcam.style.display = 'block';
-    botonParlantes.style.display = 'block';
-    volverBtn.classList.add('hidden');
-    textoCategoria.style.display = 'block';
-    textoCategoria.style.textAlign = 'center';
-});
-
-
 function agregarProducto(producto) {
 
     const productoEnCarrito = carrito.find((el) => el.id === producto.id);
@@ -255,9 +226,9 @@ function agregarProducto(producto) {
         };
         carrito.push(nuevoProducto)
     }
+    carritoEnLocalStorage();
     mostrarCarrito();
 }
-
 
 function calcularTotalCarrito() {
     let total = 0;
@@ -266,13 +237,6 @@ function calcularTotalCarrito() {
     });
     return total;
 }
-
-const carritoCompras = document.querySelector("#mostrarProductos");
-const sidenav = document.querySelector("#sidenav-7");
-
-sidenav.style.transform = "translateX(100%)";
-
-carritoCompras.addEventListener("click", barraLateral)
 
 function barraLateral() {
 
@@ -314,29 +278,14 @@ function mostrarCarrito() {
     articulosCarrito.appendChild(totalCarrito);
 }
 
-
 function eliminarProducto(index) {
     carrito.splice(index, 1);
+    carritoEnLocalStorage();
 }
 
-const inputBuscador = document.querySelector("#buscador");
-const boton = document.querySelector("#botonBuscar");
-const carousel = document.querySelector("#carouselExampleControls");
-const dataInfo = document.querySelector("#dataPagos");
-
-
-boton.addEventListener("click", function () {
-    const textoIngresado = inputBuscador.value.toLowerCase();
-
-    const productosFiltrados = productos.filter((producto) => {
-        const coincideNombre = producto.nombre.toLowerCase().includes(textoIngresado);
-        const coincideCategoria = producto.categoria.toLowerCase().includes(textoIngresado);
-        return coincideNombre || coincideCategoria;
-    });
-
-    mostrarProductosFiltrados(productosFiltrados)
-
-})
+function carritoEnLocalStorage(){
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+}
 
 function mostrarProductosFiltrados(productosFiltrados) {
     productosContainer.innerHTML = "";
@@ -379,3 +328,60 @@ function mostrarProductosFiltrados(productosFiltrados) {
     textoCategoria.style.display = 'none';
     volverBtn.classList.remove('hidden')
 }
+
+sidenav.style.transform = "translateX(100%)";
+
+botonAuriculares.addEventListener('click', () => {
+    mostrarCategorias('auriculares');
+});
+
+botonMouse.addEventListener('click', () => {
+    mostrarCategorias('mouse');
+});
+
+botonTeclado.addEventListener('click', () => {
+    mostrarCategorias('teclado');
+});
+
+botonWebcam.addEventListener('click', () => {
+    mostrarCategorias('webcam');
+});
+
+botonParlantes.addEventListener('click', () => {
+    mostrarCategorias('parlantes');
+});
+
+volverBtn.addEventListener('click', () => {
+
+    productosContainer.innerHTML = '';
+
+    carousel.style.display = 'block';
+    dataInfo.classList.add('hidden');
+    botonAuriculares.style.display = 'block';
+    botonMouse.style.display = 'block';
+    botonTeclado.style.display = 'block';
+    botonWebcam.style.display = 'block';
+    botonParlantes.style.display = 'block';
+    volverBtn.classList.add('hidden');
+    textoCategoria.style.display = 'block';
+    textoCategoria.style.textAlign = 'center';
+});
+
+carritoCompras.addEventListener("click", () => {
+    barraLateral()
+});
+
+boton.addEventListener("click", function () {
+    const textoIngresado = inputBuscador.value.toLowerCase();
+
+    const productosFiltrados = productos.filter((producto) => {
+        const coincideNombre = producto.nombre.toLowerCase().includes(textoIngresado);
+        const coincideCategoria = producto.categoria.toLowerCase().includes(textoIngresado);
+        return coincideNombre || coincideCategoria;
+    });
+
+    mostrarProductosFiltrados(productosFiltrados)
+
+})
+
+
