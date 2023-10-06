@@ -308,20 +308,19 @@ function eliminarProducto(index) {
 
 function actualizaContador() {
     const contadorCarrito = document.querySelector("#contadorCarrito");
-  
+
     const totalCantidadCarrito = carrito.reduce((total, producto) => {
         return total + producto.cantidad;
     }, 0);
-        
+
     contadorCarrito.innerText = totalCantidadCarrito;
-       
+
     if (totalCantidadCarrito > 0) {
         contadorCarrito.classList.remove("hidden");
     } else {
         contadorCarrito.classList.add("hidden");
     }
 }
-
 
 function carritoEnLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(carrito))
@@ -415,25 +414,29 @@ carritoCompras.addEventListener("click", () => {
 botonBuscar.addEventListener("click", function () {
     const textoIngresado = inputBuscador.value.toLowerCase();
 
-    const productosFiltrados = productos.filter((producto) => {
-        const coincideNombre = producto.nombre.toLowerCase().includes(textoIngresado);
-        const coincideCategoria = producto.categoria.toLowerCase().includes(textoIngresado);
-        return coincideNombre || coincideCategoria;
-    });
 
-    mostrarProductosFiltrados(productosFiltrados)
+    if (textoIngresado !== "") {
+        const productosFiltrados = productos.filter((producto) => {
+            const coincideNombre = producto.nombre.toLowerCase().includes(textoIngresado);
+            const coincideCategoria = producto.categoria.toLowerCase().includes(textoIngresado);
+            return coincideNombre || coincideCategoria;
+        });
 
+        mostrarProductosFiltrados(productosFiltrados)
+    }
 })
 
 inputBuscador.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
         const textoIngresado = inputBuscador.value.toLowerCase();
 
-        const productosFiltrados = productos.filter((producto) => {
-            const coincideNombre = producto.nombre.toLowerCase().includes(textoIngresado);
-            const coincideCategoria = producto.categoria.toLowerCase().includes(textoIngresado);
-            return coincideNombre || coincideCategoria;
-        })
-        mostrarProductosFiltrados(productosFiltrados)
+        if (textoIngresado !== "") {
+            const productosFiltrados = productos.filter((producto) => {
+                const coincideNombre = producto.nombre.toLowerCase().includes(textoIngresado);
+                const coincideCategoria = producto.categoria.toLowerCase().includes(textoIngresado);
+                return coincideNombre || coincideCategoria;
+            })
+            mostrarProductosFiltrados(productosFiltrados)
+        }
     }
 })
