@@ -299,14 +299,24 @@ function mostrarProductosEnCarrito() {
 }
 
 function eliminarProducto(index) {
-    carrito.splice(index, 1);
+    const productoEnCarrito = carrito[index];
+    if(productoEnCarrito.cantidad > 1 ){
+        productoEnCarrito.cantidad --;
+        productoEnCarrito.subTotal = productoEnCarrito.cantidad * productoEnCarrito.precio;
+    }else{
+        carrito.splice(index, 1);
+    }
+
     carritoEnLocalStorage();
     actualizaContador();
-
     localStorage.setItem("contadorCarrito", carrito.length);
+    mostrarProductosEnCarrito();
+
 }
 
 function actualizaContador() {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
     const contadorCarrito = document.querySelector("#contadorCarrito");
 
     const totalCantidadCarrito = carrito.reduce((total, producto) => {
@@ -320,10 +330,15 @@ function actualizaContador() {
     } else {
         contadorCarrito.classList.add("hidden");
     }
+
+    localStorage.setItem("contadorCarrito", totalCantidadCarrito.toString());
 }
+
+actualizaContador ()
 
 function carritoEnLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(carrito))
+    
 }
 
 function mostrarProductosFiltrados(productosFiltrados) {
