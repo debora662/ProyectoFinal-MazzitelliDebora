@@ -11,7 +11,7 @@ const productos = [
     },
     {
         id: 1,
-        nombre: "Auriculares JBL Tune 510BT",
+        nombre: "Auriculares JBL 510T",
         image: "./assets/images/auris3.webp",
         precio: 7500,
         tags: ["auriculares", "inalambricos"],
@@ -21,7 +21,7 @@ const productos = [
     },
     {
         id: 2,
-        nombre: "Auriculares Noga Ng918bt",
+        nombre: "Auriculares Noga Ng98t",
         image: "./assets/images/auris1.webp",
         precio: 3800,
         tags: ["auriculares", "inalambricos"],
@@ -51,7 +51,7 @@ const productos = [
     },
     {
         id: 5,
-        nombre: "Mouse Redragon M601WL",
+        nombre: "Mouse Redragon M601L",
         image: "./assets/images/mouse2.webp",
         precio: 4100,
         tags: ["mouse", "inalambricos"],
@@ -81,7 +81,7 @@ const productos = [
     },
     {
         id: 8,
-        nombre: "Teclado SteelSeries ApexPro TKL",
+        nombre: "Teclado ApexPro TKL",
         image: "./assets/images/teclado3.webp",
         precio: 4700,
         tags: ["teclado", "español"],
@@ -111,7 +111,7 @@ const productos = [
     },
     {
         id: 11,
-        nombre: "WebCam Genius 1000X",
+        nombre: "WebCam Genius 100X",
         image: "./assets/images/web1.webp",
         precio: 4300,
         tags: ["webcam", "camaraweb"],
@@ -121,7 +121,7 @@ const productos = [
     },
     {
         id: 12,
-        nombre: "Parlantes Genius SP-HF180",
+        nombre: "Parlantes Genius HF180",
         image: "./assets/images/parlantes1.webp",
         precio: 5900,
         tags: ["parlantes", "musica"],
@@ -141,7 +141,7 @@ const productos = [
     },
     {
         id: 14,
-        nombre: "Parlantes Braun Speaker 180",
+        nombre: "Parlantes Braun 180",
         image: "./assets/images/parlantes2.webp",
         precio: 3900,
         tags: ["parlantes", "musica"],
@@ -152,7 +152,6 @@ const productos = [
 ]
 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
 
 
 const botonAuriculares = document.querySelector("#auriculares");
@@ -170,6 +169,7 @@ const inputBuscador = document.querySelector("#buscador");
 const botonBuscar = document.querySelector("#botonBuscar");
 const carousel = document.querySelector("#carouselExampleControls");
 const dataInfo = document.querySelector("#dataPagos");
+const botonesCategoria = document.querySelectorAll(".categoria-btn")
 
 
 function mostrarCategorias(categoria) {
@@ -384,6 +384,7 @@ function mostrarProductosFiltrados(productosFiltrados) {
 }
 
 
+
 sidenav.style.transform = "translateX(100%)";
 
 botonAuriculares.addEventListener('click', () => {
@@ -454,4 +455,11 @@ inputBuscador.addEventListener("keypress", function (e) {
             mostrarProductosFiltrados(productosFiltrados)
         }
     }
+})
+
+botonesCategoria.forEach(boton => {
+    boton.addEventListener("click", function(){
+        const categoria = boton.getAttribute(`data-categoria`);
+        mostrarCategorias(categoria)
+    })
 })

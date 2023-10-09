@@ -1073,6 +1073,10 @@ input[type="range"]:active::-webkit-slider-thumb {
   margin: 2rem;
 }
 
+.m-4 {
+  margin: 1rem;
+}
+
 .\!my-0 {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
@@ -1121,6 +1125,16 @@ input[type="range"]:active::-webkit-slider-thumb {
 .my-\[5px\] {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.mx-7 {
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
+}
+
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
 }
 
 .-ml-1 {
@@ -4318,6 +4332,11 @@ input[type="range"]:active::-webkit-slider-thumb {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-indigo-800 {
+  --tw-text-opacity: 1;
+  color: rgb(55 48 163 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -5268,6 +5287,11 @@ input[type="range"]:active::-webkit-slider-thumb {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-indigo-800:hover {
+  --tw-text-opacity: 1;
+  color: rgb(55 48 163 / var(--tw-text-opacity));
 }
 
 .hover\:no-underline:hover {
@@ -6727,9 +6751,9 @@ input[type="range"]:active::-webkit-slider-thumb {
     max-width: 972px;
   }
 
-  .lg\:py-5 {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
+  .lg\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .lg\:text-left {
