@@ -221,6 +221,7 @@ const carousel = document.querySelector("#carouselExampleControls");
 const dataInfo = document.querySelector("#dataPagos");
 const botonesCategoria = document.querySelectorAll(".categoria-btn");
 const contenedorFiltros = document.querySelector("#contenedorFiltros")
+const noEncontrado = document.querySelector("#noEncontrado")
 
 
 
@@ -554,36 +555,6 @@ function carritoEnLocalStorage() {
 }
 
 function mostrarProductosFiltrados(productosFiltrados) {
-    productosContainer.innerHTML = "";
-
-    const hayCoincidencia = productosFiltrados.length > 0;
-
-    if (hayCoincidencia) {
-        productosFiltrados.forEach(producto => {
-            const productoElemento = document.createElement('div');
-            productoElemento.className = 'bg-white rounded-lg shadow-lg p-2 m-2 flex flex-col items-center '
-            productoElemento.innerHTML = `
-          <div class="flex flex-col items-center ">
-          <img class="w-36 object-cover mb-2 mx-auto rounded-t" src="${producto.image}" alt="${producto.nombre}"> 
-          <h2 class="text-sm font-bold mb-1">${producto.nombre}</h2> 
-          <p class=" w-64 h-50 text-gray-700 text-xs mb-1">${producto.desc}</p>
-          <p class="font-bold text-sm mt-2">Precio: $${producto.precio}</p> 
-          <div class="flex items-end">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mt-3 agregar-btn">Agregar</button> 
-          </div>
-          </div>
-          `;
-
-            productoElemento.querySelector('.agregar-btn').addEventListener('click', function () {
-                agregarProducto(producto);
-            });
-
-            productosContainer.appendChild(productoElemento);
-        })
-    } else {
-        productosContainer.innerHTML = '<p class="bg-white rounded-lg p-10">No se encontraron productos que coincidan con la búsqueda.</p>';
-    }
-
     carousel.style.display = 'none';
     dataInfo.classList.remove('hidden');
     botonAuriculares.style.display = 'none';
@@ -593,6 +564,32 @@ function mostrarProductosFiltrados(productosFiltrados) {
     botonParlantes.style.display = 'none';
     textoCategoria.style.display = 'none';
     volverBtn.classList.remove('hidden')
+    contenedorFiltros.classList.add('hidden');
+
+    productosContainer.innerHTML = "";
+    
+    const hayCoincidencia = productosFiltrados.length > 0;
+
+    if (hayCoincidencia) {
+        productosFiltrados.forEach(producto => {
+            const productoElemento = document.createElement('div');
+            productoElemento.className = 'bg-white rounded-lg shadow-xl hover:shadow-gray-500 p-8 m-4 flex flex-col items-center border border-slate-400'
+            productoElemento.innerHTML = `        
+            <div class="flex flex-col items-center w-32 h-64">
+            <button>
+            <img class="w-36 object-cover mb-2 mx-auto rounded-t" src="${producto.image}" alt="${producto.nombre}"> 
+            <h2 class="text-sm mb-1 text-center">${producto.nombre}</h2>
+            <p class="font-bold text-sm mt-10">Precio: $${producto.precio}</p>          
+            </button>
+            </div>
+            `;
+            
+            productosContainer.appendChild(productoElemento);
+        })
+    } else {
+        noEncontrado.innerHTML = '<p class="bg-white rounded-lg p-20 text-center">No se encontraron productos que coincidan con la búsqueda.</p>';
+    }
+           
 }
 
 
