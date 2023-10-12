@@ -264,7 +264,7 @@ function mostrarCategorias(categoria, orden) {
         </div>
         `;
 
-        productosContainer.appendChild(productoElemento);
+        productosContainer.appendChild(productoElemento);        
     })
 }
 
@@ -584,9 +584,10 @@ function mostrarProductosFiltrados(productosFiltrados) {
             </div>
             `;
             
-            productosContainer.appendChild(productoElemento);
+            productosContainer.appendChild(productoElemento);            
         })
     } else {
+        noEncontrado.classList.remove('hidden');
         noEncontrado.innerHTML = '<p class="bg-white rounded-lg p-20 text-center">No se encontraron productos que coincidan con la búsqueda.</p>';
     }
            
@@ -640,6 +641,7 @@ volverBtn.addEventListener('click', () => {
     textoCategoria.style.display = 'block';
     textoCategoria.style.textAlign = 'center';
     contenedorFiltros.classList.add('hidden');
+    noEncontrado.classList.add('hidden');
 });
 
 carritoCompras.addEventListener("click", () => {
