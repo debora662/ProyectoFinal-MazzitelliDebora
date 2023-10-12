@@ -224,7 +224,7 @@ const contenedorFiltros = document.querySelector("#contenedorFiltros")
 
 
 
-function mostrarCategorias(categoria, orden) {    
+function mostrarCategorias(categoria, orden) {
 
     carousel.style.display = 'none';
     dataInfo.classList.remove('hidden');
@@ -242,8 +242,12 @@ function mostrarCategorias(categoria, orden) {
 
     if (orden === 'menorPrecio') {
         productosCategoria = productosCategoria.sort(ordenarPorPrecioAscendente);
-    }else if (orden === 'mayorPrecio') {
+    } else if (orden === 'mayorPrecio') {
         productosCategoria = productosCategoria.sort(ordenarPorPrecioDescendente);
+    } else if (orden === 'nombreAscendente') {
+        productosCategoria = productosCategoria.sort(ordenarNombreAscendente);
+    } else if (orden === 'nombreDescendente') {
+        productosCategoria = productosCategoria.sort(ordenarNombreDescendente);
     }
 
     productosCategoria.forEach(producto => {
@@ -269,18 +273,49 @@ function ordenarPorPrecioAscendente(a, b) {
 
 function ordenarPorPrecioDescendente(a, b) {
     return b.precio - a.precio;
-} 
+}
 
-function mostrarFiltros(categoria) {   
-    
+function ordenarNombreAscendente(a, b) {
+    const nombreA = a.nombre.toLowerCase();
+    const nombreB = b.nombre.toLowerCase();
+    if (nombreA < nombreB) {
+        return -1
+    }
+    if (nombreA > nombreB) {
+        return 1
+    }
+    return 0;
+}
+
+function ordenarNombreDescendente(a, b) {
+    const nombreA = a.nombre.toLowerCase();
+    const nombreB = b.nombre.toLowerCase();
+    if (nombreA > nombreB) {
+        return -1;
+    }
+    if (nombreA < nombreB) {
+        return 1;
+    }
+    return 0;
+}
+
+
+function mostrarFiltros(categoria) {
+
     contenedorFiltros.innerHTML = '';
 
     const cuotas = document.createElement("div");
     cuotas.textContent = "⭐ ¡12 cuotas sin interés!";
     cuotas.className = "text-sm font-bold mb-8"
 
-    contenedorFiltros.appendChild(cuotas)
-    
+    contenedorFiltros.appendChild(cuotas);
+
+    const ordernarPor = document.createElement("div");
+    ordernarPor.textContent = "Ordenar por...";
+    ordernarPor.className = "text-sm font-bold mb-2"
+
+    contenedorFiltros.appendChild(ordernarPor);
+
     const divsFiltros1 = document.createElement("div");
     divsFiltros1.className = "flex items-center mb-2";
 
@@ -294,18 +329,17 @@ function mostrarFiltros(categoria) {
     inputMenorPrecio.setAttribute("id", "menorPrecio");
     inputMenorPrecio.setAttribute("name", "orden");
     inputMenorPrecio.setAttribute("value", "menorPrecio");
-    inputMenorPrecio.setAttribute("data-categoria", "auriculares");
     inputMenorPrecio.className = "mr-2"
 
-    inputMenorPrecio.addEventListener('change', function() {
+    inputMenorPrecio.addEventListener('change', function () {
         if (inputMenorPrecio.checked) {
             mostrarCategorias(categoria, 'menorPrecio');
         }
     });
-   
+
     divsFiltros1.appendChild(labelMenorPrecio);
     divsFiltros1.appendChild(inputMenorPrecio);
-    
+
     const divsFiltros2 = document.createElement("div");
     divsFiltros2.className = "flex items-center mb-2"
 
@@ -321,7 +355,7 @@ function mostrarFiltros(categoria) {
     inputMayorPrecio.setAttribute("value", "mayorPrecio");
     inputMayorPrecio.className = "mr-2"
 
-    inputMayorPrecio.addEventListener('change', function() {
+    inputMayorPrecio.addEventListener('change', function () {
         if (inputMayorPrecio.checked) {
             mostrarCategorias(categoria, 'mayorPrecio');
         }
@@ -330,8 +364,60 @@ function mostrarFiltros(categoria) {
     divsFiltros2.appendChild(labelMayorPrecio);
     divsFiltros2.appendChild(inputMayorPrecio);
 
+    const divsFiltros3 = document.createElement("div");
+    divsFiltros3.className = "flex items-center mb-2";
+
+    const labelAz = document.createElement("label");
+    labelAz.setAttribute("for", "a_z");
+    labelAz.className = "mr-2";
+    labelAz.textContent = "Ordenar A - Z";
+
+    const inputAz = document.createElement("input");
+    inputAz.setAttribute("type", "radio");
+    inputAz.setAttribute("id", "a_z");
+    inputAz.setAttribute("name", "orden");
+    inputAz.setAttribute("value", "a_z");
+    inputAz.className = "mr-2";
+
+    inputAz.addEventListener('change', function () {
+        if (inputAz.checked) {
+            mostrarCategorias(categoria, 'nombreAscendente');
+        }
+    });
+
+    divsFiltros3.appendChild(labelAz);
+    divsFiltros3.appendChild(inputAz);
+
+    const divsFiltros4 = document.createElement("div");
+    divsFiltros4.className = "flex items-center mb-2";
+
+    const labelZa = document.createElement("label");
+    labelZa.setAttribute("for", "z_a");
+    labelZa.className = "mr-2";
+    labelZa.textContent = "Ordenar Z - A";
+
+    const inputZa = document.createElement("input");
+    inputZa.setAttribute("type", "radio");
+    inputZa.setAttribute("id", "z_a");
+    inputZa.setAttribute("name", "orden");
+    inputZa.setAttribute("value", "z_a");
+    inputZa.className = "mr-2";
+
+    inputZa.addEventListener('change', function () {
+        if (inputZa.checked) {
+            mostrarCategorias(categoria, 'nombreDescendente');
+        }
+    });
+
+    divsFiltros4.appendChild(labelZa);
+    divsFiltros4.appendChild(inputZa);
+
+
     contenedorFiltros.appendChild(divsFiltros1);
     contenedorFiltros.appendChild(divsFiltros2);
+    contenedorFiltros.appendChild(divsFiltros3);
+    contenedorFiltros.appendChild(divsFiltros4);
+
 
     contenedorFiltros.classList.remove('hidden');
 }
@@ -513,32 +599,32 @@ function mostrarProductosFiltrados(productosFiltrados) {
 sidenav.style.transform = "translateX(100%)";
 
 botonAuriculares.addEventListener('click', () => {
-    const categoria = botonAuriculares.getAttribute(`data-categoria`);      
-    mostrarCategorias(categoria);  
-    mostrarFiltros(categoria);     
+    const categoria = botonAuriculares.getAttribute(`data-categoria`);
+    mostrarCategorias(categoria);
+    mostrarFiltros(categoria);
 });
 
 botonMouse.addEventListener('click', () => {
-    const categoria = botonMouse.getAttribute(`data-categoria`);      
-    mostrarCategorias(categoria);  
-    mostrarFiltros(categoria);    
+    const categoria = botonMouse.getAttribute(`data-categoria`);
+    mostrarCategorias(categoria);
+    mostrarFiltros(categoria);
 });
 
 botonTeclado.addEventListener('click', () => {
-    const categoria = botonTeclado.getAttribute(`data-categoria`);      
-    mostrarCategorias(categoria);  
+    const categoria = botonTeclado.getAttribute(`data-categoria`);
+    mostrarCategorias(categoria);
     mostrarFiltros(categoria);
 });
 
 botonWebcam.addEventListener('click', () => {
-    const categoria = botonWebcam.getAttribute(`data-categoria`);      
-    mostrarCategorias(categoria);  
+    const categoria = botonWebcam.getAttribute(`data-categoria`);
+    mostrarCategorias(categoria);
     mostrarFiltros(categoria);
 });
 
 botonParlantes.addEventListener('click', () => {
-    const categoria = botonParlantes.getAttribute(`data-categoria`);      
-    mostrarCategorias(categoria);  
+    const categoria = botonParlantes.getAttribute(`data-categoria`);
+    mostrarCategorias(categoria);
     mostrarFiltros(categoria);
 });
 
@@ -595,9 +681,9 @@ inputBuscador.addEventListener("keypress", function (e) {
 
 botonesCategoria.forEach(boton => {
     boton.addEventListener("click", function () {
-        const categoria = boton.getAttribute(`data-categoria`);        
+        const categoria = boton.getAttribute(`data-categoria`);
         mostrarCategorias(categoria);
-        mostrarFiltros(categoria);            
+        mostrarFiltros(categoria);
     })
 })
 
