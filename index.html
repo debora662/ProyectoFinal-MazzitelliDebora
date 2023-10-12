@@ -44,7 +44,7 @@
                     <button id="mostrarProductos">
                         <img class="w-8" src="./assets/images/cart.png" alt="icono de carrito de compras" />
                         <span id="contadorCarrito"
-                            class="bg-red-500 text-white text-xs rounded-full px-2 py-1 xs:-top-1 lg:top-8  absolute hidden"></span>
+                            class="bg-red-500 text-white text-xs rounded-full px-2 py-1 xs:-top-1 lg:top-8 absolute hidden"></span>
                         <div id="sidenav-7"
                             class="transition-transform duration-300 ease-in-out transform translate-x-full invisible fixed right-0 top-0 z-[1035] h-screen w-60 overflow-hidden bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.07),_0_2px_4px_rgba(0,0,0,0.05)] dark:bg-zinc-800">
                             <h3 class="text-white font-bold text-lg mb-4">Mi Carrito</h3>
@@ -59,11 +59,16 @@
         </nav>
         <div class="bg-indigo-600">
             <ul class="flex justify-center ">
-                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110" data-categoria="auriculares">Auriculares</button></li>
-                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110" data-categoria="mouse">Mouse</button></li>
-                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110" data-categoria="teclado">Teclado</button></li>
-                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110" data-categoria="webcam">WebCam</button></li>
-                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110" data-categoria="parlantes">Parlantes</button></li>
+                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110"
+                        data-categoria="auriculares">Auriculares</button></li>
+                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110"
+                        data-categoria="mouse">Mouse</button></li>
+                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110"
+                        data-categoria="teclado">Teclado</button></li>
+                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110"
+                        data-categoria="webcam">WebCam</button></li>
+                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110"
+                        data-categoria="parlantes">Parlantes</button></li>
             </ul>
         </div>
     </header>
@@ -155,7 +160,7 @@
         <div class="grid grid-cols-1">
             <div class="flex justify-center flex-wrap mt-4 mb-6 mx-4 gap-8" id="categoriasContainer">
 
-                <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100"
+                <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100" data-categoria="auriculares"
                     id="auriculares">
                     <div class="bg-white rounded-t-lg overflow-hidden">
                         <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
@@ -166,7 +171,7 @@
                     </div>
                 </button>
 
-                <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100" id="mouse">
+                <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100" data-categoria="mouse" id="mouse">
                     <div class="bg-white rounded-t-lg overflow-hidden">
                         <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
                             src="./assets/images/mouse.webp" alt="foto de mouse">
@@ -176,7 +181,7 @@
                     </div>
                 </button>
 
-                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100" id="teclado">
+                <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100" data-categoria="teclado" id="teclado">
                     <div class="bg-white rounded-t-lg overflow-hidden">
                         <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
                             src="./assets/images/teclado.webp" alt="foto de teclado">
@@ -184,9 +189,9 @@
                     <div class="bg-white flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">Teclado</div>
                     </div>
-                </div>
+                </button>
 
-                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100" id="webcam">
+                <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100" data-categoria="webcam" id="webcam">
                     <div class="bg-white rounded-t-lg overflow-hidden">
                         <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
                             src="./assets/images/webcam.webp" alt="foto de webcams">
@@ -194,9 +199,9 @@
                     <div class="bg-white flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">WebCam</div>
                     </div>
-                </div>
+                </buttton>
 
-                <div class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100" id="parlantes">
+                <button class="xs:mb-6 sm:mb-6 w-32 md:w-40 h-min shadow-lg hover:shadow-indigo-600/100" data-categoria="parlantes" id="parlantes">
                     <div class="bg-white rounded-t-lg overflow-hidden">
                         <img class="rounded-t-lg transition-transform transform hover:scale-90 max-w-full h-auto"
                             src="./assets/images/parlantes.webp" alt="foto de parlantes">
@@ -204,13 +209,19 @@
                     <div class="bg-white flex flex-col items-center rounded-b-lg">
                         <div class="font-bold text-lg mb-1">Parlantes</div>
                     </div>
-                </div>
+                </button>
 
             </div>
         </div>
 
-        <div id="productosContainer"
-            class="flex flex-wrap justify-center md:grid md:grid-cols-2 lg:flex justify-center grid-cols-3 xl:grid-cols-4 gap-4 p-4 mb-8">
+        <div class="flex flex-col lg:flex-row">
+            <div class="hidden bg-white w-96 h-72 flex flex-col ml-10 p-8 rounded-lg shadow-xl hover:shadow-gray-500"
+                id="contenedorFiltros">
+            </div>
+
+            <div id="productosContainer"
+                class="flex flex-wrap items-center justify-center lg:flex justify-center xl:grid-cols-4 gap-2 p-4 mb-8">
+            </div>
         </div>
 
     </main>

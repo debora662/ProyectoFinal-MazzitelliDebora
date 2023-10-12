@@ -31,7 +31,7 @@ const productos = [
     },
     {
         id: 3,
-        nombre: "Mouse Yindiao A2",
+        nombre: "Mouse Yindiao A2410",
         image: "./assets/images/mouse3.webp",
         precio: 5800,
         tags: ["mouse", "inalambricos"],
@@ -141,12 +141,62 @@ const productos = [
     },
     {
         id: 14,
-        nombre: "Parlantes Braun 180",
+        nombre: "Parlantes Braun J180TB",
         image: "./assets/images/parlantes2.webp",
         precio: 3900,
         tags: ["parlantes", "musica"],
         desc: "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
         categoria: "parlantes",
+        cantidad: 1,
+    },
+    {
+        id: 15,
+        nombre: "Auriculares Noblex H350b",
+        image: "./assets/images/parlantes2.webp",
+        precio: 5900,
+        tags: ["auriculares", "inalambricos"],
+        desc: "En la calle, en el colectivo o en la oficina, tené siempre a mano tus auriculares Noblex y ¡escapate de la rutina por un rato! Vas a poder disfrutar de la música que más te gusta y de tus podcasts con un sonido excelente y con muy buenos graves.",
+        categoria: "auriculares",
+        cantidad: 1,
+    },
+    {
+        id: 16,
+        nombre: "Parlantes Braun J180TB",
+        image: "./assets/images/parlantes2.webp",
+        precio: 3900,
+        tags: ["parlantes", "musica"],
+        desc: "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
+        categoria: "auriculares",
+        cantidad: 1,
+    },
+    {
+        id: 17,
+        nombre: "Parlantes Braun J180TB",
+        image: "./assets/images/parlantes2.webp",
+        precio: 3900,
+        tags: ["parlantes", "musica"],
+        desc: "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
+        categoria: "auriculares",
+        cantidad: 1,
+    },
+    {
+        id: 17,
+        nombre: "Parlantes Braun J180TB",
+        image: "./assets/images/parlantes2.webp",
+        precio: 3900,
+        tags: ["parlantes", "musica"],
+        desc: "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
+        categoria: "auriculares",
+        cantidad: 1,
+    },
+    {
+        id: 14,
+        nombre: "Parlantes Braun J180TB",
+        image: "./assets/images/parlantes2.webp",
+        precio: 3900,
+        tags: ["parlantes", "musica"],
+        desc: "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
+        categoria: "auriculares",
         cantidad: 1,
     },
 ]
@@ -169,36 +219,12 @@ const inputBuscador = document.querySelector("#buscador");
 const botonBuscar = document.querySelector("#botonBuscar");
 const carousel = document.querySelector("#carouselExampleControls");
 const dataInfo = document.querySelector("#dataPagos");
-const botonesCategoria = document.querySelectorAll(".categoria-btn")
+const botonesCategoria = document.querySelectorAll(".categoria-btn");
+const contenedorFiltros = document.querySelector("#contenedorFiltros")
 
 
-function mostrarCategorias(categoria) {
 
-    productosContainer.innerHTML = '';
-
-    const productosCategoria = productos.filter(producto => producto.categoria === categoria);
-
-    productosCategoria.forEach(producto => {
-        const productoElemento = document.createElement('div');
-        productoElemento.className = 'bg-white rounded-lg shadow-lg p-2 m-2 flex flex-col items-center '
-        productoElemento.innerHTML = `
-        <div class="flex flex-col items-center ">
-        <img class="w-36 object-cover mb-2 mx-auto rounded-t" src="${producto.image}" alt="${producto.nombre}"> 
-        <h2 class="text-sm font-bold mb-1">${producto.nombre}</h2> 
-        <p class=" w-64 h-50 text-gray-700 text-xs mb-1">${producto.desc}</p>
-        <p class="font-bold text-sm mt-2">Precio: $${producto.precio}</p> 
-        <div class="flex items-end">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mt-3 agregar-btn">Agregar</button> 
-        </div>
-        </div>
-        `;
-
-        productoElemento.querySelector('.agregar-btn').addEventListener('click', function () {
-            agregarProducto(producto);
-        });
-
-        productosContainer.appendChild(productoElemento);
-    })
+function mostrarCategorias(categoria, orden) {    
 
     carousel.style.display = 'none';
     dataInfo.classList.remove('hidden');
@@ -209,7 +235,107 @@ function mostrarCategorias(categoria) {
     botonParlantes.style.display = 'none';
     textoCategoria.style.display = 'none';
     volverBtn.classList.remove('hidden')
+
+    productosContainer.innerHTML = '';
+
+    let productosCategoria = productos.filter(producto => producto.categoria === categoria);
+
+    if (orden === 'menorPrecio') {
+        productosCategoria = productosCategoria.sort(ordenarPorPrecioAscendente);
+    }else if (orden === 'mayorPrecio') {
+        productosCategoria = productosCategoria.sort(ordenarPorPrecioDescendente);
+    }
+
+    productosCategoria.forEach(producto => {
+        const productoElemento = document.createElement('div');
+        productoElemento.className = 'bg-white rounded-lg shadow-xl hover:shadow-gray-500 p-8 m-4 flex flex-col items-center border border-slate-400'
+        productoElemento.innerHTML = `        
+        <div class="flex flex-col items-center w-32 h-64">
+        <button>
+        <img class="w-36 object-cover mb-2 mx-auto rounded-t" src="${producto.image}" alt="${producto.nombre}"> 
+        <h2 class="text-sm mb-1 text-center">${producto.nombre}</h2>
+        <p class="font-bold text-sm mt-10">Precio: $${producto.precio}</p>          
+        </button>
+        </div>
+        `;
+
+        productosContainer.appendChild(productoElemento);
+    })
 }
+
+function ordenarPorPrecioAscendente(a, b) {
+    return a.precio - b.precio;
+}
+
+function ordenarPorPrecioDescendente(a, b) {
+    return b.precio - a.precio;
+} 
+
+function mostrarFiltros(categoria) {   
+    
+    contenedorFiltros.innerHTML = '';
+
+    const cuotas = document.createElement("div");
+    cuotas.textContent = "⭐ ¡12 cuotas sin interés!";
+    cuotas.className = "text-sm font-bold mb-8"
+
+    contenedorFiltros.appendChild(cuotas)
+    
+    const divsFiltros1 = document.createElement("div");
+    divsFiltros1.className = "flex items-center mb-2";
+
+    const labelMenorPrecio = document.createElement("label");
+    labelMenorPrecio.setAttribute("for", "menorPrecio");
+    labelMenorPrecio.className = "mr-2";
+    labelMenorPrecio.textContent = "Menor Precio";
+
+    const inputMenorPrecio = document.createElement("input");
+    inputMenorPrecio.setAttribute("type", "radio");
+    inputMenorPrecio.setAttribute("id", "menorPrecio");
+    inputMenorPrecio.setAttribute("name", "orden");
+    inputMenorPrecio.setAttribute("value", "menorPrecio");
+    inputMenorPrecio.setAttribute("data-categoria", "auriculares");
+    inputMenorPrecio.className = "mr-2"
+
+    inputMenorPrecio.addEventListener('change', function() {
+        if (inputMenorPrecio.checked) {
+            mostrarCategorias(categoria, 'menorPrecio');
+        }
+    });
+   
+    divsFiltros1.appendChild(labelMenorPrecio);
+    divsFiltros1.appendChild(inputMenorPrecio);
+    
+    const divsFiltros2 = document.createElement("div");
+    divsFiltros2.className = "flex items-center mb-2"
+
+    const labelMayorPrecio = document.createElement("label");
+    labelMayorPrecio.setAttribute("for", "mayorPrecio");
+    labelMayorPrecio.className = "mr-2";
+    labelMayorPrecio.textContent = "Mayor Precio";
+
+    const inputMayorPrecio = document.createElement("input");
+    inputMayorPrecio.setAttribute("type", "radio");
+    inputMayorPrecio.setAttribute("id", "mayorPrecio");
+    inputMayorPrecio.setAttribute("name", "orden");
+    inputMayorPrecio.setAttribute("value", "mayorPrecio");
+    inputMayorPrecio.className = "mr-2"
+
+    inputMayorPrecio.addEventListener('change', function() {
+        if (inputMayorPrecio.checked) {
+            mostrarCategorias(categoria, 'mayorPrecio');
+        }
+    });
+
+    divsFiltros2.appendChild(labelMayorPrecio);
+    divsFiltros2.appendChild(inputMayorPrecio);
+
+    contenedorFiltros.appendChild(divsFiltros1);
+    contenedorFiltros.appendChild(divsFiltros2);
+
+    contenedorFiltros.classList.remove('hidden');
+}
+
 
 function agregarProducto(producto) {
 
@@ -300,10 +426,10 @@ function mostrarProductosEnCarrito() {
 
 function eliminarProducto(index) {
     const productoEnCarrito = carrito[index];
-    if(productoEnCarrito.cantidad > 1 ){
-        productoEnCarrito.cantidad --;
+    if (productoEnCarrito.cantidad > 1) {
+        productoEnCarrito.cantidad--;
         productoEnCarrito.subTotal = productoEnCarrito.cantidad * productoEnCarrito.precio;
-    }else{
+    } else {
         carrito.splice(index, 1);
     }
 
@@ -334,11 +460,11 @@ function actualizaContador() {
     localStorage.setItem("contadorCarrito", totalCantidadCarrito.toString());
 }
 
-actualizaContador ()
+actualizaContador()
 
 function carritoEnLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(carrito))
-    
+
 }
 
 function mostrarProductosFiltrados(productosFiltrados) {
@@ -384,27 +510,36 @@ function mostrarProductosFiltrados(productosFiltrados) {
 }
 
 
-
 sidenav.style.transform = "translateX(100%)";
 
 botonAuriculares.addEventListener('click', () => {
-    mostrarCategorias('auriculares');
+    const categoria = botonAuriculares.getAttribute(`data-categoria`);      
+    mostrarCategorias(categoria);  
+    mostrarFiltros(categoria);     
 });
 
 botonMouse.addEventListener('click', () => {
-    mostrarCategorias('mouse');
+    const categoria = botonMouse.getAttribute(`data-categoria`);      
+    mostrarCategorias(categoria);  
+    mostrarFiltros(categoria);    
 });
 
 botonTeclado.addEventListener('click', () => {
-    mostrarCategorias('teclado');
+    const categoria = botonTeclado.getAttribute(`data-categoria`);      
+    mostrarCategorias(categoria);  
+    mostrarFiltros(categoria);
 });
 
 botonWebcam.addEventListener('click', () => {
-    mostrarCategorias('webcam');
+    const categoria = botonWebcam.getAttribute(`data-categoria`);      
+    mostrarCategorias(categoria);  
+    mostrarFiltros(categoria);
 });
 
 botonParlantes.addEventListener('click', () => {
-    mostrarCategorias('parlantes');
+    const categoria = botonParlantes.getAttribute(`data-categoria`);      
+    mostrarCategorias(categoria);  
+    mostrarFiltros(categoria);
 });
 
 volverBtn.addEventListener('click', () => {
@@ -421,6 +556,7 @@ volverBtn.addEventListener('click', () => {
     volverBtn.classList.add('hidden');
     textoCategoria.style.display = 'block';
     textoCategoria.style.textAlign = 'center';
+    contenedorFiltros.classList.add('hidden');
 });
 
 carritoCompras.addEventListener("click", () => {
@@ -458,8 +594,12 @@ inputBuscador.addEventListener("keypress", function (e) {
 })
 
 botonesCategoria.forEach(boton => {
-    boton.addEventListener("click", function(){
-        const categoria = boton.getAttribute(`data-categoria`);
-        mostrarCategorias(categoria)
+    boton.addEventListener("click", function () {
+        const categoria = boton.getAttribute(`data-categoria`);        
+        mostrarCategorias(categoria);
+        mostrarFiltros(categoria);            
     })
 })
+
+
+
