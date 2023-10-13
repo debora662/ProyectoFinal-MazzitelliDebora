@@ -1078,6 +1078,11 @@ input[type="range"]:active::-webkit-slider-thumb {
   margin-bottom: 0px !important;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -1128,11 +1133,6 @@ input[type="range"]:active::-webkit-slider-thumb {
   margin-bottom: 5px;
 }
 
-.-my-20 {
-  margin-top: -5rem;
-  margin-bottom: -5rem;
-}
-
 .-ml-1 {
   margin-left: -0.25rem;
 }
@@ -1155,6 +1155,10 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
 }
 
 .mb-2 {
@@ -1195,6 +1199,10 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .ml-10 {
   margin-left: 2.5rem;
+}
+
+.ml-16 {
+  margin-left: 4rem;
 }
 
 .ml-2 {
@@ -1287,6 +1295,10 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .mt-\[0\.15rem\] {
@@ -3371,6 +3383,11 @@ input[type="range"]:active::-webkit-slider-thumb {
   background-color: currentColor;
 }
 
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
 .bg-gray-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
@@ -3610,16 +3627,16 @@ input[type="range"]:active::-webkit-slider-thumb {
   padding: 0.25rem;
 }
 
-.p-10 {
-  padding: 2.5rem;
-}
-
 .p-2 {
   padding: 0.5rem;
 }
 
 .p-2\.5 {
   padding: 0.625rem;
+}
+
+.p-20 {
+  padding: 5rem;
 }
 
 .p-3 {
@@ -3648,10 +3665,6 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .p-\[auto\] {
   padding: auto;
-}
-
-.p-20 {
-  padding: 5rem;
 }
 
 .\!py-0 {
@@ -3799,16 +3812,6 @@ input[type="range"]:active::-webkit-slider-thumb {
   padding-bottom: 5px;
 }
 
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
-.py-40 {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-}
-
 .pb-0 {
   padding-bottom: 0px;
 }
@@ -3931,6 +3934,11 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .align-\[-0\.125em\] {
   vertical-align: -0.125em;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-\[0\.8rem\] {
@@ -5247,6 +5255,11 @@ input[type="range"]:active::-webkit-slider-thumb {
 .hover\:bg-blue-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-gray-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-gray-600:hover {

@@ -5,6 +5,9 @@ module.exports = {
 ],
   theme: {
     extend: {
+      margin: {
+        '11': '6.5rem',              
+      },
       width: {
         'w-98': '390px',
       },
