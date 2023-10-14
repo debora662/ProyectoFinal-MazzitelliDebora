@@ -203,6 +203,8 @@ const productos = [
 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
+console.log("Contenido del carrito:", carrito);
+
 
 const botonAuriculares = document.querySelector("#auriculares");
 const botonMouse = document.querySelector("#mouse");
@@ -301,11 +303,6 @@ function mostrarCategorias(categoria, orden) {
             const increaseBtn = modal.querySelector('.increase-btn');
             const cantidadElement = modal.querySelector('.cantidad');
 
-            modal.addEventListener('click', function (event) {
-                if (event.target.id === 'btnAgregar') {
-                    agregarProducto(producto);
-                }
-            });
 
             decreaseBtn.addEventListener('click', function (event) {
                 event.stopPropagation();
@@ -320,6 +317,14 @@ function mostrarCategorias(categoria, orden) {
                 producto.cantidad++;
                 cantidadElement.textContent = producto.cantidad;
             });
+
+            modal.addEventListener('click', function (event) { //cantidad
+                if (event.target.id === 'btnAgregar') {
+                    const cantidadSeleccionada = productos[producto.id].cantidad;
+                    agregarProducto(producto, cantidadSeleccionada);
+                }
+            });
+
         });
 
         productosContainer.appendChild(productoElemento);
@@ -478,7 +483,9 @@ function mostrarFiltros(categoria) {
     contenedorFiltros.classList.remove('hidden');
 }
 
-function agregarProducto(producto) {
+function agregarProducto(producto, cantidad) {
+
+    console.log(producto, cantidad)
 
     const productoEnCarrito = carrito.find((el) => el.id === producto.id);
 
@@ -488,10 +495,11 @@ function agregarProducto(producto) {
     } else {
         const nuevoProducto = {
             ...producto,
-            cantidad: 1,
-            subTotal: producto.precio
+            cantidad: cantidad,
+            subTotal: cantidad * producto.precio
         };
         carrito.push(nuevoProducto)
+
     }
     carritoEnLocalStorage();
     mostrarProductosEnCarrito();
@@ -618,7 +626,7 @@ function mostrarProductosFiltrados(productosFiltrados) {
     botonParlantes.style.display = 'none';
     textoCategoria.style.display = 'none';
     volverBtn.classList.remove('hidden')
-    contenedorFiltros.classList.add('hidden');
+    contenedorFiltros.classList.remove('hidden');
 
     productosContainer.innerHTML = "";
 
@@ -642,6 +650,7 @@ function mostrarProductosFiltrados(productosFiltrados) {
         })
     } else {
         noEncontrado.classList.remove('hidden');
+        contenedorFiltros.classList.add('hidden');
         noEncontrado.innerHTML = '<p class="bg-white rounded-lg p-20 text-center">No se encontraron productos que coincidan con la búsqueda.</p>';
     }
 
@@ -695,6 +704,7 @@ botonBuscar.addEventListener("click", function () {
             return coincideNombre || coincideCategoria;
         });
 
+
         mostrarProductosFiltrados(productosFiltrados)
     }
 })
@@ -738,6 +748,4 @@ volverBtn.addEventListener('click', () => {
     textoCategoria.style.textAlign = 'center';
     contenedorFiltros.classList.add('hidden');
     noEncontrado.classList.add('hidden');
-    detalleProducto.classList.add("hidden");
-
 });
