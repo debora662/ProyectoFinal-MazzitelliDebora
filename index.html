@@ -8,6 +8,9 @@
         content="Explora la mejor selección de productos de computación en nuestra tienda en línea. Encuentra laptops, PCs, componentes, accesorios y más. ¡Potencia tu mundo digital con nuestras ofertas y calidad.">
     <meta name="keywords" content="computadoras de escritorio, laptops, teclados, mouse, auriculares">
     <link rel="shorcut icon" href="./assets/images/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="./src/output.css" rel="stylesheet">
     <title>E-TechUniverse - Ecommerce</title>
@@ -152,7 +155,8 @@
             </div>
         </div>
 
-        <H5 class="underline decoration-2 font-semibold text-lg m-8 flex justify-center" id="categoria">CATEGORIAS:</H5>
+        <H5 class="underline decoration-2 font-semibold text-lg m-8 flex justify-center" id="textoCategoria">CATEGORIAS:
+        </H5>
         <button id="volverBtn"
             class="hidden text-black hover:text-blue-700 underline underline-offset-1 font-bold py-2 px-4 mt-3 ml-8">Volver
             atrás</button>
@@ -217,6 +221,10 @@
             </div>
         </div>
 
+        <div class="my-16 px-8">
+            <img src="./assets/images/bannermiddle.webp" class="rounded-md">
+        </div>
+
         <div id="noEncontrado" class="hidden flex justify-center"></div>
         <div class="flex flex-col lg:flex-row">
             <div class="hidden bg-white w-96 h-72 flex flex-col ml-10 p-8 rounded-lg shadow-xl hover:shadow-gray-500"
@@ -228,6 +236,29 @@
             </div>
         </div>
     </main>
+
+    <div id="slider" class="bg-white mb-10 px-10">
+        <div class="py-15">
+            <img src="./assets/images/braun.webp" alt="" class="mx-11 w-32" />            
+        </div>
+        <div class="py-1">
+            <img src="./assets/images/genius.webp" alt="" class="mx-11 w-28" />            
+        </div>
+        <div class=" py-15">
+            <img src="./assets/images/jbl.webp" alt="" class="mx-11 w-32" />            
+        </div>
+        <div class="py-15">
+            <img src="./assets/images/logitech.webp" alt="" class="mx-11 w-32" />           
+        </div>
+        <div class="py-15">
+            <img src="./assets/images/noga.webp" alt="" class="mx-11 w-32" />           
+        </div>
+        <div class="py-15">
+            <img src="./assets/images/redragon.webp" alt="" class="mx-11 w-32" />           
+        </div>
+    </div>
+
+
 
     <footer class="bg-indigo-600 text-center text-white lg:text-left">
         <div class="mx-6 py-4 text-center md:text-left">
@@ -338,6 +369,8 @@
     <script type="text/javascript" src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="carrito.js"></script>
 </body>
 

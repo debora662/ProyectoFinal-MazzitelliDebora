@@ -203,15 +203,13 @@ const productos = [
 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-console.log("Contenido del carrito:", carrito);
-
 
 const botonAuriculares = document.querySelector("#auriculares");
 const botonMouse = document.querySelector("#mouse");
 const botonTeclado = document.querySelector("#teclado");
 const botonWebcam = document.querySelector("#webcam");
 const botonParlantes = document.querySelector("#parlantes");
-const textoCategoria = document.querySelector("#categoria")
+const textoCategoria = document.querySelector("#textoCategoria")
 const volverBtn = document.querySelector("#volverBtn");
 const categoriasContainer = document.querySelector("#categoriasContainer");
 const productosContainer = document.querySelector('#productosContainer');
@@ -226,9 +224,12 @@ const contenedorFiltros = document.querySelector("#contenedorFiltros");
 const noEncontrado = document.querySelector("#noEncontrado");
 const detalleProducto = document.querySelector("#detalleProducto");
 const containerDetalle = document.querySelector("#containerDetalle");
+const slider = document.querySelector("#slider")
 
 
 function mostrarCategorias(categoria, orden) {
+
+    console.log("Mostrando productos de la categoría:", categoria);
 
     carousel.style.display = 'none';
     dataInfo.classList.remove('hidden');
@@ -751,3 +752,17 @@ volverBtn.addEventListener('click', () => {
     contenedorFiltros.classList.add('hidden');
     noEncontrado.classList.add('hidden');
 });
+
+
+window.onload=function(){
+    $('#slider').slick({
+    autoplay:true,
+    autoplaySpeed:2000,
+    arrows:false,
+    prevArrow:'<button type="button" class="slick-prev"></button>',
+    nextArrow:'<button type="button" class="slick-next"></button>',
+    centerMode:true,
+    slidesToShow:4,
+    slidesToScroll:5
+    });
+  };
