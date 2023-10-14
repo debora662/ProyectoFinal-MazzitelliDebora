@@ -1456,6 +1456,10 @@ input[type="range"]:active::-webkit-slider-thumb {
   height: 0.75rem;
 }
 
+.h-32 {
+  height: 8rem;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -1683,6 +1687,10 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .w-60 {
   width: 15rem;
+}
+
+.w-64 {
+  width: 16rem;
 }
 
 .w-7 {
@@ -4857,6 +4865,10 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
 }
 
 .duration-\[1000ms\] {
