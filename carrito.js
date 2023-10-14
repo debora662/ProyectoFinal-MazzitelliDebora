@@ -23,7 +23,7 @@ const productos = [
         id: 2,
         nombre: "Auriculares Noga Ng98t",
         image: "./assets/images/auris1.webp",
-        precio: 3800,
+        precio: 4899,
         tags: ["auriculares", "inalambricos"],
         desc: "En la calle, en el colectivo o en la oficina, tené siempre a mano tus auriculares Noga y ¡escapate de la rutina por un rato! Vas a poder disfrutar de la música que más te gusta y de tus podcasts favoritos cuando quieras y donde quieras. Al ser on-ear se apoyan en tus orejas cómodamente y ofrecen una gran calidad de sonido.",
         categoria: "auriculares",
@@ -152,7 +152,7 @@ const productos = [
     {
         id: 15,
         nombre: "Auriculares Noblex H350b",
-        image: "./assets/images/parlantes2.webp",
+        image: "./assets/images/auris4.webp",
         precio: 5900,
         tags: ["auriculares", "inalambricos"],
         desc: "En la calle, en el colectivo o en la oficina, tené siempre a mano tus auriculares Noblex y ¡escapate de la rutina por un rato! Vas a poder disfrutar de la música que más te gusta y de tus podcasts con un sonido excelente y con muy buenos graves.",
@@ -161,41 +161,41 @@ const productos = [
     },
     {
         id: 16,
-        nombre: "Parlantes Braun J180TB",
-        image: "./assets/images/parlantes2.webp",
-        precio: 3900,
+        nombre: "Auriculares Extrabass 80TB",
+        image: "./assets/images/auris5.webp",
+        precio: 6900,
         tags: ["parlantes", "musica"],
-        desc: "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
+        desc: "El Auricular sunset 450-AP Vincha Plegable Extra Bass es un auricular con un sonido excelente y cuentan con muy buenos graves, tambien tienen (manos libres, play/pausa, atender/colgar) desdxe la comodidad de un boton.",
         categoria: "auriculares",
         cantidad: 1,
     },
     {
         id: 17,
-        nombre: "Parlantes Braun J180TB",
-        image: "./assets/images/parlantes2.webp",
-        precio: 3900,
+        nombre: "Auriculares Suono Style ",
+        image: "./assets/images/auris6.webp",
+        precio: 7900,
         tags: ["parlantes", "musica"],
-        desc: "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
+        desc: "¡Experimentá la adrenalina de sumergirte en la escena de otra manera! Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida. Con los Suono Confort Audio no te perdés ningún detalle y escuchás el audio tal y como fue diseñado por los creadores.",
         categoria: "auriculares",
         cantidad: 1,
     },
     {
         id: 17,
-        nombre: "Parlantes Braun J180TB",
-        image: "./assets/images/parlantes2.webp",
-        precio: 3900,
+        nombre: "Auriculares Soul XH150 ",
+        image: "./assets/images/auris7.webp",
+        precio: 8900,
         tags: ["parlantes", "musica"],
-        desc: "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
+        desc: "¡Experimentá la adrenalina de sumergirte en la escena de otra manera! Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida. Con los Soul Future Sound XH150 no te perdés ningún detalle y escuchás el audio tal y como fue diseñado por los creadores.",
         categoria: "auriculares",
         cantidad: 1,
     },
     {
         id: 14,
-        nombre: "Parlantes Braun J180TB",
-        image: "./assets/images/parlantes2.webp",
-        precio: 3900,
+        nombre: "Auriculares GTC Vintage ",
+        image: "./assets/images/auris8.webp",
+        precio: 8900,
         tags: ["parlantes", "musica"],
-        desc: "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
+        desc: "En la calle, en el colectivo o en la oficina, tené siempre a mano tus auriculares GTC y ¡escapate de la rutina por un rato! Vas a poder disfrutar de la música que más te gusta y de tus podcasts favoritos cuando quieras y donde quieras.",
         categoria: "auriculares",
         cantidad: 1,
     },
@@ -225,6 +225,7 @@ const noEncontrado = document.querySelector("#noEncontrado");
 const detalleProducto = document.querySelector("#detalleProducto");
 const containerDetalle = document.querySelector("#containerDetalle");
 const slider = document.querySelector("#slider")
+const bannerMiddle = document.querySelector("#bannerMiddle")
 
 
 function mostrarCategorias(categoria, orden) {
@@ -239,7 +240,9 @@ function mostrarCategorias(categoria, orden) {
     botonWebcam.style.display = 'none';
     botonParlantes.style.display = 'none';
     textoCategoria.style.display = 'none';
-    volverBtn.classList.remove('hidden')
+    volverBtn.classList.remove('hidden');
+    bannerMiddle.classList.add('hidden');
+
 
 
     productosContainer.innerHTML = '';
@@ -369,7 +372,7 @@ function mostrarFiltros(categoria) {
     contenedorFiltros.innerHTML = '';
 
     const cuotas = document.createElement("div");
-    cuotas.textContent = "⭐ ¡12 cuotas sin interés!";
+    cuotas.innerHTML = "⭐ ¡12 cuotas sin interés!";
     cuotas.className = "text-sm font-bold mb-8"
 
     contenedorFiltros.appendChild(cuotas);
@@ -709,6 +712,7 @@ botonBuscar.addEventListener("click", function () {
         });
 
         mostrarProductosFiltrados(productosFiltrados)
+        bannerMiddle.classList.add('hidden');
     }
 })
 
@@ -723,6 +727,7 @@ inputBuscador.addEventListener("keypress", function (e) {
                 return coincideNombre || coincideCategoria;
             })
             mostrarProductosFiltrados(productosFiltrados)
+            bannerMiddle.classList.add('hidden');
         }
     }
 })
@@ -751,6 +756,7 @@ volverBtn.addEventListener('click', () => {
     textoCategoria.style.textAlign = 'center';
     contenedorFiltros.classList.add('hidden');
     noEncontrado.classList.add('hidden');
+    bannerMiddle.classList.remove('hidden');
 });
 
 
