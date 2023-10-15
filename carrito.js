@@ -191,7 +191,7 @@ const productos = [
     },
     {
         id: 19,
-        nombre: "Teclado Gamer Tkl Redrago",
+        nombre: "Teclado Gamer Redrago",
         image: "./assets/images/teclado4.webp",
         precio: 4690,
         tags: ["teclado", "español"],
@@ -221,7 +221,7 @@ const productos = [
     },
     {
         id: 22,
-        nombre: "Teclado Gamer Soul Xk700",
+        nombre: "Teclado Gamer Soul XT",
         image: "./assets/images/teclado7.webp",
         precio: 7700,
         tags: ["teclado", "español"],
@@ -231,7 +231,7 @@ const productos = [
     },
     {
         id: 23,
-        nombre: "Teclado Mini Genius Lux110",
+        nombre: "Teclado Mini Genius 110",
         image: "./assets/images/teclado8.webp",
         precio: 2900,
         tags: ["teclado", "español"],
@@ -271,7 +271,7 @@ const productos = [
     },
     {
         id: 27,
-        nombre: "WebCam Sinovision SN-U3",
+        nombre: "WebCam Sinovision SN",
         image: "./assets/images/web4.webp",
         precio: 9500,
         tags: ["webcam", "camaraweb"],
@@ -281,7 +281,7 @@ const productos = [
     },
     {
         id: 28,
-        nombre: "WebCam Newvision DC325",
+        nombre: "WebCam Newvision DCQ",
         image: "./assets/images/web5.webp",
         precio: 3850,
         tags: ["webcam", "camaraweb"],
@@ -291,7 +291,7 @@ const productos = [
     },
     {
         id: 29,
-        nombre: "WebCam Genius ECam 8000",
+        nombre: "WebCam Genius ECam",
         image: "./assets/images/web6.webp",
         precio: 4800,
         tags: ["webcam", "camaraweb"],
@@ -301,7 +301,7 @@ const productos = [
     },
     {
         id: 30,
-        nombre: "WebCam Gadnic Camweb03",
+        nombre: "WebCam Gadnic RT02",
         image: "./assets/images/web7.webp",
         precio: 8500,
         tags: ["webcam", "camaraweb"],
@@ -331,7 +331,7 @@ const productos = [
     },
     {
         id: 33,
-        nombre: "Parlantes Xinua Rgb",
+        nombre: "Parlantes Xinua Rgb12",
         image: "./assets/images/parlantes3.webp",
         precio: 6800,
         tags: ["parlantes", "musica"],
@@ -341,7 +341,7 @@ const productos = [
     },
     {
         id: 34,
-        nombre: "Parlantes Braun J180TB",
+        nombre: "Parlantes Braun J18TB",
         image: "./assets/images/parlantes2.webp",
         precio: 3900,
         tags: ["parlantes", "musica"],
@@ -351,51 +351,51 @@ const productos = [
     },
     {
         id: 35,
-        nombre: "Parlantes Braun J180TB",
-        image: "./assets/images/parlantes2.webp",
-        precio: 3900,
+        nombre: "Parlantes Targa Alpha",
+        image: "./assets/images/parlantes4.webp",
+        precio: 5900,
         tags: ["parlantes", "musica"],
-        desc: "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
+        desc: "Altavoz para juegos Stereo AlphaX de 16W (2x8W) de potencia con modos de luz configurables. Para expertos, sonido natural, con claridad y precisión. Poder y calidad para todos tus juegos. Incorpora control de volumen y entrada para auriculares para una experiencia de audio completa.",
         categoria: "parlantes",
         cantidad: 1,
     },
     {
         id: 36,
-        nombre: "Parlantes Braun J180TB",
-        image: "./assets/images/parlantes2.webp",
-        precio: 3900,
+        nombre: "Parlantes Genius SP-H8",
+        image: "./assets/images/parlantes5.webp",
+        precio: 6200,
         tags: ["parlantes", "musica"],
-        desc: "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
+        desc: "Genius SP-HF800A ofrece un sonido natural, con una gran claridad y precisión, que se dispersa de manera uniforme. Un parlante que asegura potencia y calidad por igual en la reproducción de contenidos multimedia.",
         categoria: "parlantes",
         cantidad: 1,
     },
     {
         id: 37,
-        nombre: "Parlantes Braun J180TB",
-        image: "./assets/images/parlantes2.webp",
-        precio: 3900,
+        nombre: "Parlantes Gamer Xinua",
+        image: "./assets/images/parlantes6.webp",
+        precio: 5300,
         tags: ["parlantes", "musica"],
-        desc: "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
+        desc: "Dúo de parlantes compatible con Notebook, Laptop, PC, Celulares, tablets, MP3, TV Smart, PS4 y cualquier dispositivo que tenga conexión jack 3.5mm. Ideal para juegos, escuchar música, ver películas y videos.",
         categoria: "parlantes",
         cantidad: 1,
     },
     {
         id: 38,
-        nombre: "Parlantes Braun J180TB",
-        image: "./assets/images/parlantes2.webp",
-        precio: 3900,
+        nombre: "Parlantes Madera Noga",
+        image: "./assets/images/parlantes7.webp",
+        precio: 4500,
         tags: ["parlantes", "musica"],
-        desc: "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
+        desc: "Noga NG-508P ofrece un sonido natural, con una gran claridad y precisión, que se dispersa de manera uniforme. Un parlante que asegura potencia y calidad por igual en la reproducción de contenidos multimedia.",
         categoria: "parlantes",
         cantidad: 1,
     },
     {
         id: 39,
-        nombre: "Parlantes Braun J180TB",
-        image: "./assets/images/parlantes2.webp",
-        precio: 3900,
+        nombre: "Parlantes Logitech S150",
+        image: "./assets/images/parlantes8.webp",
+        precio: 8900,
         tags: ["parlantes", "musica"],
-        desc: "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
+        desc: "Logitech S150 ofrece un sonido natural, con una gran claridad y precisión, que se dispersa de manera uniforme. Un parlante que asegura potencia y calidad por igual en la reproducción de contenidos multimedia.",
         categoria: "parlantes",
         cantidad: 1,
     },    
@@ -476,7 +476,7 @@ function mostrarCategorias(categoria, orden) {
                 title: producto.nombre,
                 html: `
             <div class="flex">
-                <img src="${producto.image}" alt="Product Image" class="mr-4" style="max-height: 350px;"> 
+                <img src="${producto.image}" alt="foto de ${producto.nombre}" class="" style="max-height: 350px;"> 
                 <div>
                      <p class="font-bold text-3xl text-blue-500 text-left">$ ${producto.precio}</p>
                     <div class="flex items-center mt-8">                        
@@ -494,7 +494,7 @@ function mostrarCategorias(categoria, orden) {
                 width: 950,
                 imageAlt: 'A tall image',
                 customClass: {
-                    title: 'font-bold text-black text-3xl text-center ml-16'
+                    title: 'ml-64 font-bold text-black text-3xl w-1/2'
                 },
                 allowOutsideClick: false,
                 showCloseButton: true,
@@ -971,3 +971,5 @@ window.onload=function(){
     slidesToScroll:5
     });
   };
+
+  
