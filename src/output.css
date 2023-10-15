@@ -3143,6 +3143,14 @@ input[type="range"]:active::-webkit-slider-thumb {
   border-width: 14px;
 }
 
+.border-2 {
+  border-width: 2px;
+}
+
+.border-4 {
+  border-width: 4px;
+}
+
 .border-x {
   border-left-width: 1px;
   border-right-width: 1px;
@@ -3265,6 +3273,10 @@ input[type="range"]:active::-webkit-slider-thumb {
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 
+.border-indigo-600\/100 {
+  border-color: rgb(79 70 229 / 1);
+}
+
 .border-neutral-100 {
   --tw-border-opacity: 1;
   border-color: rgb(245 245 245 / var(--tw-border-opacity));
@@ -3302,6 +3314,11 @@ input[type="range"]:active::-webkit-slider-thumb {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.border-indigo-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(79 70 229 / var(--tw-border-opacity));
 }
 
 .border-t-transparent {
@@ -4716,14 +4733,88 @@ input[type="range"]:active::-webkit-slider-thumb {
   outline-style: double;
 }
 
+.outline-2 {
+  outline-width: 2px;
+}
+
+.outline-offset-2 {
+  outline-offset: 2px;
+}
+
+.outline-offset-1 {
+  outline-offset: 1px;
+}
+
+.outline-pink-500 {
+  outline-color: #ec4899;
+}
+
+.outline-indigo-500 {
+  outline-color: #6366f1;
+}
+
+.outline-indigo-600 {
+  outline-color: #4f46e5;
+}
+
+.outline-blue-500 {
+  outline-color: #3b82f6;
+}
+
 .ring {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
+.ring-2 {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.ring-1 {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
 .ring-inset {
   --tw-ring-inset: inset;
+}
+
+.ring-blue-500 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+}
+
+.ring-indigo-600 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(79 70 229 / var(--tw-ring-opacity));
+}
+
+.ring-indigo-500 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(99 102 241 / var(--tw-ring-opacity));
+}
+
+.ring-gray-500 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
+}
+
+.ring-gray-300 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
+}
+
+.ring-gray-400 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(156 163 175 / var(--tw-ring-opacity));
+}
+
+.ring-offset-2 {
+  --tw-ring-offset-width: 2px;
 }
 
 .blur {
@@ -5258,6 +5349,19 @@ input[type="range"]:active::-webkit-slider-thumb {
   border-radius: 50%;
 }
 
+.hover\:border-2:hover {
+  border-width: 2px;
+}
+
+.hover\:border-indigo-600\/100:hover {
+  border-color: rgb(79 70 229 / 1);
+}
+
+.hover\:border-indigo-600:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(79 70 229 / var(--tw-border-opacity));
+}
+
 .hover\:\!bg-\[\#eee\]:hover {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(238 238 238 / var(--tw-bg-opacity)) !important;
@@ -5405,6 +5509,34 @@ input[type="range"]:active::-webkit-slider-thumb {
 .hover\:outline-none:hover {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.hover\:outline-offset-2:hover {
+  outline-offset: 2px;
+}
+
+.hover\:outline-offset-1:hover {
+  outline-offset: 1px;
+}
+
+.hover\:outline-offset-4:hover {
+  outline-offset: 4px;
+}
+
+.hover\:outline-indigo-600:hover {
+  outline-color: #4f46e5;
+}
+
+.hover\:outline-indigo-600\/50:hover {
+  outline-color: rgb(79 70 229 / 0.5);
+}
+
+.hover\:ring-offset-2:hover {
+  --tw-ring-offset-width: 2px;
+}
+
+.hover\:ring-offset-1:hover {
+  --tw-ring-offset-width: 1px;
 }
 
 .hover\:ease-in-out:hover {
