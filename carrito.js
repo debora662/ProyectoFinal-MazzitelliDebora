@@ -424,9 +424,12 @@ const contenedorFiltros = document.querySelector("#contenedorFiltros");
 const noEncontrado = document.querySelector("#noEncontrado");
 const detalleProducto = document.querySelector("#detalleProducto");
 const containerDetalle = document.querySelector("#containerDetalle");
-const slider = document.querySelector("#slider")
-const bannerMiddle = document.querySelector("#bannerMiddle")
-const logoInicio = document.querySelector("#inicio")
+const slider = document.querySelector("#slider");
+const bannerMiddle = document.querySelector("#bannerMiddle");
+const logoInicio = document.querySelector("#inicio");
+
+
+
 
 
 function mostrarCategorias(categoria, orden) {
@@ -724,6 +727,11 @@ function calcularTotalCarrito() {
     carrito.forEach((producto) => {
         total += producto.subTotal;
     });
+
+    if (total > 0) {
+
+    }
+
     return total;
 }
 
@@ -740,6 +748,8 @@ function barraLateral() {
 
 function mostrarProductosEnCarrito() {
     const articulosCarrito = document.querySelector("#listaCarrito");
+    const botonComprar = document.querySelector("#btnComprar")
+
 
     articulosCarrito.innerHTML = "";
 
@@ -760,17 +770,27 @@ function mostrarProductosEnCarrito() {
 
 
     const totalCarrito = document.createElement('div');
-    totalCarrito.classList.add('text-white', 'font-bold');
+    totalCarrito.classList.add('text-white', 'font-bold');    
     const total = calcularTotalCarrito();
+    totalCarrito.innerHTML = `TOTAL:$${calcularTotalCarrito()}`   
+    totalCarrito.id = 'totalCarrito';
+    articulosCarrito.appendChild(totalCarrito);
 
     if (total > 0) {
-        totalCarrito.innerHTML = `TOTAL:$${calcularTotalCarrito()} <br> <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mt-5 agregar-btn">Comprar</button>`
+        if (!botonComprar) {
+            const nuevoBotonComprar = document.createElement('button');
+            nuevoBotonComprar.id = "btnComprar";
+            nuevoBotonComprar.className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 w-44 rounded mt-5";
+            nuevoBotonComprar.textContent = "Comprar";
+            nuevoBotonComprar.addEventListener('click', () => {
+               console.log("soy boton", nuevoBotonComprar)
+            });
+            articulosCarrito.appendChild(nuevoBotonComprar);
+        }    
     } else {
         totalCarrito.innerHTML = "El carrito está vacio 😢"
     }
 
-    totalCarrito.id = 'totalCarrito';
-    articulosCarrito.appendChild(totalCarrito);
 }
 
 function eliminarProducto(index) {
