@@ -398,7 +398,7 @@ const productos = [
         desc: "Logitech S150 ofrece un sonido natural, con una gran claridad y precisión, que se dispersa de manera uniforme. Un parlante que asegura potencia y calidad por igual en la reproducción de contenidos multimedia.",
         categoria: "parlantes",
         cantidad: 1,
-    },    
+    },
 ]
 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -426,11 +426,10 @@ const detalleProducto = document.querySelector("#detalleProducto");
 const containerDetalle = document.querySelector("#containerDetalle");
 const slider = document.querySelector("#slider")
 const bannerMiddle = document.querySelector("#bannerMiddle")
+const logoInicio = document.querySelector("#inicio")
 
 
 function mostrarCategorias(categoria, orden) {
-
-    console.log("Mostrando productos de la categoría:", categoria);
 
     carousel.style.display = 'none';
     dataInfo.classList.remove('hidden');
@@ -465,7 +464,7 @@ function mostrarCategorias(categoria, orden) {
         <button class="producto-card" data-id="${producto.id}">
         <img class="w-36 object-cover mb-2 mx-auto rounded-t" src="${producto.image}" alt="${producto.nombre}"> 
         <h2 class="text-sm mb-1 text-center">${producto.nombre}</h2>
-        <p class="font-bold text-sm mt-10">Precio: $${producto.precio}</p>          
+        <p class="font-bold text-lg mt-10">Precio: $${producto.precio}</p>          
         </button>
         </div>
         `;
@@ -521,7 +520,7 @@ function mostrarCategorias(categoria, orden) {
                 cantidadElement.textContent = producto.cantidad;
             });
 
-            modal.addEventListener('click', function (event) { //cantidad
+            modal.addEventListener('click', function (event) {
                 if (event.target.id === 'btnAgregar') {
                     const cantidadSeleccionada = productos[producto.id].cantidad;
                     agregarProducto(producto, cantidadSeleccionada);
@@ -688,8 +687,6 @@ function mostrarFiltros(categoria) {
 
 function agregarProducto(producto, cantidad) {
 
-    console.log(producto, cantidad)
-
     const productoEnCarrito = carrito.find((el) => el.id === producto.id);
 
     if (productoEnCarrito) {
@@ -837,19 +834,76 @@ function mostrarProductosFiltrados(productosFiltrados) {
     if (hayCoincidencia) {
         productosFiltrados.forEach(producto => {
             const productoElemento = document.createElement('div');
-            productoElemento.className = 'bg-white rounded-lg shadow-xl hover:shadow-gray-500 p-8 m-4 flex flex-col items-center border border-slate-400'
+            productoElemento.className = 'bg-white rounded-lg shadow-xl hover:shadow-gray-500 border-double border-4 hover:border-indigo-600 p-8 m-4 flex flex-col items-center border border-slate-400'
             productoElemento.innerHTML = `        
             <div class="flex flex-col items-center w-32 h-64">
-            <button>
+            <button class="producto-card" data-id="${producto.id}">
             <img class="w-36 object-cover mb-2 mx-auto rounded-t" src="${producto.image}" alt="${producto.nombre}"> 
             <h2 class="text-sm mb-1 text-center">${producto.nombre}</h2>
-            <p class="font-bold text-sm mt-10">Precio: $${producto.precio}</p>          
+            <p class="font-bold text-lg mt-10">Precio: $${producto.precio}</p>          
             </button>
             </div>
             `;
 
+            const botonProducto = productoElemento.querySelector('.producto-card');
+            botonProducto.addEventListener('click', () => {
+                Swal.fire({
+                    title: producto.nombre,
+                    html: `
+            <div class="flex">
+                <img src="${producto.image}" alt="foto de ${producto.nombre}" class="" style="max-height: 350px;"> 
+                <div>
+                     <p class="font-bold text-3xl text-blue-500 text-left">$ ${producto.precio}</p>
+                    <div class="flex items-center mt-8">                        
+                        <button class="bg-gray-200 px-2.5 py-1 rounded-l hover:bg-gray-300 decrease-btn">-</button>
+                        <span class="mx-2 cantidad">${producto.cantidad}</span>
+                        <button class="bg-gray-200 px-2 py-1 rounded-r hover:bg-gray-300 increase-btn">+</button>
+                    </div>
+                    <p class="mt-8 font-bold text-left text-black">Descripción</p>
+                    <p class="mt-2 text-sm text-left mb-16">${producto.desc}</p>                   
+                        <button id="btnAgregar" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded 11">Agregar al carrito</button>
+                </div>
+            </div>
+        `,
+                    imageHeight: 350,
+                    width: 950,
+                    imageAlt: 'A tall image',
+                    customClass: {
+                        title: 'ml-64 font-bold text-black text-3xl w-1/2'
+                    },
+                    allowOutsideClick: false,
+                    showCloseButton: true,
+                    showConfirmButton: false,
+                })
+
+                const modal = document.querySelector('.swal2-modal');
+                const decreaseBtn = modal.querySelector('.decrease-btn');
+                const increaseBtn = modal.querySelector('.increase-btn');
+                const cantidadElement = modal.querySelector('.cantidad');
+
+
+                decreaseBtn.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    if (producto.cantidad > 1) {
+                        producto.cantidad--;
+                        cantidadElement.textContent = producto.cantidad;
+                    }
+                });
+
+                increaseBtn.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    producto.cantidad++;
+                    cantidadElement.textContent = producto.cantidad;
+                });
+
+                modal.addEventListener('click', function (event) {
+                    if (event.target.id === 'btnAgregar') {
+                        const cantidadSeleccionada = productos[producto.id].cantidad;
+                        agregarProducto(producto, cantidadSeleccionada);
+                    }
+                });
+            });
             productosContainer.appendChild(productoElemento);
-            mostrarFiltros();
         })
     } else {
         ocultarFiltro();
@@ -858,7 +912,7 @@ function mostrarProductosFiltrados(productosFiltrados) {
     }
 }
 
-function ocultarFiltro(){
+function ocultarFiltro() {
     contenedorFiltros.classList.add('hidden');
 }
 
@@ -901,6 +955,8 @@ carritoCompras.addEventListener("click", () => {
 
 botonBuscar.addEventListener("click", function () {
     const textoIngresado = inputBuscador.value.toLowerCase();
+    const categoria = inputBuscador.value.toLowerCase();
+    mostrarFiltros(categoria);
 
 
     if (textoIngresado !== "") {
@@ -910,7 +966,7 @@ botonBuscar.addEventListener("click", function () {
             return coincideNombre || coincideCategoria;
         });
 
-        mostrarProductosFiltrados(productosFiltrados)
+        mostrarProductosFiltrados(productosFiltrados);
         bannerMiddle.classList.add('hidden');
     }
 })
@@ -918,6 +974,8 @@ botonBuscar.addEventListener("click", function () {
 inputBuscador.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
         const textoIngresado = inputBuscador.value.toLowerCase();
+        const categoria = inputBuscador.value.toLowerCase();
+        mostrarFiltros(categoria);
 
         if (textoIngresado !== "") {
             const productosFiltrados = productos.filter((producto) => {
@@ -958,18 +1016,35 @@ volverBtn.addEventListener('click', () => {
     bannerMiddle.classList.remove('hidden');
 });
 
+logoInicio.addEventListener("click", () => {
+    productosContainer.innerHTML = '';
 
-window.onload=function(){
+    carousel.style.display = 'block';
+    dataInfo.classList.add('hidden');
+    botonAuriculares.style.display = 'block';
+    botonMouse.style.display = 'block';
+    botonTeclado.style.display = 'block';
+    botonWebcam.style.display = 'block';
+    botonParlantes.style.display = 'block';
+    volverBtn.classList.add('hidden');
+    textoCategoria.style.display = 'block';
+    textoCategoria.style.textAlign = 'center';
+    contenedorFiltros.classList.add('hidden');
+    noEncontrado.classList.add('hidden');
+    bannerMiddle.classList.remove('hidden');
+});
+
+
+window.onload = function () {
     $('#slider').slick({
-    autoplay:true,
-    autoplaySpeed:2000,
-    arrows:false,
-    prevArrow:'<button type="button" class="slick-prev"></button>',
-    nextArrow:'<button type="button" class="slick-next"></button>',
-    centerMode:true,
-    slidesToShow:4,
-    slidesToScroll:5
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false,
+        prevArrow: '<button type="button" class="slick-prev"></button>',
+        nextArrow: '<button type="button" class="slick-next"></button>',
+        centerMode: true,
+        slidesToShow: 4,
+        slidesToScroll: 5
     });
-  };
+};
 
-  

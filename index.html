@@ -8,9 +8,9 @@
         content="Explora la mejor selección de productos de computación en nuestra tienda en línea. Encuentra laptops, PCs, componentes, accesorios y más. ¡Potencia tu mundo digital con nuestras ofertas y calidad.">
     <meta name="keywords" content="computadoras de escritorio, laptops, teclados, mouse, auriculares">
     <link rel="shorcut icon" href="./assets/images/favicon-16x16.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="./src/output.css" rel="stylesheet">
     <title>E-TechUniverse - Ecommerce</title>
@@ -19,19 +19,21 @@
 <body class="m-0 p-0 h-screen bg-slate-300">
     <header>
         <nav
-            class="flex items-center bg-[#FBFBFB] py-2 text-white shadow-lg hover:text-neutral-700 focus:text-neutral-700 bg-indigo-600 lg:py-4">
+            class="flex items-center bg-[#FBFBFB] py-2 text-white shadow-lg hover:text-neutral-700 focus:text-neutral-700 bg-indigo-600 ">
             <div class="flex items-center justify-between space-x-5 px-3 w-full">
 
                 <div class="lg:mr-auto">
-                    <img class="w-32 transition-transform transform hover:scale-110 xs:hidden lg:block"
-                        src="./assets/images/logo3.png" alt="logo de e-techuniverse">
+                    <button id="inicio">
+                        <img class="w-32 transition-transform transform hover:scale-110 xs:hidden lg:block"
+                            src="./assets/images/logo3.png" alt="logo de e-techuniverse">
+                    </button>
                 </div>
 
                 <div class="flex items-center justify-center w-full">
                     <div class="grow-[0.5]">
                         <input type="text" id="buscador"
                             class="w-full rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] placeholder-neutral-200 focus:outline-none focus:border-2 dark:text-white"
-                            placeholder="Buscar productos..." aria-label="buscador" aria-describedby="button-addon2" />
+                            placeholder="Buscar productos..." aria-label="buscador" aria-describedby="button-addon2">
                     </div>
                     <button id="botonBuscar"
                         class="input-group-text flex items-center whitespace-nowrap rounded px-2 py-2 text-center text-base font-normal text-neutral-700 dark:text-neutral-200 bg-gray-700 hover:bg-gray-600">
@@ -45,7 +47,7 @@
 
                 <div>
                     <button id="mostrarProductos">
-                        <img class="w-8" src="./assets/images/cart.png" alt="icono de carrito de compras" />
+                        <img class="w-8" src="./assets/images/cart.png" alt="icono de carrito de compras">
                         <span id="contadorCarrito"
                             class="bg-red-500 text-white text-xs rounded-full px-2 py-1 xs:-top-1 lg:top-8 absolute hidden"></span>
                         <div id="sidenav-7"
@@ -62,16 +64,36 @@
         </nav>
         <div class="bg-indigo-600">
             <ul class="flex justify-center ">
-                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110"
-                        data-categoria="auriculares">Auriculares</button></li>
-                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110"
-                        data-categoria="mouse">Mouse</button></li>
-                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110"
-                        data-categoria="teclado">Teclado</button></li>
-                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110"
-                        data-categoria="webcam">WebCam</button></li>
-                <li class="mx-5 text-white mb-1"><button class="categoria-btn hover:scale-110"
-                        data-categoria="parlantes">Parlantes</button></li>
+                <li class="mx-5 text-white mb-1 flex flex-col items-center hover:scale-110">
+                    <button class="categoria-btn" data-categoria="teclado">
+                        <img class="w-6" src="./assets/images/headphones.png" alt="icono auriculares">
+                    </button>
+                    <button class="categoria-btn" data-categoria="auriculares">Auriculares</button>
+                </li>
+                <li class="mx-5 text-white mb-1 flex flex-col items-center hover:scale-110">
+                    <button class="categoria-btn" data-categoria="teclado">
+                        <img class="w-6" src="./assets/images/mouse.png" alt="icono mouse">
+                    </button>
+                    <button class="categoria-btn" data-categoria="mouse">Mouse</button>
+                </li>
+                <li class="mx-5 text-white mb-1 flex flex-col items-center hover:scale-110">
+                    <button class="categoria-btn" data-categoria="teclado">
+                        <img class="w-6" src="./assets/images/keyboard.png" alt="icono teclado">
+                    </button>
+                    <button class="categoria-btn" data-categoria="teclado">Teclado</button>
+                </li>
+                <li class="mx-5 text-white mb-1 flex flex-col items-center hover:scale-110">
+                    <button class="categoria-btn" data-categoria="teclado">
+                        <img class="w-6" src="./assets/images/webcam.png" alt="icono webcam">
+                    </button>
+                    <button class="categoria-btn" data-categoria="webcam">WebCam</button>
+                </li>
+                <li class="mx-5 text-white mb-1 flex flex-col items-center hover:scale-110">
+                    <button class="categoria-btn" data-categoria="teclado">
+                        <img class="w-6" src="./assets/images/speakers.png" alt="icono teclado">
+                    </button>
+                    <button class="categoria-btn" data-categoria="parlantes">Parlantes</button>
+                </li>
             </ul>
         </div>
     </header>
@@ -83,22 +105,22 @@
 
                 <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item data-te-carousel-active>
-                    <img src="./assets/images/img1.webp" class="block w-full" alt="imagen de discos rigidos" />
+                    <img src="./assets/images/img1.webp" class="block w-full" alt="imagen de discos rigidos">
                 </div>
 
                 <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item>
-                    <img src="./assets/images/img3.webp" class="block w-full" alt="imagen de tlecado mecánico" />
+                    <img src="./assets/images/img3.webp" class="block w-full" alt="imagen de tlecado mecánico">
                 </div>
 
                 <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item>
-                    <img src="./assets/images/img2.webp" class="block w-full" alt="imagen de placa de video" />
+                    <img src="./assets/images/img2.webp" class="block w-full" alt="imagen de placa de video">
                 </div>
 
                 <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item>
-                    <img src="./assets/images/img4.webp" class="block w-full" alt="imagen de cpu" />
+                    <img src="./assets/images/img4.webp" class="block w-full" alt="imagen de cpu">
                 </div>
             </div>
 
@@ -132,7 +154,7 @@
         <div class="bg-white p-5 xs:hidden md:block md:flex flex-col md:flex-row items-center justify-around"
             id="dataPagos">
             <div class="flex items-center">
-                <img class="w-10" src="./assets/images/card.svg">
+                <img class="w-10" src="./assets/images/card.svg" alt="icono tarjeta crédito">
                 <p class="text-sm font-semibold ml-2">
                     Formas de pago<br>
                     3, 6, 12 y 18 cuotas
@@ -140,14 +162,14 @@
             </div>
 
             <div class="flex items-center">
-                <img class="w-10" src="./assets/images/truck.svg">
+                <img class="w-10" src="./assets/images/truck.svg" alt="icono camión envio">
                 <p class="text-sm font-semibold ml-2">
                     Envios a todo el país
                 </p>
             </div>
 
             <div class="flex items-center">
-                <img class="w-10" src="./assets/images/clock.svg">
+                <img class="w-10" src="./assets/images/clock.svg" alt="icono reloj">
                 <p class="text-sm font-semibold ml-2">
                     Horarios de atención<br>
                     L a V 9 a 13hs / 14 a 17 hs
@@ -158,7 +180,7 @@
         <H5 class="underline decoration-2 font-semibold text-lg m-8 flex justify-center" id="textoCategoria">CATEGORIAS:
         </H5>
         <button id="volverBtn"
-            class="hidden text-black hover:text-blue-700 underline underline-offset-1 font-bold py-2 px-4 mt-3 ml-8">Volver
+            class="volverBtn hidden text-black hover:text-blue-700 underline underline-offset-1 font-bold py-2 px-4 mt-3 ml-8">Volver
             atrás</button>
 
         <div class="grid grid-cols-1">
@@ -220,9 +242,9 @@
                     </button>
             </div>
         </div>
-        
+
         <div id="bannerMiddle" class="my-16 px-8">
-            <img src="./assets/images/bannermiddle.webp" class="rounded-md">
+            <img src="./assets/images/bannermiddle.webp" class="rounded-md" alt="imagen banner tecnología">
         </div>
 
         <div id="noEncontrado" class="hidden flex justify-center"></div>
@@ -239,22 +261,22 @@
 
     <div id="slider" class="bg-white mb-10 px-10">
         <div class="py-15">
-            <img src="./assets/images/braun.webp" alt="" class="mx-11 w-32" />            
+            <img src="./assets/images/braun.webp" alt="logo braun" class="mx-11 w-32">
         </div>
         <div class="py-1">
-            <img src="./assets/images/genius.webp" alt="" class="mx-11 w-28" />            
+            <img src="./assets/images/genius.webp" alt="logo genius" class="mx-11 w-28">
         </div>
         <div class=" py-15">
-            <img src="./assets/images/jbl.webp" alt="" class="mx-11 w-32" />            
+            <img src="./assets/images/jbl.webp" alt="logo jbl" class="mx-11 w-32">
         </div>
         <div class="py-15">
-            <img src="./assets/images/logitech.webp" alt="" class="mx-11 w-32" />           
+            <img src="./assets/images/logitech.webp" alt="logo logitech" class="mx-11 w-32">
         </div>
         <div class="py-15">
-            <img src="./assets/images/noga.webp" alt="" class="mx-11 w-32" />           
+            <img src="./assets/images/noga.webp" alt="logo noga" class="mx-11 w-32">
         </div>
         <div class="py-15">
-            <img src="./assets/images/redragon.webp" alt="" class="mx-11 w-32" />           
+            <img src="./assets/images/redragon.webp" alt="logo redragon" class="mx-11 w-32">
         </div>
     </div>
 
@@ -283,11 +305,23 @@
                     <h6 class="mb-4 flex justify-center text-sm font-semibold uppercase md:justify-start">
                         Productos
                     </h6>
-                    <p class="mb-2 text-sm">Auriculares</p>
-                    <p class="mb-2 text-sm">Mouse</p>
-                    <p class="mb-2 text-sm">Teclado</p>
-                    <p class="mb-2 text-sm">WebCam</p>
-                    <p class="text-sm">Parlantes</p>
+                    <ul>
+                        <li class="text-white text-sm mb-1">
+                            <button class="categoria-btn" data-categoria="auriculares">Auriculares</button>
+                        </li>
+                        <li class="text-white text-sm mb-1">
+                            <button class="categoria-btn" data-categoria="mouse">Mouse</button>
+                        </li>
+                        <li class="text-white text-sm mb-1">
+                            <button class="categoria-btn" data-categoria="teclado">Teclado</button>
+                        </li>
+                        <li class="text-white text-sm mb-1">
+                            <button class="categoria-btn" data-categoria="webcam">WebCam</button>
+                        </li>
+                        <li class="text-white text-sm mb-1">
+                            <button class="categoria-btn" data-categoria="parlantes">Parlantes</button>
+                        </li>
+                    </ul>
                 </div>
 
                 <div>
@@ -366,8 +400,8 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
