@@ -427,7 +427,7 @@ const containerDetalle = document.querySelector("#containerDetalle");
 const slider = document.querySelector("#slider");
 const bannerMiddle = document.querySelector("#bannerMiddle");
 const logoInicio = document.querySelector("#inicio");
-
+const botonComprar = document.querySelector("#btnComprar");
 
 
 
@@ -747,9 +747,7 @@ function barraLateral() {
 };
 
 function mostrarProductosEnCarrito() {
-    const articulosCarrito = document.querySelector("#listaCarrito");
-    const botonComprar = document.querySelector("#btnComprar")
-
+    const articulosCarrito = document.querySelector("#listaCarrito");   
 
     articulosCarrito.innerHTML = "";
 
@@ -780,17 +778,49 @@ function mostrarProductosEnCarrito() {
         if (!botonComprar) {
             const nuevoBotonComprar = document.createElement('button');
             nuevoBotonComprar.id = "btnComprar";
-            nuevoBotonComprar.className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 w-44 rounded mt-5";
+            nuevoBotonComprar.className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 w-44 mx-5 rounded mt-5 flex self-center";
             nuevoBotonComprar.textContent = "Comprar";
+            nuevoBotonComprar.style.display = "block";
             nuevoBotonComprar.addEventListener('click', () => {
-               console.log("soy boton", nuevoBotonComprar)
+               pagarConMercadoPago()             
             });
             articulosCarrito.appendChild(nuevoBotonComprar);
         }    
     } else {
-        totalCarrito.innerHTML = "El carrito está vacio 😢"
+        totalCarrito.innerHTML = "El carrito está vacio 😢"       
     }
 
+}
+
+async function pagarConMercadoPago() {
+    const items = carrito.map((producto) => {
+        return {
+            title: producto.nombre,
+            description: producto.descripcion,
+            quantity: producto.cantidad,
+            currency_id: 'ARS',
+            unit_price: producto.precio,
+        };
+    });
+
+    try {
+        const response = await fetch('https://api.mercadopago.com/checkout/preferences', {
+            method: 'POST',
+            headers: {
+                Authorization: "Bearer TEST-8833293876625925-081318-eee760da7dbe58f4a684f933b7f48738-23398645",
+            },
+            body: JSON.stringify({
+                items: items,
+            }),
+        });
+
+        const preference = await response.json();
+              window.open(preference.init_point, '_blank'); 
+              borrarCarrito()            
+              actualizaContador()
+    } catch (error) {
+        console.error('Error al crear la preferencia de pago:', error);
+    }
 }
 
 function eliminarProducto(index) {
@@ -809,6 +839,12 @@ function eliminarProducto(index) {
 
 }
 
+function borrarCarrito() {    
+	carrito = [];
+	localStorage.clear();
+}
+
+
 function actualizaContador() {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -821,7 +857,7 @@ function actualizaContador() {
     contadorCarrito.innerText = totalCantidadCarrito;
 
     if (totalCantidadCarrito > 0) {
-        contadorCarrito.classList.remove("hidden");
+        contadorCarrito.classList.remove("hidden");        
     } else {
         contadorCarrito.classList.add("hidden");
     }
