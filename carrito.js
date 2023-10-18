@@ -1,3 +1,9 @@
+import {
+    Carousel,
+    initTE,
+  } from "tw-elements";
+
+
 const productos = [
     {
         id: 0,
@@ -1112,3 +1118,4 @@ window.onload = function () {
     });
 };
 
+initTE({ Carousel });
