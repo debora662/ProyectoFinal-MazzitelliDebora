@@ -443,8 +443,9 @@ function mostrarCategorias(categoria, orden) {
     botonParlantes.style.display = 'none';
     textoCategoria.style.display = 'none';
     volverBtn.classList.remove('hidden');
-    bannerMiddle.style.display = "none"
-
+    contenedorFiltros.style.display = "block";
+    bannerMiddle.style.display = "none";
+    
     productosContainer.innerHTML = '';
 
     let productosCategoria = productos.filter(producto => producto.categoria === categoria);
@@ -572,7 +573,7 @@ function mostrarFiltros(categoria) {
 
     contenedorFiltros.innerHTML = '';
 
-    const cuotas = document.createElement("div");
+    const cuotas = document.createElement("div");    
     cuotas.innerHTML = "⭐ ¡12 cuotas sin interés!";
     cuotas.className = "text-sm font-bold mb-8"
 
@@ -747,7 +748,7 @@ function barraLateral() {
 };
 
 function mostrarProductosEnCarrito() {
-    const articulosCarrito = document.querySelector("#listaCarrito");   
+    const articulosCarrito = document.querySelector("#listaCarrito");
 
     articulosCarrito.innerHTML = "";
 
@@ -768,9 +769,9 @@ function mostrarProductosEnCarrito() {
 
 
     const totalCarrito = document.createElement('div');
-    totalCarrito.classList.add('text-white', 'font-bold');    
+    totalCarrito.classList.add('text-white', 'font-bold');
     const total = calcularTotalCarrito();
-    totalCarrito.innerHTML = `TOTAL:$${calcularTotalCarrito()}`   
+    totalCarrito.innerHTML = `TOTAL:$${calcularTotalCarrito()}`
     totalCarrito.id = 'totalCarrito';
     articulosCarrito.appendChild(totalCarrito);
 
@@ -782,12 +783,12 @@ function mostrarProductosEnCarrito() {
             nuevoBotonComprar.textContent = "Comprar";
             nuevoBotonComprar.style.display = "block";
             nuevoBotonComprar.addEventListener('click', () => {
-               pagarConMercadoPago()             
+                pagarConMercadoPago()
             });
             articulosCarrito.appendChild(nuevoBotonComprar);
-        }    
+        }
     } else {
-        totalCarrito.innerHTML = "El carrito está vacio 😢"       
+        totalCarrito.innerHTML = "El carrito está vacio 😢"
     }
 
 }
@@ -815,9 +816,9 @@ async function pagarConMercadoPago() {
         });
 
         const preference = await response.json();
-              window.open(preference.init_point, '_blank'); 
-              borrarCarrito()            
-              actualizaContador()
+        window.open(preference.init_point, '_blank');
+        borrarCarrito()
+        actualizaContador()
     } catch (error) {
         console.error('Error al crear la preferencia de pago:', error);
     }
@@ -839,9 +840,9 @@ function eliminarProducto(index) {
 
 }
 
-function borrarCarrito() {    
-	carrito = [];
-	localStorage.clear();
+function borrarCarrito() {
+    carrito = [];
+    localStorage.clear();
 }
 
 
@@ -857,7 +858,7 @@ function actualizaContador() {
     contadorCarrito.innerText = totalCantidadCarrito;
 
     if (totalCantidadCarrito > 0) {
-        contadorCarrito.classList.remove("hidden");        
+        contadorCarrito.classList.remove("hidden");
     } else {
         contadorCarrito.classList.add("hidden");
     }
@@ -883,7 +884,9 @@ function mostrarProductosFiltrados(productosFiltrados) {
     textoCategoria.style.display = 'none';
     volverBtn.classList.remove('hidden')
     bannerMiddle.style.display = "none";
-    
+    contenedorFiltros.style.display = "block"
+
+
     productosContainer.innerHTML = "";
 
     const hayCoincidencia = productosFiltrados.length > 0;
@@ -967,15 +970,16 @@ function mostrarProductosFiltrados(productosFiltrados) {
         ocultarFiltro();
         noEncontrado.classList.remove('hidden');
         noEncontrado.innerHTML = '<p class="bg-white rounded-lg p-20 text-center">No se encontraron productos que coincidan con la búsqueda.</p>';
-        
+
     }
 }
 
 function ocultarFiltro() {
-    contenedorFiltros.classList.add('hidden');  
+    contenedorFiltros.classList.add('hidden');
 }
 
 sidenav.style.transform = "translateX(100%)";
+
 
 botonAuriculares.addEventListener('click', () => {
     const categoria = botonAuriculares.getAttribute(`data-categoria`);
@@ -1051,7 +1055,7 @@ inputBuscador.addEventListener("keypress", function (e) {
 botonesCategoria.forEach(boton => {
     boton.addEventListener("click", function () {
         noEncontrado.innerHTML = "";
-        const categoria = boton.getAttribute(`data-categoria`);        
+        const categoria = boton.getAttribute(`data-categoria`);
         mostrarCategorias(categoria);
         mostrarFiltros(categoria);
     })
@@ -1071,9 +1075,10 @@ volverBtn.addEventListener('click', () => {
     volverBtn.classList.add('hidden');
     textoCategoria.style.display = 'block';
     textoCategoria.style.textAlign = 'center';
-    contenedorFiltros.classList.add('hidden');
+    contenedorFiltros.style.display = "none";
     noEncontrado.classList.add('hidden');
-    bannerMiddle.style.display = "block";
+    bannerMiddle.style.display = "block";    
+
 });
 
 logoInicio.addEventListener("click", () => {
@@ -1090,8 +1095,7 @@ logoInicio.addEventListener("click", () => {
     textoCategoria.style.display = 'block';
     textoCategoria.style.textAlign = 'center';
     contenedorFiltros.classList.add('hidden');
-    noEncontrado.classList.add('hidden');
-    bannerMiddle.classList.remove('hidden');
+    noEncontrado.classList.add('hidden');    
 });
 
 

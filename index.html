@@ -99,7 +99,8 @@
     </header>
 
     <main>
-        <div id="carouselExampleControls" class="relative" data-te-carousel-init data-te-ride="carousel">
+        <div id="carouselExampleControls" class="relative xs:hidden md:block" data-te-carousel-init
+            data-te-ride="carousel">
 
             <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
 
@@ -243,13 +244,9 @@
             </div>
         </div>
 
-        <div id="bannerMiddle" class="my-16 px-8 xs:hidden lg:block">
-            <img src="./assets/images/bannermiddle.webp" class="rounded-md" alt="imagen banner tecnología">
-        </div>
-
         <div id="noEncontrado" class="hidden flex justify-center"></div>
         <div class="flex flex-col lg:flex-row">
-            <div class="hidden bg-white w-96 h-72 flex flex-col ml-10 p-8 rounded-lg shadow-xl hover:shadow-gray-500 xs:flex flex-wrap"
+            <div class="xs:hidden lg:hidden w-96 h-72 ml-12 bg-white flex flex-col p-8 rounded-lg shadow-xl hover:shadow-gray-500"
                 id="contenedorFiltros">
             </div>
 
@@ -257,6 +254,11 @@
                 class="flex flex-wrap items-center justify-center xl:grid-cols-4 gap-2 p-4 mb-8">
             </div>
         </div>
+
+        <div id="bannerMiddle" class="my-16 px-8 lg:block">
+            <img src="./assets/images/bannermiddle.webp" class="rounded-md" alt="imagen banner tecnología">
+        </div>
+
     </main>
 
     <div id="slider" class="bg-white mb-10 px-10">
