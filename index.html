@@ -100,59 +100,33 @@
     </header>
 
     <main>
-        <div id="default-carousel" class="relative w-full" data-carousel="slide">
+        <div id="default-carousel" class="relative xs:hidden md:block" data-te-carousel-init
+        data-te-ride="carousel">
 
-            <div class="relative overflow-hidden">
+        <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
 
-                <div class="relative float-left -mr-[100%] w-full transition-transform duration-[100ms] ease-in-out motion-reduce:transition-none"
-                    data-carousel-item>
-                    <img src="./assets/images/img1.webp" class="block w-full" alt="imagen de cpu">
-                </div>
-
-                <div class="relative float-left -mr-[100%] w-full transition-transform duration-[1000ms] ease-in-out motion-reduce:transition-none"
-                    data-carousel-item>
-                    <img src="./assets/images/img2.webp" class="block w-full" alt="imagen de placa de video">
-                </div>
-
-                <div class="relative float-left -mr-[100%] w-full transition-transform duration-[1000ms] ease-in-out motion-reduce:transition-none"
-                    data-carousel-item>
-                    <img src="./assets/images/img3.webp" class="block w-full" alt="imagen de teclado">
-                </div>
-
-                <div class="relative float-left -mr-[100%] w-full transition-transform duration-[1000ms] ease-in-out motion-reduce:transition-none"
-                    data-carousel-item>
-                    <img src="./assets/images/img4.webp" class="block w-full" alt="imagen de discos rigidos">
-                </div>
+            <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                data-te-carousel-item data-te-carousel-active>
+                <img src="./assets/images/img1.webp" class="block w-full" alt="imagen de discos rigidos">
             </div>
 
-            <button type="button"
-                class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                data-carousel-prev>
-                <span
-                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 1 1 5l4 4" />
-                    </svg>
-                    <span class="sr-only">Previous</span>
-                </span>
-            </button>
-            <button type="button"
-                class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                data-carousel-next>
-                <span
-                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 9 4-4-4-4" />
-                    </svg>
-                    <span class="sr-only">Next</span>
-                </span>
-            </button>
-        </div>
+            <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                data-te-carousel-item>
+                <img src="./assets/images/img3.webp" class="block w-full" alt="imagen de tlecado mecánico">
+            </div>
 
+            <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                data-te-carousel-item>
+                <img src="./assets/images/img2.webp" class="block w-full" alt="imagen de placa de video">
+            </div>
+
+            <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                data-te-carousel-item>
+                <img src="./assets/images/img4.webp" class="block w-full" alt="imagen de cpu">
+            </div>
+        </div>        
+    </div>
+       
         <div class="bg-white p-5 xs:hidden md:block md:flex flex-col md:flex-row items-center justify-around"
             id="dataPagos">
             <div class="flex items-center">
