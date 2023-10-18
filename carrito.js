@@ -1,9 +1,3 @@
-import {
-    Carousel,
-    initTE,
-  } from "tw-elements";
-
-
 const productos = [
     {
         id: 0,
@@ -423,7 +417,7 @@ const carritoCompras = document.querySelector("#mostrarProductos");
 const sidenav = document.querySelector("#sidenav-7");
 const inputBuscador = document.querySelector("#buscador");
 const botonBuscar = document.querySelector("#botonBuscar");
-const carousel = document.querySelector("#carouselExampleControls");
+const carousel = document.querySelector("#default-carousel");
 const dataInfo = document.querySelector("#dataPagos");
 const botonesCategoria = document.querySelectorAll(".categoria-btn");
 const contenedorFiltros = document.querySelector("#contenedorFiltros");
@@ -1117,5 +1111,3 @@ window.onload = function () {
         slidesToScroll: 5
     });
 };
-
-initTE({ Carousel });

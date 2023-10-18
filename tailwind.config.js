@@ -14,6 +14,5 @@ export const theme = {
       'xs': '320px',
     },
   },
-};
- 
+}; 
 
