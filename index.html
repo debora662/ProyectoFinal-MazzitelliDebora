@@ -8,10 +8,11 @@
         content="Explora la mejor selección de productos de computación en nuestra tienda en línea. Encuentra laptops, PCs, componentes, accesorios y más. ¡Potencia tu mundo digital con nuestras ofertas y calidad.">
     <meta name="keywords" content="computadoras de escritorio, laptops, teclados, mouse, auriculares">
     <link rel="shorcut icon" href="./assets/images/favicon-16x16.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">  
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
     <link href="./src/output.css" rel="stylesheet">
     <title>E-TechUniverse - Ecommerce</title>
@@ -100,7 +101,7 @@
     </header>
 
     <main>
-        <div id="default-carousel" class="relative xs:hidden md:block" data-te-carousel-init
+         <div id="default-carousel" class="relative xs:hidden md:block" data-te-carousel-init
         data-te-ride="carousel">
 
         <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
@@ -151,8 +152,50 @@
             <span
                 class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span>
         </button>
-    </div>
+    </div> 
+
+
+
+    <!-- <div id="controls-carousel" class="relative w-full" data-carousel="static">
        
+        <div class="relative h-96 overflow-hidden">
+            
+            <div class="hidden duration-4000 ease-in-out" data-carousel-item>
+                <img src="./assets/images/img1.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            
+            <div class="hidden duration-4000 ease-in-out" data-carousel-item="active">
+                <img src="./assets/images/img2.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+           
+            <div class="hidden duration-4000 ease-in-out" data-carousel-item>
+                <img src="./assets/images/img3.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            
+            <div class="hidden duration-4000 ease-in-out" data-carousel-item>
+                <img src="./assets/images/img4.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+           
+        </div>
+       
+        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div> -->
+            
         <div class="bg-white p-5 xs:hidden md:block md:flex flex-col md:flex-row items-center justify-around"
             id="dataPagos">
             <div class="flex items-center">
@@ -407,7 +450,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script> 
     <script src="carrito.js"></script>
 </body>
 
