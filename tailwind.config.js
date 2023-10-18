@@ -15,5 +15,5 @@ export const theme = {
     },
   },
 };
-export const plugins = [require("tw-elements/dist/plugin.cjs")];
+ export const plugins = [require("tw-elements/dist/plugin.cjs")]; 
 
