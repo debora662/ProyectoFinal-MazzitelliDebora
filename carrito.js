@@ -417,7 +417,7 @@ const carritoCompras = document.querySelector("#mostrarProductos");
 const sidenav = document.querySelector("#sidenav-7");
 const inputBuscador = document.querySelector("#buscador");
 const botonBuscar = document.querySelector("#botonBuscar");
-const carousel = document.querySelector("#carouselExampleCaptions");
+/* const carousel = document.querySelector("#carouselExampleCaptions"); */
 const dataInfo = document.querySelector("#dataPagos");
 const botonesCategoria = document.querySelectorAll(".categoria-btn");
 const contenedorFiltros = document.querySelector("#contenedorFiltros");
@@ -434,7 +434,7 @@ const botonComprar = document.querySelector("#btnComprar");
 
 function mostrarCategorias(categoria, orden) {
 
-    carousel.style.display = 'none';
+   /*  carousel.style.display = 'none'; */
     dataInfo.classList.remove('hidden');
     botonAuriculares.style.display = 'none';
     botonMouse.style.display = 'none';
@@ -874,7 +874,7 @@ function carritoEnLocalStorage() {
 }
 
 function mostrarProductosFiltrados(productosFiltrados) {
-    carousel.style.display = 'none';
+    /* carousel.style.display = 'none'; */
     dataInfo.classList.remove('hidden');
     botonAuriculares.style.display = 'none';
     botonMouse.style.display = 'none';
@@ -1065,7 +1065,7 @@ volverBtn.addEventListener('click', () => {
 
     productosContainer.innerHTML = '';
 
-    carousel.style.display = 'block';
+   /*  carousel.style.display = 'block'; */
     dataInfo.classList.add('hidden');
     botonAuriculares.style.display = 'block';
     botonMouse.style.display = 'block';
@@ -1084,7 +1084,7 @@ volverBtn.addEventListener('click', () => {
 logoInicio.addEventListener("click", () => {
     productosContainer.innerHTML = '';
 
-    carousel.style.display = 'block';
+   /*  carousel.style.display = 'block'; */
     dataInfo.classList.add('hidden');
     botonAuriculares.style.display = 'block';
     botonMouse.style.display = 'block';
