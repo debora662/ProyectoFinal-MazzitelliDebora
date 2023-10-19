@@ -417,7 +417,7 @@ const carritoCompras = document.querySelector("#mostrarProductos");
 const sidenav = document.querySelector("#sidenav-7");
 const inputBuscador = document.querySelector("#buscador");
 const botonBuscar = document.querySelector("#botonBuscar");
-/* const carousel = document.querySelector("#carouselExampleCaptions"); */
+const carousel = document.querySelector("#carouselExampleIndicators");
 const dataInfo = document.querySelector("#dataPagos");
 const botonesCategoria = document.querySelectorAll(".categoria-btn");
 const contenedorFiltros = document.querySelector("#contenedorFiltros");
@@ -434,7 +434,7 @@ const botonComprar = document.querySelector("#btnComprar");
 
 function mostrarCategorias(categoria, orden) {
 
-   /*  carousel.style.display = 'none'; */
+    carousel.style.display = 'none';
     dataInfo.classList.remove('hidden');
     botonAuriculares.style.display = 'none';
     botonMouse.style.display = 'none';
@@ -445,7 +445,7 @@ function mostrarCategorias(categoria, orden) {
     volverBtn.classList.remove('hidden');
     contenedorFiltros.style.display = "block";
     bannerMiddle.style.display = "none";
-    
+
     productosContainer.innerHTML = '';
 
     let productosCategoria = productos.filter(producto => producto.categoria === categoria);
@@ -573,7 +573,7 @@ function mostrarFiltros(categoria) {
 
     contenedorFiltros.innerHTML = '';
 
-    const cuotas = document.createElement("div");    
+    const cuotas = document.createElement("div");
     cuotas.innerHTML = "⭐ ¡12 cuotas sin interés!";
     cuotas.className = "text-sm font-bold mb-8"
 
@@ -874,7 +874,7 @@ function carritoEnLocalStorage() {
 }
 
 function mostrarProductosFiltrados(productosFiltrados) {
-    /* carousel.style.display = 'none'; */
+    carousel.style.display = 'none';
     dataInfo.classList.remove('hidden');
     botonAuriculares.style.display = 'none';
     botonMouse.style.display = 'none';
@@ -1065,7 +1065,7 @@ volverBtn.addEventListener('click', () => {
 
     productosContainer.innerHTML = '';
 
-   /*  carousel.style.display = 'block'; */
+    carousel.style.display = 'block';
     dataInfo.classList.add('hidden');
     botonAuriculares.style.display = 'block';
     botonMouse.style.display = 'block';
@@ -1077,14 +1077,14 @@ volverBtn.addEventListener('click', () => {
     textoCategoria.style.textAlign = 'center';
     contenedorFiltros.style.display = "none";
     noEncontrado.classList.add('hidden');
-    bannerMiddle.style.display = "block";    
+    bannerMiddle.style.display = "block";
 
 });
 
 logoInicio.addEventListener("click", () => {
     productosContainer.innerHTML = '';
 
-   /*  carousel.style.display = 'block'; */
+    carousel.style.display = 'block';
     dataInfo.classList.add('hidden');
     botonAuriculares.style.display = 'block';
     botonMouse.style.display = 'block';
@@ -1095,7 +1095,7 @@ logoInicio.addEventListener("click", () => {
     textoCategoria.style.display = 'block';
     textoCategoria.style.textAlign = 'center';
     contenedorFiltros.classList.add('hidden');
-    noEncontrado.classList.add('hidden');    
+    noEncontrado.classList.add('hidden');
 });
 
 
