@@ -432,7 +432,7 @@ const botonComprar = document.querySelector("#btnComprar");
 
 
 
-function mostrarCategorias(categoria, orden) {
+function mostrarCategorias(categoria, nombreProducto, orden) {
 
     carousel.style.display = 'none';
     dataInfo.classList.remove('hidden');
@@ -448,7 +448,8 @@ function mostrarCategorias(categoria, orden) {
 
     productosContainer.innerHTML = '';
 
-    let productosCategoria = productos.filter(producto => producto.categoria === categoria);
+   /*  let productosCategoria = productos.filter(producto => producto.categoria === categoria); */
+    let productosCategoria = productos.filter(producto => producto.categoria === categoria || producto.nombre.toLowerCase().includes(nombreProducto.toLowerCase()));
 
     if (orden === 'menorPrecio') {
         productosCategoria = productosCategoria.sort(ordenarPorPrecioAscendente);
@@ -569,7 +570,7 @@ function ordenarNombreDescendente(a, b) {
     return 0;
 }
 
-function mostrarFiltros(categoria) {
+function mostrarFiltros(categoria, nombreProducto) {
 
     contenedorFiltros.innerHTML = '';
 
@@ -602,7 +603,7 @@ function mostrarFiltros(categoria) {
 
     inputMenorPrecio.addEventListener('change', function () {
         if (inputMenorPrecio.checked) {
-            mostrarCategorias(categoria, 'menorPrecio');
+            mostrarCategorias(categoria, nombreProducto, 'menorPrecio');
         }
     });
 
@@ -626,7 +627,7 @@ function mostrarFiltros(categoria) {
 
     inputMayorPrecio.addEventListener('change', function () {
         if (inputMayorPrecio.checked) {
-            mostrarCategorias(categoria, 'mayorPrecio');
+            mostrarCategorias(categoria, nombreProducto, 'mayorPrecio');
         }
     });
 
@@ -650,7 +651,7 @@ function mostrarFiltros(categoria) {
 
     inputAz.addEventListener('change', function () {
         if (inputAz.checked) {
-            mostrarCategorias(categoria, 'nombreAscendente');
+            mostrarCategorias(categoria, nombreProducto, 'nombreAscendente');
         }
     });
 
@@ -674,7 +675,7 @@ function mostrarFiltros(categoria) {
 
     inputZa.addEventListener('change', function () {
         if (inputZa.checked) {
-            mostrarCategorias(categoria, 'nombreDescendente');
+            mostrarCategorias(categoria, nombreProducto, 'nombreDescendente');
         }
     });
 
@@ -890,6 +891,7 @@ function mostrarProductosFiltrados(productosFiltrados) {
     productosContainer.innerHTML = "";
 
     const hayCoincidencia = productosFiltrados.length > 0;
+    
 
     if (hayCoincidencia) {
         noEncontrado.classList.add('hidden');
@@ -970,7 +972,6 @@ function mostrarProductosFiltrados(productosFiltrados) {
         ocultarFiltro();
         noEncontrado.classList.remove('hidden');
         noEncontrado.innerHTML = '<p class="bg-white rounded-lg p-20 text-center">No se encontraron productos que coincidan con la búsqueda.</p>';
-
     }
 }
 
@@ -1017,15 +1018,15 @@ carritoCompras.addEventListener("click", () => {
 });
 
 botonBuscar.addEventListener("click", function () {
-    const textoIngresado = inputBuscador.value.toLowerCase();
+    const nombreProducto = inputBuscador.value.toLowerCase();
     const categoria = inputBuscador.value.toLowerCase();
-    mostrarFiltros(categoria);
+    mostrarFiltros(categoria, nombreProducto);
 
 
-    if (textoIngresado !== "") {
+    if (nombreProducto !== "") {
         const productosFiltrados = productos.filter((producto) => {
-            const coincideNombre = producto.nombre.toLowerCase().includes(textoIngresado);
-            const coincideCategoria = producto.categoria.toLowerCase().includes(textoIngresado);
+            const coincideNombre = producto.nombre.toLowerCase().includes(nombreProducto);
+            const coincideCategoria = producto.categoria.toLowerCase().includes(nombreProducto);
             return coincideNombre || coincideCategoria;
         });
 
@@ -1036,14 +1037,14 @@ botonBuscar.addEventListener("click", function () {
 
 inputBuscador.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
-        const textoIngresado = inputBuscador.value.toLowerCase();
-        const categoria = inputBuscador.value.toLowerCase();
-        mostrarFiltros(categoria);
+        const nombreProducto = inputBuscador.value.toLowerCase();
+        const categoria = inputBuscador.value.toLowerCase();        
+        mostrarFiltros(categoria, nombreProducto);
 
-        if (textoIngresado !== "") {
+        if (nombreProducto !== "") {
             const productosFiltrados = productos.filter((producto) => {
-                const coincideNombre = producto.nombre.toLowerCase().includes(textoIngresado);
-                const coincideCategoria = producto.categoria.toLowerCase().includes(textoIngresado);
+                const coincideNombre = producto.nombre.toLowerCase().includes(nombreProducto);
+                const coincideCategoria = producto.categoria.toLowerCase().includes(nombreProducto);
                 return coincideNombre || coincideCategoria;
             })
             mostrarProductosFiltrados(productosFiltrados)
