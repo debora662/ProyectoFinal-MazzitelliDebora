@@ -11,7 +11,7 @@ const productos = [
     },
     {
         id: 1,
-        nombre: "Auriculares JBL 510T",
+        nombre: "Auriculares JBL PRO-git510T",
         image: "./assets/images/auris3.webp",
         precio: 7500,
         tags: ["auriculares", "inalambricos"],
