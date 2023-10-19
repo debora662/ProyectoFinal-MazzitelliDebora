@@ -131,7 +131,7 @@ const productos = [
     },
     {
         id: 13,
-        nombre: "Mouse Gamer Xtrike",
+        nombre: "Mouse Gamer Xtrike 510",
         image: "./assets/images/mouse6.webp",
         precio: 5600,
         tags: ["mouse", "inalambricos"],
