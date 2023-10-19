@@ -1106,3 +1106,11 @@ window.onload = function () {
         slidesToScroll: 5
     });
 };
+
+
+fetch('https://jsonplaceholder.typicode.com/debora662/JSON_ecommerce')
+      .then(response => response.json())
+      .then(json => console.log(json))
+
+
+      

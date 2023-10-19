@@ -1,0 +1,524 @@
+{
+    "productos" : [
+        {
+        "id": 0,
+        "nombre": "Auriculares Soul s600",
+        "image": "./assets/images/auris2.webp",
+        "precio": 5200,
+        "tags": [
+                "auriculares",
+                "inalambricos"
+            ],
+        "desc": "Sumérgete en la mejor experiencia auditiva con los Auriculares inalámbricos Soul S600 AUR-BT881 en elegante combinación de rosa y gris. Diseñados pensando en tu comodidad y estilo, estos auriculares On-ear se ajustan perfectamente a tus oídos, permitiéndote disfrutar de tu música favorita durante horas sin molestias.",
+        "categoria": "auriculares",
+        "cantidad": 1
+        },
+        {
+        "id": 1,
+        "nombre": "Auriculares JBL PRO-git510T",
+        "image": "./assets/images/auris3.webp",
+        "precio": 7500,
+        "tags": [
+                "auriculares",
+                "inalambricos"
+            ],
+        "desc": "JBL, marca de renombre mundial en el mercado de audio, es desde hace más 70 años una referente por la alta calidad de sus productos. Su gama de auriculares es variada, ya que la compañía ofrece produtos in-ear, over-ear, on-ear, deportivos e inalámbricos. Cualquiera de estos es una buena opción para hacerte disfrutar de tu música preferida.",
+        "categoria": "auriculares",
+        "cantidad": 1
+        },
+        {
+        "id": 2,
+        "nombre": "Auriculares Noga Ng98t",
+        "image": "./assets/images/auris1.webp",
+        "precio": 4899,
+        "tags": [
+                "auriculares",
+                "inalambricos"
+            ],
+        "desc": "En la calle, en el colectivo o en la oficina, tené siempre a mano tus auriculares Noga y ¡escapate de la rutina por un rato! Vas a poder disfrutar de la música que más te gusta y de tus podcasts favoritos cuando quieras y donde quieras. Al ser on-ear se apoyan en tus orejas cómodamente y ofrecen una gran calidad de sonido.",
+        "categoria": "auriculares",
+        "cantidad": 1
+        },
+        {
+        "id": 3,
+        "nombre": "Auriculares Noblex H350b",
+        "image": "./assets/images/auris4.webp",
+        "precio": 5900,
+        "tags": [
+                "auriculares",
+                "inalambricos"
+            ],
+        "desc": "En la calle, en el colectivo o en la oficina, tené siempre a mano tus auriculares Noblex y ¡escapate de la rutina por un rato! Vas a poder disfrutar de la música que más te gusta y de tus podcasts con un sonido excelente y con muy buenos graves.",
+        "categoria": "auriculares",
+        "cantidad": 1
+        },
+        {
+        "id": 4,
+        "nombre": "Auriculares Extrabass 80TB",
+        "image": "./assets/images/auris5.webp",
+        "precio": 6900,
+        "tags": [
+                "parlantes",
+                "musica"
+            ],
+        "desc": "El Auricular sunset 450-AP Vincha Plegable Extra Bass es un auricular con un sonido excelente y cuentan con muy buenos graves, tambien tienen (manos libres, play/pausa, atender/colgar) desdxe la comodidad de un boton.",
+        "categoria": "auriculares",
+        "cantidad": 1
+        },
+        {
+        "id": 5,
+        "nombre": "Auriculares Suono Style ",
+        "image": "./assets/images/auris6.webp",
+        "precio": 7900,
+        "tags": [
+                "parlantes",
+                "musica"
+            ],
+        "desc": "¡Experimentá la adrenalina de sumergirte en la escena de otra manera! Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida. Con los Suono Confort Audio no te perdés ningún detalle y escuchás el audio tal y como fue diseñado por los creadores.",
+        "categoria": "auriculares",
+        "cantidad": 1
+        },
+        {
+        "id": 6,
+        "nombre": "Auriculares Soul XH150 ",
+        "image": "./assets/images/auris7.webp",
+        "precio": 8900,
+        "tags": [
+                "parlantes",
+                "musica"
+            ],
+        "desc": "¡Experimentá la adrenalina de sumergirte en la escena de otra manera! Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida. Con los Soul Future Sound XH150 no te perdés ningún detalle y escuchás el audio tal y como fue diseñado por los creadores.",
+        "categoria": "auriculares",
+        "cantidad": 1
+        },
+        {
+        "id": 7,
+        "nombre": "Auriculares GTC Vintage ",
+        "image": "./assets/images/auris8.webp",
+        "precio": 8900,
+        "tags": [
+                "parlantes",
+                "musica"
+            ],
+        "desc": "En la calle, en el colectivo o en la oficina, tené siempre a mano tus auriculares GTC y ¡escapate de la rutina por un rato! Vas a poder disfrutar de la música que más te gusta y de tus podcasts favoritos cuando quieras y donde quieras.",
+        "categoria": "auriculares",
+        "cantidad": 1
+        },
+        {
+        "id": 8,
+        "nombre": "Mouse Yindiao A2410",
+        "image": "./assets/images/mouse3.webp",
+        "precio": 5800,
+        "tags": [
+                "mouse",
+                "inalambricos"
+            ],
+        "desc": "Para trabajar desde casa con la computadora o aprovechar los momentos de ocio, necesitás comodidad y facilidad de movimiento.Con tu Yindiao A2 encontrá eso que buscás en un solo aparato con la mejor tecnología.",
+        "categoria": "mouse",
+        "cantidad": 1
+        },
+        {
+        "id": 9,
+        "nombre": "Mouse Logitech M220",
+        "image": "./assets/images/mouse1.webp",
+        "precio": 2800,
+        "tags": [
+                "mouse",
+                "inalambricos"
+            ],
+        "desc": "Su diseño eficaz hace de este mouse un elemento cómodo, tambien cuenta con detección de movimiento óptico te permitirá mover el cursor de una manera más precisa y sensible",
+        "categoria": "mouse",
+        "cantidad": 1
+        },
+        {
+        "id": 10,
+        "nombre": "Mouse Redragon M601L",
+        "image": "./assets/images/mouse2.webp",
+        "precio": 4100,
+        "tags": [
+                "mouse",
+                "inalambricos"
+            ],
+        "desc": "El sistema de detección de movimiento óptico te permitirá mover el cursor de una manera más precisa y sensible que en los sistemas tradicionales. Trabajá de forma inalámbrica y movete libremente sin ninguna interrupción..",
+        "categoria": "mouse",
+        "cantidad": 1
+        },
+        {
+        "id": 11,
+        "nombre": "Mouse Verbatim Pro1887",
+        "image": "./assets/images/mouse4.webp",
+        "precio": 3100,
+        "tags": [
+                "mouse",
+                "inalambricos"
+            ],
+        "desc": "¡Funcionan instantáneamente después de conectar! Los mouses ópticos inalámbricos para notebook de Verbatim son ideales para usuarios de laptop.",
+        "categoria": "mouse",
+        "cantidad": 1
+        },
+        {
+        "id": 12,
+        "nombre": "Mouse Gamer DX360",
+        "image": "./assets/images/mouse5.webp",
+        "precio": 6100,
+        "tags": [
+                "mouse",
+                "inalambricos"
+            ],
+        "desc": "Las líneas suaves describen la vida inalámbrica, los elegantes colores jóvenes y la artesanía exquisita. Interfaz USB, compatible con la mayoría de los dispositivos de audio y video. Conector USB, plug and play, conexión inalámbrica, compartimento de almacenamiento del receptor inferior portátil y estable, fácil de transportar y almacenar",
+        "categoria": "mouse",
+        "cantidad": 1
+        },
+        {
+        "id": 13,
+        "nombre": "Mouse Gamer Xtrike 510",
+        "image": "./assets/images/mouse6.webp",
+        "precio": 5600,
+        "tags": [
+                "mouse",
+                "inalambricos"
+            ],
+        "desc": "Mouse Programable Dpi Cable Pc Usb Con 7 botones.Cuenta con un diseño de alto perfil con soporte total para la palma. Control mejorado para los tipos de agarre de palma y garra. Selección rápida de DPI de 6 pasos hasta 6400. Retroiluminación RGB con efecto de respiración.",
+        "categoria": "mouse",
+        "cantidad": 1
+        },
+        {
+        "id": 14,
+        "nombre": "Mouse Genius Dx-110",
+        "image": "./assets/images/mouse7.webp",
+        "precio": 3000,
+        "tags": [
+                "mouse",
+                "inalambricos"
+            ],
+        "desc": "El mouse Genius se caracteriza por suaves curvas que resultan cómodas para cualquier mano. Gracias a su resolución, conseguirás movimientos precisos en una amplia gama de superficies.Adaptado a tus movimientos. Su diseño eficaz hace de este mouse un elemento cómodo, con una gran experiencia de uso para aquellas personas que buscan seguridad en cada click.",
+        "categoria": "mouse",
+        "cantidad": 1
+        },
+        {
+        "id": 15,
+        "nombre": "Mouse Trust-Puck G12",
+        "image": "./assets/images/mouse8.webp",
+        "precio": 2989,
+        "tags": [
+                "mouse",
+                "inalambricos"
+            ],
+        "desc": "Para trabajar desde casa con la computadora o aprovechar los momentos de ocio, necesitás comodidad y facilidad de movimiento. Con tu Trust Puck encontrá eso que buscás en un solo aparato con la mejor tecnología.",
+        "categoria": "mouse",
+        "cantidad": 1
+        },
+        {
+        "id": 16,
+        "nombre": "Teclado Noganet 78005",
+        "image": "./assets/images/teclado1.webp",
+        "precio": 5300,
+        "tags": [
+                "teclado",
+                "español"
+            ],
+        "desc": "Este teclado Noganet es el mejor complemento para hacer todo tipo de actividades. Es cómodo y práctico al momento de redactar documentos, navegar y hacer búsquedas por internet, ya sea en tu trabajo o en la comodidad del hogar.",
+        "categoria": "teclado",
+        "cantidad": 1
+        },
+        {
+        "id": 17,
+        "nombre": "Teclado Logitech K380",
+        "image": "./assets/images/teclado2.webp",
+        "precio": 9800,
+        "tags": [
+                "teclado",
+                "español"
+            ],
+        "desc": "Innovadores en diseño y tecnología, Logitech se encarga de brindar la mejor experiencia de uso para sus usuarios. Sus teclados resaltan por ser resistentes y muy de buena calidad, por lo que podrás disfrutarlos por un largo tiempo.",
+        "categoria": "teclado",
+        "cantidad": 1
+        },
+        {
+        "id": 18,
+        "nombre": "Teclado ApexPro TKL",
+        "image": "./assets/images/teclado3.webp",
+        "precio": 4700,
+        "tags": [
+                "teclado",
+                "español"
+            ],
+        "desc": "Este teclado SteelSeries de alto rendimiento permite que puedas disfrutar de horas ilimitadas de juegos. Está diseñado especialmente para que puedas expresar tanto tus habilidades como tu estilo.",
+        "categoria": "teclado",
+        "cantidad": 1
+        },
+        {
+        "id": 19,
+        "nombre": "Teclado Gamer Redrago",
+        "image": "./assets/images/teclado4.webp",
+        "precio": 4690,
+        "tags": [
+                "teclado",
+                "español"
+            ],
+        "desc": "Disfrutá de tus partidas en otro nivel con Redragon, marca reconocida que se especializa en brindar la mejor experiencia de juego al público gamer desde hace más de 20 años. Sus teclados se adaptan a todo tipo de jugadores y esto los convierten en un fiel reflejo de la alta gama y calidad que la compañía ofrece.",
+        "categoria": "teclado",
+        "cantidad": 1
+        },
+        {
+        "id": 20,
+        "nombre": "Teclado Logitech Pop",
+        "image": "./assets/images/teclado5.webp",
+        "precio": 6400,
+        "tags": [
+                "teclado",
+                "español"
+            ],
+        "desc": "Disfrutá de tus partidas en otro nivel con Redragon, marca reconocida que se especializa en brindar la mejor experiencia de juego al público gamer desde hace más de 20 años. Sus teclados se adaptan a todo tipo de jugadores y esto los convierten en un fiel reflejo de la alta gama y calidad que la compañía ofrece.",
+        "categoria": "teclado",
+        "cantidad": 1
+        },
+        {
+        "id": 21,
+        "nombre": "Teclado Kolke KET-1203",
+        "image": "./assets/images/teclado6.webp",
+        "precio": 3500,
+        "tags": [
+                "teclado",
+                "español"
+            ],
+        "desc": "Este teclado Kolke de alto rendimiento permite que puedas disfrutar de horas ilimitadas de juegos. Está diseñado especialmente para que puedas expresar tanto tus habilidades como tu estilo. Podrás mejorar tu experiencia de gaming, ya seas un aficionado o todo un experto y hacer que tus jugadas alcancen otro nivel.",
+        "categoria": "teclado",
+        "cantidad": 1
+        },
+        {
+        "id": 22,
+        "nombre": "Teclado Gamer Soul XT",
+        "image": "./assets/images/teclado7.webp",
+        "precio": 7700,
+        "tags": [
+                "teclado",
+                "español"
+            ],
+        "desc": "Teclado Gamer ideal para jugadores de multiplayer on-line, rpg, first person shooter y cualquier juego con interface. Por su diseño es óptimo para largas sesiones de juego en las que puedas apoyar tus manos.",
+        "categoria": "teclado",
+        "cantidad": 1
+        },
+        {
+        "id": 23,
+        "nombre": "Teclado Mini Genius 110",
+        "image": "./assets/images/teclado8.webp",
+        "precio": 2900,
+        "tags": [
+                "teclado",
+                "español"
+            ],
+        "desc": "Este teclado Genius es el mejor complemento para hacer todo tipo de actividades. Es cómodo y práctico al momento de redactar documentos, navegar y hacer búsquedas por internet, ya sea en tu trabajo o en la comodidad del hogar.",
+        "categoria": "teclado",
+        "cantidad": 1
+        },
+        {
+        "id": 24,
+        "nombre": "WebCam Noga NGW-120",
+        "image": "./assets/images/web3.webp",
+        "precio": 6500,
+        "tags": [
+                "webcam",
+                "camaraweb"
+            ],
+        "desc": "Ya no tenés que preocuparte si tu PC no tiene cámara. Este dispositivo de Noga brinda la calidad de imagen y funciones que necesitás para comunicarte de manera fácil y efectiva en la virtualidad.",
+        "categoria": "webcam",
+        "cantidad": 1
+        },
+        {
+        "id": 25,
+        "nombre": "WebCam Logitech C922",
+        "image": "./assets/images/web2.webp",
+        "precio": 7700,
+        "tags": [
+                "webcam",
+                "camaraweb"
+            ],
+        "desc": "Este dispositivo es ideal para aquellas personas que disfrutan de los juegos en línea. Cabe destacar que sus funcionalidades y la calidad de imagen, sin dudas, ofrecen una gran experiencia.",
+        "categoria": "webcam",
+        "cantidad": 1
+        },
+        {
+        "id": 26,
+        "nombre": "WebCam Genius 100X",
+        "image": "./assets/images/web1.webp",
+        "precio": 4300,
+        "tags": [
+                "webcam",
+                "camaraweb"
+            ],
+        "desc": "La Genius FaceCam 1000X cuenta con un micrófono incorporado, lo que facilita la comunicación con tus amigos, familiares o colegas sin necesidad de utilizar un dispositivo adicional.",
+        "categoria": "webcam",
+        "cantidad": 1
+        },
+        {
+        "id": 27,
+        "nombre": "WebCam Sinovision SN",
+        "image": "./assets/images/web4.webp",
+        "precio": 9500,
+        "tags": [
+                "webcam",
+                "camaraweb"
+            ],
+        "desc": "Ya no tenés que preocuparte si tu PC no tiene cámara. Este dispositivo de Noga brinda la calidad de imagen y funciones que necesitás para comunicarte de manera fácil y efectiva en la virtualidad.",
+        "categoria": "webcam",
+        "cantidad": 1
+        },
+        {
+        "id": 28,
+        "nombre": "WebCam Newvision DCQ",
+        "image": "./assets/images/web5.webp",
+        "precio": 3850,
+        "tags": [
+                "webcam",
+                "camaraweb"
+            ],
+        "desc": "Esta cámara web ofrece micrófono incorporado, lo que permite capturar el sonido del ambiente. Podrás disfrutar de conversaciones con altavoz o con auriculares, si buscás mayor privacidad.",
+        "categoria": "webcam",
+        "cantidad": 1
+        },
+        {
+        "id": 29,
+        "nombre": "WebCam Genius ECam",
+        "image": "./assets/images/web6.webp",
+        "precio": 4800,
+        "tags": [
+                "webcam",
+                "camaraweb"
+            ],
+        "desc": "Ya no tenés que preocuparte si tu PC no tiene cámara. Este dispositivo de Genius brinda la calidad de imagen y funciones que necesitás para comunicarte de manera fácil y efectiva en la virtualidad.",
+        "categoria": "webcam",
+        "cantidad": 1
+        },
+        {
+        "id": 30,
+        "nombre": "WebCam Gadnic RT02",
+        "image": "./assets/images/web7.webp",
+        "precio": 8500,
+        "tags": [
+                "webcam",
+                "camaraweb"
+            ],
+        "desc": "Este dispositivo es ideal para aquellas personas que disfrutan de los juegos en línea. Sus funcionalidades y la calidad de imagen, sin dudas, ofrecen una gran experiencia.",
+        "categoria": "webcam",
+        "cantidad": 1
+        },
+        {
+        "id": 31,
+        "nombre": "Trust Tyro Full HD 30FPS",
+        "image": "./assets/images/web8.webp",
+        "precio": 6500,
+        "tags": [
+                "webcam",
+                "camaraweb"
+            ],
+        "desc": "Trust es una empresa mundial que comercializa accesorios para el mundo digital. A través de soluciones inteligentes, busca simplificar la vida cotidiana de las personas que los eligen. Sin dudas, sus cámaras web pueden ser una excelente opción.",
+        "categoria": "webcam",
+        "cantidad": 1
+        },
+        {
+        "id": 32,
+        "nombre": "Parlantes Genius HF180",
+        "image": "./assets/images/parlantes1.webp",
+        "precio": 5900,
+        "tags": [
+                "parlantes",
+                "musica"
+            ],
+        "desc": "Genius SP-HF180 ofrece un sonido natural, con una gran claridad y precisión, que se dispersa de manera uniforme. Un parlante que asegura potencia y calidad por igual en la reproducción de contenidos multimedia.",
+        "categoria": "parlantes",
+        "cantidad": 1
+        },
+        {
+        "id": 33,
+        "nombre": "Parlantes Xinua Rgb12",
+        "image": "./assets/images/parlantes3.webp",
+        "precio": 6800,
+        "tags": [
+                "parlantes",
+                "musica"
+            ],
+        "desc": "Xinua Xinua ofrece un sonido natural, con una gran claridad y precisión, que se dispersa de manera uniforme. Un parlante que asegura potencia y calidad por igual en la reproducción de contenidos multimedia.",
+        "categoria": "parlantes",
+        "cantidad": 1
+        },
+        {
+        "id": 34,
+        "nombre": "Parlantes Braun J18TB",
+        "image": "./assets/images/parlantes2.webp",
+        "precio": 3900,
+        "tags": [
+                "parlantes",
+                "musica"
+            ],
+        "desc": "La unidad de rango completo de 2,75 pulgadas ofrece un sonido excelente. Con su revestimiento blanco perla y su tapa antipolvo en forma de bala, complementará tu escritorio en todo momento.",
+        "categoria": "parlantes",
+        "cantidad": 1
+        },
+        {
+        "id": 35,
+        "nombre": "Parlantes Targa Alpha",
+        "image": "./assets/images/parlantes4.webp",
+        "precio": 5900,
+        "tags": [
+                "parlantes",
+                "musica"
+            ],
+        "desc": "Altavoz para juegos Stereo AlphaX de 16W (2x8W) de potencia con modos de luz configurables. Para expertos, sonido natural, con claridad y precisión. Poder y calidad para todos tus juegos. Incorpora control de volumen y entrada para auriculares para una experiencia de audio completa.",
+        "categoria": "parlantes",
+        "cantidad": 1
+        },
+        {
+        "id": 36,
+        "nombre": "Parlantes Genius SP-H8",
+        "image": "./assets/images/parlantes5.webp",
+        "precio": 6200,
+        "tags": [
+                "parlantes",
+                "musica"
+            ],
+        "desc": "Genius SP-HF800A ofrece un sonido natural, con una gran claridad y precisión, que se dispersa de manera uniforme. Un parlante que asegura potencia y calidad por igual en la reproducción de contenidos multimedia.",
+        "categoria": "parlantes",
+        "cantidad": 1
+        },
+        {
+        "id": 37,
+        "nombre": "Parlantes Gamer Xinua",
+        "image": "./assets/images/parlantes6.webp",
+        "precio": 5300,
+        "tags": [
+                "parlantes",
+                "musica"
+            ],
+        "desc": "Dúo de parlantes compatible con Notebook, Laptop, PC, Celulares, tablets, MP3, TV Smart, PS4 y cualquier dispositivo que tenga conexión jack 3.5mm. Ideal para juegos, escuchar música, ver películas y videos.",
+        "categoria": "parlantes",
+        "cantidad": 1
+        },
+        {
+        "id": 38,
+        "nombre": "Parlantes Madera Noga",
+        "image": "./assets/images/parlantes7.webp",
+        "precio": 4500,
+        "tags": [
+                "parlantes",
+                "musica"
+            ],
+        "desc": "Noga NG-508P ofrece un sonido natural, con una gran claridad y precisión, que se dispersa de manera uniforme. Un parlante que asegura potencia y calidad por igual en la reproducción de contenidos multimedia.",
+        "categoria": "parlantes",
+        "cantidad": 1
+        },
+        {
+        "id": 39,
+        "nombre": "Parlantes Logitech S150",
+        "image": "./assets/images/parlantes8.webp",
+        "precio": 8900,
+        "tags": [
+                "parlantes",
+                "musica"
+            ],
+        "desc": "Logitech S150 ofrece un sonido natural, con una gran claridad y precisión, que se dispersa de manera uniforme. Un parlante que asegura potencia y calidad por igual en la reproducción de contenidos multimedia.",
+        "categoria": "parlantes",
+        "cantidad": 1
+        }
+    ]
+}
