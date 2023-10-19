@@ -433,7 +433,7 @@ const botonComprar = document.querySelector("#btnComprar");
 
 
 function mostrarCategorias(textIngresado, orden) {
-        
+
     carousel.style.display = 'none';
     dataInfo.classList.remove('hidden');
     botonAuriculares.style.display = 'none';
@@ -449,7 +449,7 @@ function mostrarCategorias(textIngresado, orden) {
     productosContainer.innerHTML = '';
 
     let productosAordenar = productos.filter(producto => producto.categoria === textIngresado || producto.nombre.toLowerCase().includes(textIngresado))
-         
+
     if (orden === 'menorPrecio') {
         productosAordenar = productosAordenar.sort(ordenarPorPrecioAscendente);
     } else if (orden === 'mayorPrecio') {
@@ -570,7 +570,7 @@ function ordenarNombreDescendente(a, b) {
 }
 
 function mostrarFiltros(textIngresado) {
-    
+
     contenedorFiltros.innerHTML = '';
 
     const cuotas = document.createElement("div");
@@ -602,7 +602,7 @@ function mostrarFiltros(textIngresado) {
 
     inputMenorPrecio.addEventListener('change', function () {
         if (inputMenorPrecio.checked) {
-            mostrarCategorias(textIngresado, 'menorPrecio');         
+            mostrarCategorias(textIngresado, 'menorPrecio');
         }
     });
 
@@ -892,7 +892,7 @@ function mostrarProductosFiltrados(productosFiltrados) {
     const hayCoincidencia = productosFiltrados.length > 0;
 
     if (hayCoincidencia) {
-        noEncontrado.classList.add('hidden');        
+        noEncontrado.classList.add('hidden');
         productosFiltrados.forEach(producto => {
             const productoElemento = document.createElement('div');
             productoElemento.className = 'bg-white rounded-lg shadow-xl hover:shadow-gray-500 border-double border-4 hover:border-indigo-600 p-8 m-4 flex flex-col items-center border border-slate-400'
@@ -1016,8 +1016,8 @@ carritoCompras.addEventListener("click", () => {
 });
 
 botonBuscar.addEventListener("click", function () {
-    const textIngresado = inputBuscador.value.toLowerCase();     
-    
+    const textIngresado = inputBuscador.value.toLowerCase();
+
     if (textIngresado !== "") {
         const productosFiltrados = productos.filter((producto) => {
             const coincideNombre = producto.nombre.toLowerCase().includes(textIngresado);
@@ -1033,16 +1033,16 @@ botonBuscar.addEventListener("click", function () {
 
 inputBuscador.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
-        const textIngresado = inputBuscador.value.toLowerCase();        
+        const textIngresado = inputBuscador.value.toLowerCase();
 
         if (textIngresado !== "") {
             const productosFiltrados = productos.filter((producto) => {
                 const coincideNombre = producto.nombre.toLowerCase().includes(textIngresado);
-                const coincideCategoria = producto.categoria.toLowerCase().includes(textIngresado); 
+                const coincideCategoria = producto.categoria.toLowerCase().includes(textIngresado);
                 return coincideNombre || coincideCategoria;
-            })            
+            })
             mostrarProductosFiltrados(productosFiltrados)
-            mostrarFiltros(textIngresado);      
+            mostrarFiltros(textIngresado);
             bannerMiddle.classList.add('hidden');
         }
     }
@@ -1073,8 +1073,7 @@ volverBtn.addEventListener('click', () => {
     textoCategoria.style.textAlign = 'center';
     contenedorFiltros.style.display = "none";
     noEncontrado.classList.add('hidden');
-    bannerMiddle.style.display = "block";
-
+    bannerMiddle.style.display = "block"; 
 });
 
 logoInicio.addEventListener("click", () => {
