@@ -432,8 +432,8 @@ const botonComprar = document.querySelector("#btnComprar");
 
 
 
-function mostrarCategorias(categoria, nombreProducto, orden) {
-
+function mostrarCategorias(textIngresado, orden) {
+        
     carousel.style.display = 'none';
     dataInfo.classList.remove('hidden');
     botonAuriculares.style.display = 'none';
@@ -448,20 +448,19 @@ function mostrarCategorias(categoria, nombreProducto, orden) {
 
     productosContainer.innerHTML = '';
 
-   /*  let productosCategoria = productos.filter(producto => producto.categoria === categoria); */
-    let productosCategoria = productos.filter(producto => producto.categoria === categoria || producto.nombre.toLowerCase().includes(nombreProducto.toLowerCase()));
-
+    let productosAordenar = productos.filter(producto => producto.categoria === textIngresado || producto.nombre.toLowerCase().includes(textIngresado))
+         
     if (orden === 'menorPrecio') {
-        productosCategoria = productosCategoria.sort(ordenarPorPrecioAscendente);
+        productosAordenar = productosAordenar.sort(ordenarPorPrecioAscendente);
     } else if (orden === 'mayorPrecio') {
-        productosCategoria = productosCategoria.sort(ordenarPorPrecioDescendente);
+        productosAordenar = productosAordenar.sort(ordenarPorPrecioDescendente);
     } else if (orden === 'nombreAscendente') {
-        productosCategoria = productosCategoria.sort(ordenarNombreAscendente);
+        productosAordenar = productosAordenar.sort(ordenarNombreAscendente);
     } else if (orden === 'nombreDescendente') {
-        productosCategoria = productosCategoria.sort(ordenarNombreDescendente);
+        productosAordenar = productosAordenar.sort(ordenarNombreDescendente);
     }
 
-    productosCategoria.forEach(producto => {
+    productosAordenar.forEach(producto => {
         const productoElemento = document.createElement('div');
         productoElemento.className = 'bg-white rounded-lg shadow-xl hover:shadow-gray-500 border-double border-4 hover:border-indigo-600 p-8 m-4 flex flex-col items-center border border-slate-400'
         productoElemento.innerHTML = `        
@@ -570,8 +569,8 @@ function ordenarNombreDescendente(a, b) {
     return 0;
 }
 
-function mostrarFiltros(categoria, nombreProducto) {
-
+function mostrarFiltros(textIngresado) {
+    
     contenedorFiltros.innerHTML = '';
 
     const cuotas = document.createElement("div");
@@ -603,7 +602,7 @@ function mostrarFiltros(categoria, nombreProducto) {
 
     inputMenorPrecio.addEventListener('change', function () {
         if (inputMenorPrecio.checked) {
-            mostrarCategorias(categoria, nombreProducto, 'menorPrecio');
+            mostrarCategorias(textIngresado, 'menorPrecio');         
         }
     });
 
@@ -627,7 +626,7 @@ function mostrarFiltros(categoria, nombreProducto) {
 
     inputMayorPrecio.addEventListener('change', function () {
         if (inputMayorPrecio.checked) {
-            mostrarCategorias(categoria, nombreProducto, 'mayorPrecio');
+            mostrarCategorias(textIngresado, 'mayorPrecio');
         }
     });
 
@@ -651,7 +650,7 @@ function mostrarFiltros(categoria, nombreProducto) {
 
     inputAz.addEventListener('change', function () {
         if (inputAz.checked) {
-            mostrarCategorias(categoria, nombreProducto, 'nombreAscendente');
+            mostrarCategorias(textIngresado, 'nombreAscendente');
         }
     });
 
@@ -675,7 +674,7 @@ function mostrarFiltros(categoria, nombreProducto) {
 
     inputZa.addEventListener('change', function () {
         if (inputZa.checked) {
-            mostrarCategorias(categoria, nombreProducto, 'nombreDescendente');
+            mostrarCategorias(textIngresado, 'nombreDescendente');
         }
     });
 
@@ -891,10 +890,9 @@ function mostrarProductosFiltrados(productosFiltrados) {
     productosContainer.innerHTML = "";
 
     const hayCoincidencia = productosFiltrados.length > 0;
-    
 
     if (hayCoincidencia) {
-        noEncontrado.classList.add('hidden');
+        noEncontrado.classList.add('hidden');        
         productosFiltrados.forEach(producto => {
             const productoElemento = document.createElement('div');
             productoElemento.className = 'bg-white rounded-lg shadow-xl hover:shadow-gray-500 border-double border-4 hover:border-indigo-600 p-8 m-4 flex flex-col items-center border border-slate-400'
@@ -1018,36 +1016,33 @@ carritoCompras.addEventListener("click", () => {
 });
 
 botonBuscar.addEventListener("click", function () {
-    const nombreProducto = inputBuscador.value.toLowerCase();
-    const categoria = inputBuscador.value.toLowerCase();
-    mostrarFiltros(categoria, nombreProducto);
-
-
-    if (nombreProducto !== "") {
+    const textIngresado = inputBuscador.value.toLowerCase();     
+    
+    if (textIngresado !== "") {
         const productosFiltrados = productos.filter((producto) => {
-            const coincideNombre = producto.nombre.toLowerCase().includes(nombreProducto);
-            const coincideCategoria = producto.categoria.toLowerCase().includes(nombreProducto);
+            const coincideNombre = producto.nombre.toLowerCase().includes(textIngresado);
+            const coincideCategoria = producto.categoria.toLowerCase().includes(textIngresado);
             return coincideNombre || coincideCategoria;
         });
 
         mostrarProductosFiltrados(productosFiltrados);
+        mostrarFiltros(textIngresado);
         bannerMiddle.classList.add('hidden');
     }
 })
 
 inputBuscador.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
-        const nombreProducto = inputBuscador.value.toLowerCase();
-        const categoria = inputBuscador.value.toLowerCase();        
-        mostrarFiltros(categoria, nombreProducto);
+        const textIngresado = inputBuscador.value.toLowerCase();        
 
-        if (nombreProducto !== "") {
+        if (textIngresado !== "") {
             const productosFiltrados = productos.filter((producto) => {
-                const coincideNombre = producto.nombre.toLowerCase().includes(nombreProducto);
-                const coincideCategoria = producto.categoria.toLowerCase().includes(nombreProducto);
+                const coincideNombre = producto.nombre.toLowerCase().includes(textIngresado);
+                const coincideCategoria = producto.categoria.toLowerCase().includes(textIngresado); 
                 return coincideNombre || coincideCategoria;
-            })
+            })            
             mostrarProductosFiltrados(productosFiltrados)
+            mostrarFiltros(textIngresado);      
             bannerMiddle.classList.add('hidden');
         }
     }
