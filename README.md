@@ -31,6 +31,10 @@ Este simulador de carrito de compras se ha desarrollado utilizando las siguiente
 
 - Contador de Productos: Se ha implementado un contador de productos en el carrito, lo que permite a los usuarios ver de un vistazo cuántos productos han agregado al carrito. Esto mejora la usabilidad y proporciona retroalimentación instantánea al usuario sobre su selección actual.
 
+- Filtrar productos por Precio: Los usuarios tienen la opción de filtrar los productos por precio, permitiéndoles ver productos dentro de su rango de precio preferido.
+
+- Filtrar productos por Orden Alfabético: Los usuarios pueden ordenar los productos alfabéticamente, facilitando la búsqueda y selección de productos específicos.
+
 - LocalStorage para Preservar los Productos Seleccionados: Se ha utilizado el almacenamiento local del navegador (LocalStorage) para preservar los productos seleccionados incluso después de recargar la página o cerrar el navegador. Esto asegura que los usuarios no pierdan su selección de productos y pueden continuar su experiencia de compra sin problemas.
 
 - Interfaz de usuario estilizada con Tailwind CSS: La interfaz de usuario ha sido diseñada y estilizada con Tailwind CSS para proporcionar un diseño moderno y atractivo, mejorando la experiencia visual del usuario.
