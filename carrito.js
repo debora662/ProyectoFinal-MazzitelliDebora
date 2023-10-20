@@ -10,7 +10,7 @@ const textoCategoria = document.querySelector("#textoCategoria")
 const volverBtn = document.querySelector("#volverBtn");
 const categoriasContainer = document.querySelector("#categoriasContainer");
 const productosContainer = document.querySelector('#productosContainer');
-const carritoCompras = document.querySelector("#mostrarProductos");
+const carritoCompras = document.querySelector("#mostrarProductos"); 
 const sidenav = document.querySelector("#sidenav-7");
 const inputBuscador = document.querySelector("#buscador");
 const botonBuscar = document.querySelector("#botonBuscar");
@@ -567,7 +567,6 @@ botonParlantes.addEventListener('click', () => {
     mostrarFiltros(categoria);
 });
 
-
 carritoCompras.addEventListener("click", () => {
     barraLateral()
 });
@@ -706,6 +705,7 @@ async function pagarConMercadoPago() {
 }
 
 sidenav.style.transform = "translateX(100%)";
+contenedorFiltros.style.display = "none"
 
 actualizaContador()
 cargarProductos()
