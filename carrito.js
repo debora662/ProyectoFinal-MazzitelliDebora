@@ -10,7 +10,7 @@ const textoCategoria = document.querySelector("#textoCategoria")
 const volverBtn = document.querySelector("#volverBtn");
 const categoriasContainer = document.querySelector("#categoriasContainer");
 const productosContainer = document.querySelector('#productosContainer');
-const carritoCompras = document.querySelector("#mostrarProductos"); 
+const carritoCompras = document.querySelector("#mostrarProductos");
 const sidenav = document.querySelector("#sidenav-7");
 const inputBuscador = document.querySelector("#buscador");
 const botonBuscar = document.querySelector("#botonBuscar");
@@ -647,6 +647,7 @@ logoInicio.addEventListener("click", () => {
     textoCategoria.style.textAlign = 'center';
     contenedorFiltros.style.display = 'none';
     noEncontrado.classList.add('hidden');
+    bannerMiddle.style.display = 'block'
 
 });
 
@@ -667,8 +668,8 @@ async function cargarProductos() {
     const api = "https://653276fad80bd20280f59481.mockapi.io/api/productos"
     try {
         const response = await fetch(api);
-        const data = await response.json();  
-        productos = data       
+        const data = await response.json();
+        productos = data
     } catch (error) {
         console.error('Error:', error);
     }
@@ -697,7 +698,21 @@ async function pagarConMercadoPago() {
         });
 
         const preference = await response.json();
-        window.open(preference.init_point, '_blank');
+
+        const nuevaVentana = window.open(preference.init_point, '_blank');
+
+        const intervalo = setInterval(function () {
+            if (nuevaVentana.closed) {
+                clearInterval(intervalo);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Tu compra en E-TechUniverse ha sido exitosa!!',
+                    showConfirmButton: false,
+                    timer: 4000
+                })
+            }
+        }, 1000)
         borrarCarrito()
         actualizaContador()
     } catch (error) {
