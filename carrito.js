@@ -645,8 +645,9 @@ logoInicio.addEventListener("click", () => {
     volverBtn.classList.add('hidden');
     textoCategoria.style.display = 'block';
     textoCategoria.style.textAlign = 'center';
-    contenedorFiltros.classList.add('hidden');
+    contenedorFiltros.style.display = 'none';
     noEncontrado.classList.add('hidden');
+
 });
 
 window.onload = function () {
