@@ -21,6 +21,7 @@ const dataInfo = document.querySelector("#dataPagos");
 const botonesCategoria = document.querySelectorAll(".categoria-btn");
 const contenedorFiltros = document.querySelector("#contenedorFiltros");
 const noEncontrado = document.querySelector("#noEncontrado");
+const slider = document.querySelector("#slider");
 const bannerMiddle = document.querySelector("#bannerMiddle");
 const logoInicio = document.querySelector("#inicio");
 const botonComprar = document.querySelector("#btnComprar");
