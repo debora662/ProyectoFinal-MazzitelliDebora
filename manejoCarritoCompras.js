@@ -1,6 +1,5 @@
 import {carrito, carritoEnLocalStorage, actualizaContador, mostrarProductosEnCarrito} from "./carrito.js"
 
-
 function agregarProducto(producto, cantidad) {
 
     const productoEnCarrito = carrito.find((el) => el.id === producto.id);
@@ -61,6 +60,7 @@ function calcularTotalCarrito() {
 
     return total;
 }
+
 
 
 export {agregarProducto, eliminarProducto, calcularTotalCarrito}
