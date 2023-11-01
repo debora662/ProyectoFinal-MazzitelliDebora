@@ -1,3 +1,6 @@
+import cargarProductos  from "./manejoApi.js";
+import {agregarProducto, eliminarProducto, calcularTotalCarrito} from "./manejoCarritoCompras.js";
+
 let productos = []
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
@@ -8,7 +11,6 @@ const botonWebcam = document.querySelector("#webcam");
 const botonParlantes = document.querySelector("#parlantes");
 const textoCategoria = document.querySelector("#textoCategoria")
 const volverBtn = document.querySelector("#volverBtn");
-const categoriasContainer = document.querySelector("#categoriasContainer");
 const productosContainer = document.querySelector('#productosContainer');
 const carritoCompras = document.querySelector("#mostrarProductos");
 const sidenav = document.querySelector("#sidenav-7");
@@ -19,9 +21,6 @@ const dataInfo = document.querySelector("#dataPagos");
 const botonesCategoria = document.querySelectorAll(".categoria-btn");
 const contenedorFiltros = document.querySelector("#contenedorFiltros");
 const noEncontrado = document.querySelector("#noEncontrado");
-const detalleProducto = document.querySelector("#detalleProducto");
-const containerDetalle = document.querySelector("#containerDetalle");
-const slider = document.querySelector("#slider");
 const bannerMiddle = document.querySelector("#bannerMiddle");
 const logoInicio = document.querySelector("#inicio");
 const botonComprar = document.querySelector("#btnComprar");
@@ -283,53 +282,6 @@ function mostrarFiltros(textIngresado) {
     contenedorFiltros.classList.remove('hidden');
 }
 
-function agregarProducto(producto, cantidad) {
-
-    const productoEnCarrito = carrito.find((el) => el.id === producto.id);
-
-    if (productoEnCarrito) {
-        productoEnCarrito.cantidad++;
-        productoEnCarrito.subTotal = productoEnCarrito.cantidad * productoEnCarrito.precio;
-    } else {
-        const nuevoProducto = {
-            ...producto,
-            cantidad: cantidad,
-            subTotal: cantidad * producto.precio
-        };
-        carrito.push(nuevoProducto)
-
-    }
-    carritoEnLocalStorage();
-    mostrarProductosEnCarrito();
-    actualizaContador();
-
-    localStorage.setItem("contadorCarrito", carrito.length);
-
-    Toastify({
-        text: `Se ha añadido ${producto.nombre} al carrito`,
-        className: "info",
-        gravity: "top",
-        position: "center",
-        style: {
-            background: "linear-gradient(to right, #ec1534, #ec27ea)",
-        }
-    }).showToast();
-
-}
-
-function calcularTotalCarrito() {
-    let total = 0;
-    carrito.forEach((producto) => {
-        total += producto.subTotal;
-    });
-
-    if (total > 0) {
-
-    }
-
-    return total;
-}
-
 function barraLateral() {
 
     if (sidenav.style.transform === "translateX(100%)") {
@@ -387,22 +339,6 @@ function mostrarProductosEnCarrito() {
 
 }
 
-function eliminarProducto(index) {
-    const productoEnCarrito = carrito[index];
-    if (productoEnCarrito.cantidad > 1) {
-        productoEnCarrito.cantidad--;
-        productoEnCarrito.subTotal = productoEnCarrito.cantidad * productoEnCarrito.precio;
-    } else {
-        carrito.splice(index, 1);
-    }
-
-    carritoEnLocalStorage();
-    actualizaContador();
-    localStorage.setItem("contadorCarrito", carrito.length);
-    mostrarProductosEnCarrito();
-
-}
-
 function borrarCarrito() {
     carrito = [];
     localStorage.clear();
@@ -430,7 +366,6 @@ function actualizaContador() {
 
 function carritoEnLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(carrito))
-
 }
 
 function mostrarProductosFiltrados(productosFiltrados) {
@@ -664,14 +599,11 @@ window.onload = function () {
     });
 };
 
-async function cargarProductos() {
-    const api = "https://653276fad80bd20280f59481.mockapi.io/api/productos"
+async function productosApi () {
     try {
-        const response = await fetch(api);
-        const data = await response.json();
-        productos = data
+        productos = await cargarProductos()
     } catch (error) {
-        console.error('Error:', error);
+        console.log('Error:', error);
     }
 }
 
@@ -724,4 +656,8 @@ sidenav.style.transform = "translateX(100%)";
 contenedorFiltros.style.display = "none"
 
 actualizaContador()
-cargarProductos()
+productosApi()
+
+
+export {carrito, carritoEnLocalStorage, actualizaContador, mostrarProductosEnCarrito} 
+
