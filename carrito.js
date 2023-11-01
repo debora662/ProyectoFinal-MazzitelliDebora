@@ -1,9 +1,8 @@
-import cargarProductos from "./manejoApi.js";
+import { cargarProductos, pagarConMercadoPago, carrito, actualizaContador } from "./manejoApis.js";
 import { agregarProducto, eliminarProducto, calcularTotalCarrito } from "./manejoCarritoCompras.js";
 import { ordenarPorPrecioAscendente, ordenarPorPrecioDescendente, ordenarNombreAscendente, ordenarNombreDescendente, mostrarFiltros, mostrarProductosFiltrados } from "./interfazUsuario.js"
 
 let productos = []
-let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 export const botonAuriculares = document.querySelector("#auriculares");
 export const botonMouse = document.querySelector("#mouse");
@@ -189,33 +188,8 @@ function mostrarProductosEnCarrito() {
 
 }
 
-function actualizaContador() {
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-    const contadorCarrito = document.querySelector("#contadorCarrito");
-
-    const totalCantidadCarrito = carrito.reduce((total, producto) => {
-        return total + producto.cantidad;
-    }, 0);
-
-    contadorCarrito.innerText = totalCantidadCarrito;
-
-    if (totalCantidadCarrito > 0) {
-        contadorCarrito.classList.remove("hidden");
-    } else {
-        contadorCarrito.classList.add("hidden");
-    }
-
-    localStorage.setItem("contadorCarrito", totalCantidadCarrito.toString());
-}
-
 function carritoEnLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(carrito))
-}
-
-function borrarCarrito() {
-    carrito = [];
-    localStorage.clear();
 }
 
 botonAuriculares.addEventListener('click', () => {
@@ -350,51 +324,6 @@ async function productosApi() {
         productos = await cargarProductos()
     } catch (error) {
         console.log('Error:', error);
-    }
-}
-
-async function pagarConMercadoPago() {
-    const items = carrito.map((producto) => {
-        return {
-            title: producto.nombre,
-            description: producto.descripcion,
-            quantity: producto.cantidad,
-            currency_id: 'ARS',
-            unit_price: producto.precio,
-        };
-    });
-
-    try {
-        const response = await fetch('https://api.mercadopago.com/checkout/preferences', {
-            method: 'POST',
-            headers: {
-                Authorization: "Bearer TEST-8833293876625925-081318-eee760da7dbe58f4a684f933b7f48738-23398645",
-            },
-            body: JSON.stringify({
-                items: items,
-            }),
-        });
-
-        const preference = await response.json();
-
-        const nuevaVentana = window.open(preference.init_point, '_blank');
-
-        const intervalo = setInterval(function () {
-            if (nuevaVentana.closed) {
-                clearInterval(intervalo);
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: 'Tu compra en E-TechUniverse ha sido exitosa!!',
-                    showConfirmButton: false,
-                    timer: 4000
-                })
-            }
-        }, 1000)
-        borrarCarrito()
-        actualizaContador()
-    } catch (error) {
-        console.error('Error al crear la preferencia de pago:', error);
     }
 }
 

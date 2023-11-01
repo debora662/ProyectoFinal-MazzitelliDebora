@@ -1,4 +1,4 @@
-import {categorias, carousel, dataInfo, botonAuriculares, botonMouse, botonTeclado, botonWebcam, botonParlantes, textoCategoria, volverBtn, bannerMiddle, contenedorFiltros}  from "./carrito.js";
+import { categorias, carousel, dataInfo, botonAuriculares, botonMouse, botonTeclado, botonWebcam, botonParlantes, textoCategoria, volverBtn, bannerMiddle, contenedorFiltros } from "./carrito.js";
 
 function ordenarPorPrecioAscendente(a, b) {
     return a.precio - b.precio;
@@ -256,4 +256,4 @@ function ocultarFiltro() {
     contenedorFiltros.classList.add('hidden');
 }
 
-export { ordenarPorPrecioAscendente, ordenarPorPrecioDescendente, ordenarNombreAscendente, ordenarNombreDescendente, mostrarFiltros, mostrarProductosFiltrados}
+export { ordenarPorPrecioAscendente, ordenarPorPrecioDescendente, ordenarNombreAscendente, ordenarNombreDescendente, mostrarFiltros, mostrarProductosFiltrados }

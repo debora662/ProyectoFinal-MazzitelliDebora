@@ -1,4 +1,4 @@
-import {carrito, carritoEnLocalStorage, actualizaContador, mostrarProductosEnCarrito} from "./carrito.js"
+import { carrito, carritoEnLocalStorage, actualizaContador, mostrarProductosEnCarrito } from "./carrito.js"
 
 function agregarProducto(producto, cantidad) {
 
@@ -61,6 +61,4 @@ function calcularTotalCarrito() {
     return total;
 }
 
-
-
-export {agregarProducto, eliminarProducto, calcularTotalCarrito}
+export { agregarProducto, eliminarProducto, calcularTotalCarrito }
